@@ -1,0 +1,45 @@
+name: TradingView top stories
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      test:
+        description: Post the latest story now, as a test
+        type: boolean
+        default: false
+      dry_run:
+        description: Read the feed and print it, posting nothing
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: top-stories
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for new stories
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python3 watcher.py ${{ inputs.dry_run && '--dry-run' || inputs.test && '--test' || '' }}
+
+      - name: Save seen stories
+        if: always()
+        run: |
+          [ -f seen.json ] || exit 0
+          git add seen.json
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898732+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update seen stories"
+          git push
