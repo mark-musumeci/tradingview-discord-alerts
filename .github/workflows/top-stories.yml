@@ -1,4 +1,4 @@
-name: TradingView top stories
+name: TradingView alerts
 
 on:
   schedule:
@@ -6,11 +6,11 @@ on:
   workflow_dispatch:
     inputs:
       test:
-        description: Post the latest story now, as a test
+        description: Post test messages to both Discord channels now
         type: boolean
         default: false
       dry_run:
-        description: Read the feed and print it, posting nothing
+        description: Read the feeds and print them, posting nothing
         type: boolean
         default: false
 
@@ -33,13 +33,18 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python3 watcher.py ${{ inputs.dry_run && '--dry-run' || inputs.test && '--test' || '' }}
 
-      - name: Save seen stories
+      - name: Check the calendars
+        if: always()
+        env:
+          DISCORD_CALENDAR_WEBHOOK_URL: ${{ secrets.DISCORD_CALENDAR_WEBHOOK_URL }}
+        run: python3 calendar_watcher.py ${{ inputs.dry_run && '--dry-run' || inputs.test && '--test' || '' }}
+
+      - name: Save progress
         if: always()
         run: |
-          [ -f seen.json ] || exit 0
-          git add seen.json
+          git add '*.json'
           git diff --cached --quiet && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898732+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Update seen stories"
+          git commit -m "Update saved progress"
           git push
