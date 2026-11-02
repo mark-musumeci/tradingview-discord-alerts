@@ -3,7 +3,7 @@
 
 Each weekday morning it posts one short brief with the market regime and the
 day's main Economic, Earnings, Dividends and IPO items. Through the day it posts
-high-importance US economic results and recaps of big earnings reports as they
+high-importance US and Australian economic results and recaps of big earnings reports as they
 come out. Run it on a schedule, every few minutes.
 
   python3 calendar_watcher.py --dry-run   Print the next brief and a sample recap.
@@ -39,15 +39,18 @@ MAX_NAME_CHARS = 30
 MAX_POSTED = 500         # Economic result IDs to remember.
 
 RELEASE_TIMES = {-1: "Before open", 1: "After close"}
+FLAGS = {"US": "🇺🇸", "AU": "🇦🇺"}
+MAX_AUSTRALIA = 2        # Slots kept for Australian events in the brief.
 
 
 def fetch_economic(day):
-    """High-importance US events on an Eastern day, in time order."""
+    """High-importance events on an Eastern day, in time order."""
     start = datetime(day.year, day.month, day.day, tzinfo=EASTERN)
     end = start + timedelta(days=1)
     stamp = lambda t: t.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
     query = urllib.parse.urlencode(
-        {"from": stamp(start), "to": stamp(end), "countries": "US", "minImportance": 1}
+        {"from": stamp(start), "to": stamp(end), "countries": ",".join(FLAGS),
+         "minImportance": 1}
     )
     events = fetch_json(f"{ECONOMIC_URL}?{query}").get("result") or []
     events = [e for e in events if e.get("id") and e.get("importance", 1) == 1]
@@ -72,6 +75,10 @@ def event_name(event):
     return escape_markdown(f"{event.get('title', 'Event')}{period}")
 
 
+def flag(event):
+    return FLAGS.get(event.get("country"), "")
+
+
 def event_value(event, key):
     return number(event.get(key), event.get("scale"), event.get("unit"))
 
@@ -84,14 +91,23 @@ def ticker(row):
     return escape_markdown(row["symbol"].partition(":")[2])
 
 
+def pick_events(events):
+    """Choose the brief's events: rate decisions first, then scheduled data."""
+    limit = LIMITS["economic"]
+    ranked = sorted(events, key=lambda e: ("rate decision" not in e.get("title", "").lower(),
+                                           e.get("forecast") is None))
+    australia = [e for e in ranked if e.get("country") == "AU"][:MAX_AUSTRALIA]
+    others = [e for e in ranked if e.get("country") != "AU"][:limit - len(australia)]
+    picked = australia + others
+    picked += [e for e in ranked if e not in picked][:limit - len(picked)]
+    return sorted(picked, key=lambda e: e.get("date", ""))
+
+
 def economic_lines(events):
-    """The events most worth showing, in time order. Scheduled data comes first."""
-    ranked = sorted(events, key=lambda e: e.get("forecast") is None)[:LIMITS["economic"]]
-    ranked = sorted(ranked, key=lambda e: e.get("date", ""))
     lines = [
-        f"{event_time(e)} · **{event_name(e)}** · "
+        f"{event_time(e)} · {flag(e)} **{event_name(e)}** · "
         f"Fcst {event_value(e, 'forecast')} · Prev {event_value(e, 'previous')}"
-        for e in ranked
+        for e in pick_events(events)
     ]
     return lines, len(events)
 
@@ -214,7 +230,7 @@ def build_brief(day, events):
 
 def result_message(event):
     return "\n".join([
-        f"**🏛️ Economic result: {event_name(event)}**",
+        f"**🏛️ Economic result: {flag(event)} {event_name(event)}**",
         f"Actual {event_value(event, 'actual')} · Forecast {event_value(event, 'forecast')} · "
         f"Previous {event_value(event, 'previous')}",
         f"<{SITE_URL}/economic-calendar/>",

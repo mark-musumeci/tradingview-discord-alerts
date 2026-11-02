@@ -16,7 +16,8 @@ import urllib.error
 import urllib.request
 
 API_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
-MODEL = "gemini-2.5-flash"
+# Tried in order, because Google retires model names over time.
+MODELS = ("gemini-3.8-flash", "gemini-3.7-flash", "gemini-flash-latest")
 TIMEOUT = 60
 PACE_SECONDS = 6      # Gap after each call, to stay inside free-tier limits.
 MIN_QUOTE_WORDS = 4
@@ -112,8 +113,18 @@ def ask_json(system, source):
     key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not key:
         return None
+    for model in MODELS:
+        result, retired = ask_model(key, model, system, source)
+        if not retired:
+            return result
+    print("AI request failed: none of the listed models are available.")
+    return None
+
+
+def ask_model(key, model, system, source):
+    """Return (reply, retired). Retired means the model name no longer exists."""
     body = json.dumps({
-        "model": MODEL,
+        "model": model,
         "temperature": 0.1,
         "response_format": {"type": "json_object"},
         "messages": [{"role": "system", "content": system},
@@ -127,14 +138,16 @@ def ask_json(system, source):
             with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
                 reply = json.load(response)
             text = reply["choices"][0]["message"]["content"]
-            return json.loads(re.sub(r"^```(?:json)?|```$", "", text.strip()).strip())
+            return json.loads(re.sub(r"^```(?:json)?|```$", "", text.strip()).strip()), False
         except urllib.error.HTTPError as error:
-            print(f"AI request failed: HTTP {error.code}")
+            print(f"AI request failed ({model}): HTTP {error.code}")
+            if error.code == 404:
+                return None, True
             if error.code != 429 and error.code < 500:
-                return None
+                return None, False
         except (urllib.error.URLError, TimeoutError, ValueError, KeyError,
                 IndexError, TypeError) as error:
-            print(f"AI request failed: {type(error).__name__}")
+            print(f"AI request failed ({model}): {type(error).__name__}")
         if attempt == 1:
             time.sleep(PACE_SECONDS * 2)
-    return None
+    return None, False
