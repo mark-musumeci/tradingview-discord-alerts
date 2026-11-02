@@ -11,15 +11,15 @@ the system carries on without AI text.
 import json
 import os
 import re
-import time
 import urllib.error
 import urllib.request
 
 API_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
 # Tried in order, because Google retires model names over time.
 MODELS = ("gemini-3.8-flash", "gemini-3.7-flash", "gemini-flash-latest")
-TIMEOUT = 60
-PACE_SECONDS = 6      # Gap after each call, to stay inside free-tier limits.
+TIMEOUT = 20
+PACE_SECONDS = 4      # Gap after each call, to stay inside free-tier limits.
+MAX_FAILURES = 3      # Skip AI for the rest of a run after this many failed calls.
 MIN_QUOTE_WORDS = 4
 MAX_QUOTE_CHARS = 240
 MAX_CLAIM_CHARS = 240
@@ -51,8 +51,11 @@ _NUMBER = re.compile(r"\d+(?:[.,]\d+)*")
 _SMART = str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"', "–": "-", "—": "-"})
 
 
+_failures = 0
+
+
 def enabled():
-    return bool(os.environ.get("GEMINI_API_KEY", "").strip())
+    return bool(os.environ.get("GEMINI_API_KEY", "").strip()) and _failures < MAX_FAILURES
 
 
 def normalize(text):
@@ -110,19 +113,23 @@ def check_claim(result, key, source):
 
 def ask_json(system, source):
     """Return the AI's JSON reply, or None if the call fails for any reason."""
+    global _failures
     key = os.environ.get("GEMINI_API_KEY", "").strip()
-    if not key:
+    if not key or not enabled():
         return None
     for model in MODELS:
-        result, retired = ask_model(key, model, system, source)
-        if not retired:
+        result, try_next = ask_model(key, model, system, source)
+        if result is not None:
+            _failures = 0
             return result
-    print("AI request failed: none of the listed models are available.")
+        if not try_next:
+            break
+    _failures += 1
     return None
 
 
 def ask_model(key, model, system, source):
-    """Return (reply, retired). Retired means the model name no longer exists."""
+    """Return (reply, try_next). Try the next model if this one is gone or busy."""
     body = json.dumps({
         "model": model,
         "temperature": 0.1,
@@ -132,22 +139,17 @@ def ask_model(key, model, system, source):
     }).encode()
     request = urllib.request.Request(API_URL, data=body, headers={
         "Authorization": f"Bearer {key}", "Content-Type": "application/json"})
-
-    for attempt in (1, 2):
-        try:
-            with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
-                reply = json.load(response)
-            text = reply["choices"][0]["message"]["content"]
-            return json.loads(re.sub(r"^```(?:json)?|```$", "", text.strip()).strip()), False
-        except urllib.error.HTTPError as error:
-            print(f"AI request failed ({model}): HTTP {error.code}")
-            if error.code == 404:
-                return None, True
-            if error.code != 429 and error.code < 500:
-                return None, False
-        except (urllib.error.URLError, TimeoutError, ValueError, KeyError,
-                IndexError, TypeError) as error:
-            print(f"AI request failed ({model}): {type(error).__name__}")
-        if attempt == 1:
-            time.sleep(PACE_SECONDS * 2)
-    return None, False
+    try:
+        with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
+            reply = json.load(response)
+        text = reply["choices"][0]["message"]["content"]
+        return json.loads(re.sub(r"^```(?:json)?|```$", "", text.strip()).strip()), False
+    except urllib.error.HTTPError as error:
+        print(f"AI request failed ({model}): HTTP {error.code}")
+        return None, error.code == 404 or error.code == 429 or error.code >= 500
+    except (urllib.error.URLError, TimeoutError) as error:
+        print(f"AI request failed ({model}): {type(error).__name__}")
+        return None, True
+    except (ValueError, KeyError, IndexError, TypeError) as error:
+        print(f"AI request failed ({model}): {type(error).__name__}")
+        return None, False

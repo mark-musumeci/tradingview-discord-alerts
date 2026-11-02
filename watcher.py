@@ -25,6 +25,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 import ai
@@ -38,6 +39,9 @@ FEED_PAGE = f"{SITE_URL}/news-flow/?market=stock&market_country=us&priority=top_
 FILTERS = sorted(["lang:en", "market:stock", "market_country:US", "priority:top_stories"])
 
 STATE_FILE = Path(__file__).with_name("seen.json")
+TITLES_FILE = Path(__file__).with_name("seen_titles.json")
+TITLE_MEMORY_HOURS = 48
+SIMILAR_TITLE = 0.8   # Share of headline words that must match to count as a repeat.
 MAX_SEEN = 1000      # IDs to remember. The feed returns up to 200 at a time.
 MAX_POSTS = 10       # Most stories to post in one run, in case of a backlog.
 TIMEOUT = 30
@@ -178,12 +182,51 @@ def save_seen(seen):
     STATE_FILE.write_text(json.dumps(seen[-MAX_SEEN:], indent=0) + "\n")
 
 
+def title_words(title):
+    """A headline's main words, ignoring case and punctuation."""
+    return set(re.findall(r"[a-z0-9$%.]+", title.lower()))
+
+
+def is_repeat(title, recent):
+    """True if a headline matches one sent recently, even if slightly reworded."""
+    words = title_words(title)
+    for other in recent:
+        known = set(other["words"])
+        if words and known and len(words & known) / len(words | known) >= SIMILAR_TITLE:
+            return True
+    return False
+
+
+def load_titles(now):
+    """Return recent headlines, oldest dropped."""
+    if not TITLES_FILE.exists():
+        return []
+    cutoff = now - TITLE_MEMORY_HOURS * 3600
+    return [t for t in json.loads(TITLES_FILE.read_text()) if t["at"] >= cutoff]
+
+
+def save_titles(titles):
+    TITLES_FILE.write_text(json.dumps(titles, indent=0) + "\n")
+
+
+def remember_title(titles, title, now):
+    titles.append({"at": now, "words": sorted(title_words(title))})
+
+
+def log_feed_age(stories):
+    newest = stories[-1]
+    moment = datetime.fromtimestamp(newest.get("published", 0), timezone.utc)
+    print(f"Newest in feed: {moment:%Y-%m-%d %H:%M} UTC, {newest['title'][:70]}")
+
+
 def run(webhook):
     stories = fetch_stories()
     if not stories:
         print("The feed returned no stories, so nothing was changed.")
         return
 
+    log_feed_age(stories)
+    now = time.time()
     seen = load_seen()
     if seen is None:
         save_seen([s["id"] for s in stories])
@@ -194,6 +237,7 @@ def run(webhook):
     new = [s for s in stories if s["id"] not in known]
     skipped, to_post = new[:-MAX_POSTS], new[-MAX_POSTS:]
     seen += [s["id"] for s in skipped]
+    titles = load_titles(now)
     if skipped:
         print(f"Backlog: skipped the {len(skipped)} oldest new stories.")
 
@@ -201,6 +245,10 @@ def run(webhook):
         for index, story in enumerate(to_post):
             if index:
                 time.sleep(1)
+            if is_repeat(story["title"], titles):
+                seen.append(story["id"])
+                print(f"Skipped as a repeat: {story['title']}")
+                continue
             tag = tag_story(story)
             if tag and tag["impact"] == "low":
                 seen.append(story["id"])
@@ -208,10 +256,12 @@ def run(webhook):
                 continue
             post_to_discord(webhook, format_message(story, tag))
             seen.append(story["id"])
+            remember_title(titles, story["title"], now)
             print(f"Posted: {story['title']}")
     finally:
         # Keeps progress if a post fails, so nothing is posted twice.
         save_seen(seen)
+        save_titles(titles)
 
     print(f"{len(to_post)} new, {len(stories)} in feed.")
 
@@ -235,6 +285,13 @@ def main():
         elif args.test:
             story = fetch_stories()[-1]
             post_to_discord(webhook, format_message(story, tag_story(story)))
+            # The test post counts as sent, so a normal run won't post it again.
+            seen = load_seen()
+            if seen is not None and story["id"] not in seen:
+                save_seen(seen + [story["id"]])
+                titles = load_titles(time.time())
+                remember_title(titles, story["title"], time.time())
+                save_titles(titles)
             print("Test message sent.")
         else:
             run(webhook)
