@@ -24,19 +24,21 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
 
       - name: Check for new stories
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 watcher.py ${{ inputs.dry_run && '--dry-run' || inputs.test && '--test' || '' }}
 
       - name: Check the calendars
         if: always()
         env:
           DISCORD_CALENDAR_WEBHOOK_URL: ${{ secrets.DISCORD_CALENDAR_WEBHOOK_URL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 calendar_watcher.py ${{ inputs.dry_run && '--dry-run' || inputs.test && '--test' || '' }}
 
       - name: Save progress

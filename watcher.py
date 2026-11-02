@@ -5,6 +5,10 @@ Each run checks the feed once, posts any stories it has not seen, and records
 them in seen.json. Run it on a schedule. The very first run only records what
 is already in the feed, so the channel isn't flooded with old stories.
 
+If GEMINI_API_KEY is set, stories get a verified AI tag (see ai.py), and those
+tagged low impact are left out. Anything that can't be verified is posted as a
+plain headline, so an AI failure never hides a story.
+
   python3 watcher.py --dry-run   Print the latest stories. Posts nothing.
   python3 watcher.py --test      Post the latest story, to check the webhook.
   python3 watcher.py             Normal run.
@@ -23,8 +27,11 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+import ai
+from tv_data import SITE_URL, fetch_json
+
 NEWS_URL = "https://news-mediator.tradingview.com/public/news-flow/v2/news"
-SITE_URL = "https://www.tradingview.com"
+STORY_URL = "https://news-mediator.tradingview.com/public/news/v1/story"
 FEED_PAGE = f"{SITE_URL}/news-flow/?market=stock&market_country=us&priority=top_stories"
 
 # The API rejects filters that aren't in alphabetical order.
@@ -34,18 +41,10 @@ STATE_FILE = Path(__file__).with_name("seen.json")
 MAX_SEEN = 1000      # IDs to remember. The feed returns up to 200 at a time.
 MAX_POSTS = 10       # Most stories to post in one run, in case of a backlog.
 TIMEOUT = 30
-FETCH_ATTEMPTS = 3
 POST_ATTEMPTS = 5
+MAX_SOURCE_CHARS = 6000
 
-TV_HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-    ),
-    "Origin": SITE_URL,
-    "Referer": f"{SITE_URL}/",
-    "Cache-Control": "no-cache",
-}
+SENTIMENT = {"bullish": "🟢 Bullish", "bearish": "🔴 Bearish", "neutral": "⚪ Neutral"}
 
 
 def fetch_stories():
@@ -56,20 +55,48 @@ def fetch_stories():
         doseq=True,
         safe=":",
     )
-    request = urllib.request.Request(f"{NEWS_URL}?{query}", headers=TV_HEADERS)
-
-    for attempt in range(1, FETCH_ATTEMPTS + 1):
-        try:
-            with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
-                data = json.load(response)
-            break
-        except (urllib.error.URLError, TimeoutError, ValueError) as error:
-            if attempt == FETCH_ATTEMPTS:
-                raise RuntimeError(f"TradingView request failed: {error}") from error
-            time.sleep(2 ** attempt)
+    data = fetch_json(f"{NEWS_URL}?{query}")
 
     stories = [i for i in data.get("items", []) if i.get("id") and i.get("title")]
     return sorted(stories, key=lambda i: i.get("published", 0))
+
+
+def ast_text(node):
+    """Turn TradingView's article structure into plain text."""
+    if isinstance(node, str):
+        return node
+    if not isinstance(node, dict):
+        return ""
+    params = node.get("params") or {}
+    if node.get("type") == "symbol":
+        return params.get("text") or params.get("symbol") or ""
+    if node.get("type") == "url":
+        return params.get("linkText") or params.get("url") or ""
+    parts = [ast_text(child) for child in node.get("children", [])]
+    joiner = "\n" if node.get("type") in ("root", "list") else ""
+    return joiner.join(parts)
+
+
+def story_text(story_id):
+    """Return a story's text, or nothing if it can't be read."""
+    query = urllib.parse.urlencode({"id": story_id, "lang": "en"})
+    try:
+        data = fetch_json(f"{STORY_URL}?{query}")
+    except RuntimeError:
+        return ""
+    return ast_text(data.get("ast_description")) or data.get("short_description") or ""
+
+
+def tag_story(story):
+    """Return a verified AI tag for a story, or None to post it untagged."""
+    if not ai.enabled():
+        return None
+    source = f"{story['title']}\n{story_text(story['id'])}"[:MAX_SOURCE_CHARS]
+    tag = ai.check_tag(ai.ask_json(ai.TAG_PROMPT, source), source)
+    time.sleep(ai.PACE_SECONDS)
+    if tag is None:
+        print(f"No verified tag: {story['title']}")
+    return tag
 
 
 def story_url(story):
@@ -83,10 +110,16 @@ def escape_markdown(text):
     return re.sub(r"([\\*_~`|])", r"\\\1", text)
 
 
-def format_message(story):
-    """Headline in bold, then the link, then a small provider and ticker line."""
-    title = escape_markdown(" ".join(story["title"].split()))[:1500]
-    lines = [f"**{title}**", f"<{story_url(story)}>"]
+def format_message(story, tag=None):
+    """The headline and link, with the AI tag and its source text when verified."""
+    title = escape_markdown(" ".join(story["title"].split()))[:1200]
+    lines = []
+    if tag:
+        lines.append(f"{SENTIMENT[tag['sentiment']]} · {tag['impact'].title()} impact")
+    lines.append(f"**{title}**")
+    if tag:
+        lines.append(f"Why it matters: {escape_markdown(tag['why'])}")
+    lines.append(f"<{story_url(story)}>")
 
     provider = story.get("provider")
     details = [provider.get("name")] if isinstance(provider, dict) else []
@@ -96,6 +129,8 @@ def format_message(story):
     details = [d for d in details if d]
     if details:
         lines.append("-# " + escape_markdown(" · ".join(details)))
+    if tag:
+        lines.append(f'-# Source text: "{escape_markdown(tag["quote"])}"')
     return "\n".join(lines)
 
 
@@ -166,7 +201,12 @@ def run(webhook):
         for index, story in enumerate(to_post):
             if index:
                 time.sleep(1)
-            post_to_discord(webhook, format_message(story))
+            tag = tag_story(story)
+            if tag and tag["impact"] == "low":
+                seen.append(story["id"])
+                print(f"Skipped as low impact: {story['title']}")
+                continue
+            post_to_discord(webhook, format_message(story, tag))
             seen.append(story["id"])
             print(f"Posted: {story['title']}")
     finally:
@@ -191,9 +231,10 @@ def main():
             stories = fetch_stories()
             print(f"{len(stories)} top stories in the feed. Latest 5:\n")
             for story in stories[-5:]:
-                print(format_message(story) + "\n")
+                print(format_message(story, tag_story(story)) + "\n")
         elif args.test:
-            post_to_discord(webhook, format_message(fetch_stories()[-1]))
+            story = fetch_stories()[-1]
+            post_to_discord(webhook, format_message(story, tag_story(story)))
             print("Test message sent.")
         else:
             run(webhook)
