@@ -24,9 +24,13 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 8
     steps:
+      # Always start from the latest saved progress. A queued run would otherwise
+      # use the progress from when it was triggered, and repeat earlier posts.
       - uses: actions/checkout@v7
+        with:
+          ref: main
 
       - name: Check for new stories
         env:
@@ -49,4 +53,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898732+github-actions[bot]@users.noreply.github.com"
           git commit -m "Update saved progress"
+          git pull --rebase origin main
           git push
