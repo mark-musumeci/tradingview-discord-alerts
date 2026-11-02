@@ -5,20 +5,31 @@ from datetime import datetime, timezone
 from tv_data import fetch_json
 from watcher import NEWS_URL
 
-BASE = ["lang:en", "market:stock", "market_country:US"]
-VARIANTS = [("top_stories", "screener"), ("top_stories", "landing"), ("top_stories", "overview"),
-            ("important", "screener"), (None, "screener")]
+VARIANTS = [
+    (["lang:en", "priority:top_stories"], "screener"),
+    (["lang:en", "market:stock", "priority:top_stories"], "screener"),
+    (["lang:en", "market_country:US", "priority:top_stories"], "screener"),
+    (["lang:en", "market_country:us", "market:stock", "priority:top_stories"], "screener"),
+    (["lang:en", "market:stock", "market_country:US", "priority:key_facts"], "screener"),
+    (["lang:en", "market:stock", "market_country:US", "priority:flash"], "screener"),
+    (["lang:en", "market:stock", "market_country:US", "priority:important"], "screener"),
+    (["lang:en", "market:stock", "market_country:US", "priority:top_stories"], "web"),
+    (["lang:en", "priority:top_stories"], "landing"),
+]
 
-for priority, client in VARIANTS:
-    filters = sorted(BASE + ([f"priority:{priority}"] if priority else []))
+for filters, client in VARIANTS:
     query = urllib.parse.urlencode(
-        {"filter": filters, "client": client, "streaming": "false", "user_prostatus": "non_pro"},
+        {"filter": sorted(filters), "client": client, "streaming": "false",
+         "user_prostatus": "non_pro"},
         doseq=True, safe=":")
+    name = " ".join(f.split(":", 1)[1] for f in sorted(filters)[1:])
     try:
         items = fetch_json(f"{NEWS_URL}?{query}").get("items", [])
-        newest = max(items, key=lambda i: i.get("published", 0))
-        moment = datetime.fromtimestamp(newest.get("published", 0), timezone.utc)
-        print(f"PROBE {priority} {client}: {len(items)} items, newest {moment:%m-%d %H:%M} UTC, "
-              f"{newest.get('title', '')[:60]}")
+        items.sort(key=lambda i: i.get("published", 0), reverse=True)
+        print(f"PROBE [{name}] {client}: {len(items)} items")
+        for item in items[:4]:
+            moment = datetime.fromtimestamp(item.get("published", 0), timezone.utc)
+            source = (item.get("provider") or {}).get("name", "")
+            print(f"PROBE   {moment:%m-%d %H:%M} {source}: {item.get('title', '')[:90]}")
     except (RuntimeError, ValueError) as error:
-        print(f"PROBE {priority} {client}: failed, {error}")
+        print(f"PROBE [{name}] {client}: failed, {error}")
