@@ -1,6 +1,13 @@
 {
 "morning_date": "",
 "morning_done": [],
-"posted": [],
-"recaps": {}
+"posted": [
+"397194"
+],
+"recaps": {
+"NASDAQ:MAR:2026-11-02": "done",
+"NASDAQ:LITE:2026-11-02": "done",
+"NASDAQ:IDXX:2026-11-02": "done",
+"NYSE:ETR:2026-11-02": "done"
+}
 }
