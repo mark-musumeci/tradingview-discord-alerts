@@ -276,10 +276,11 @@ def run(webhook, now):
     events = fetch_economic(day)
     try:
         if in_morning and state.get("morning_date") != day.isoformat():
-            reading = regime.daily_reading()
+            inputs = regime.read_inputs()
+            reading = regime.summary(*inputs)
             post_to_discord(webhook, build_brief(day, events, reading))
             state["morning_date"] = day.isoformat()
-            archive.add_regime(*reading, now)
+            archive.add_regime(*reading, now, regime.sentiment_score(*inputs))
             print("Posted the morning brief.")
         post_results(webhook, state, events, first_run, now)
         recaps.post_recaps(lambda text: post_to_discord(webhook, text), state, now, first_run)

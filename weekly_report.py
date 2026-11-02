@@ -172,6 +172,55 @@ def clean(text):
     return escape(text)
 
 
+def sentiment_label(score):
+    """Return the label and colour for a score, using five equal bands."""
+    bands = [(20, "Extreme Fear", "#e5484d"), (40, "Fear", "#e88b00"), (60, "Neutral", "#f0c929"),
+             (80, "Greed", "#9fd400"), (100, "Extreme Greed", "#12c47d")]
+    return next((name, colour) for limit, name, colour in bands if score <= limit)
+
+
+def gauge(score):
+    """Draw a dark gauge card: a five-colour arc, a marker, the score and a label."""
+    from math import cos, pi, sin
+
+    from reportlab.graphics.shapes import Circle, Drawing, PolyLine, Rect, String
+    from reportlab.lib import colors
+
+    width, height, cx, cy, radius = 148, 112, 74, 34, 50
+    drawing = Drawing(width, height)
+    drawing.add(Rect(0, 0, width, height, rx=10, ry=10, strokeWidth=0.8,
+                     fillColor=colors.HexColor("#22252f"),
+                     strokeColor=colors.HexColor("#3a3f4c")))
+    drawing.add(String(12, height - 18, "Market Sentiment", fontName="Helvetica",
+                       fontSize=9.5, fillColor=colors.HexColor("#9aa3b2")))
+
+    def point(value):
+        angle = pi * (1 - value / 100)
+        return cx + radius * cos(angle), cy + radius * sin(angle)
+
+    segments = ((0, "#e5484d"), (20, "#e88b00"), (40, "#f0c929"), (60, "#9fd400"), (80, "#12c47d"))
+    for start, colour in segments:
+        points = []
+        for step in range(13):
+            points += point(start + 2.5 + (15 * step / 12))
+        drawing.add(PolyLine(points, strokeColor=colors.HexColor(colour), strokeWidth=6.5,
+                             strokeLineCap=1, strokeLineJoin=1))
+
+    x, y = point(score)
+    drawing.add(Circle(x, y, 5.5, fillColor=colors.white,
+                       strokeColor=colors.HexColor("#22252f"), strokeWidth=2))
+    drawing.add(String(cx, cy + 3, str(score), fontName="Helvetica-Bold", fontSize=21,
+                       fillColor=colors.white, textAnchor="middle"))
+
+    label, colour = sentiment_label(score)
+    pill = max(38, 5.2 * len(label) + 14)
+    drawing.add(Rect(cx - pill / 2, cy - 19, pill, 14, rx=7, ry=7, strokeWidth=0,
+                     fillColor=colors.HexColor(colour)))
+    drawing.add(String(cx, cy - 15, label, fontName="Helvetica-Bold", fontSize=8.2,
+                       textAnchor="middle", fillColor=colors.white))
+    return drawing
+
+
 def build_pdf(day, items, notes, ahead, earnings_ahead):
     """Return the PDF as bytes, always on one page."""
     from reportlab.lib import colors
@@ -204,13 +253,22 @@ def build_pdf(day, items, notes, ahead, earnings_ahead):
 
     regimes = [i for i in items if i["kind"] == "regime"]
     if regimes:
-        first, last = regimes[0], regimes[-1]
-        text = f"<b>{clean(last['heading'])}</b><br/>{clean(last['detail'])}"
-        if len(regimes) > 1 and first["heading"] != last["heading"]:
-            start_label = first["heading"].replace("Regime: ", "")
-            text += f"<br/>Started the week at: {clean(start_label)}"
-        strip = Table([[Paragraph(text, body)]], colWidths=[7.1 * inch])
+        last = regimes[-1]
+        scored = [r for r in regimes if r.get("score") is not None]
+        text = ["<b>Market sentiment</b>", clean(last["heading"]), clean(last["detail"])]
+        if len(scored) > 1:
+            text.append(f"Week's change: {scored[0]['score']} to {scored[-1]['score']}")
+        text.append(
+            "<font size=7 color='#5d6878'>Our own score from the VIX, yield curve, breadth "
+            "and trend. It isn't CNN's Fear &amp; Greed Index.</font>")
+        words = Paragraph("<br/>".join(text), body)
+        if scored:
+            row = [[gauge(scored[-1]["score"]), words]]
+            strip = Table(row, colWidths=[2.2 * inch, 4.9 * inch])
+        else:
+            strip = Table([[words]], colWidths=[7.1 * inch])
         strip.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), band),
+                                   ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
                                    ("LEFTPADDING", (0, 0), (-1, -1), 8),
                                    ("TOPPADDING", (0, 0), (-1, -1), 6),
                                    ("BOTTOMPADDING", (0, 0), (-1, -1), 7)]))

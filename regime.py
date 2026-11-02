@@ -101,5 +101,31 @@ def summary(vix, curve, breadth, trend):
     return f"{icon} Regime: {name} ({total:+d}/{len(scores)})", " · ".join(parts)
 
 
+def scale(value, low, high):
+    """Place a value on a 0 to 100 range, capped at both ends."""
+    return max(0.0, min(100.0, 100 * (value - low) / (high - low)))
+
+
+def sentiment_score(vix, curve, breadth, trend):
+    """A 0 to 100 reading, from fear to greed, averaging the four inputs equally.
+
+    Each range is a rule of thumb. Returns None with fewer than three inputs.
+    """
+    parts = []
+    if vix is not None:
+        parts.append(100 - scale(vix, 12, 35))
+    if curve is not None:
+        parts.append(scale(curve, -0.5, 1.0))
+    if breadth is not None:
+        parts.append(scale(breadth, 25, 75))
+    if trend is not None:
+        parts.append(scale(100 * (trend[0] / trend[2] - 1), -10, 10))
+    return round(sum(parts) / len(parts)) if len(parts) >= MIN_INPUTS else None
+
+
+def read_inputs():
+    return safe(read_vix), safe(read_curve), safe(read_breadth), safe(read_trend)
+
+
 def daily_reading():
-    return summary(safe(read_vix), safe(read_curve), safe(read_breadth), safe(read_trend))
+    return summary(*read_inputs())

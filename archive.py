@@ -31,8 +31,8 @@ def add_result(event, now):
     add("result", {key: event.get(key) for key in fields}, now)
 
 
-def add_regime(heading, detail, now):
-    add("regime", {"heading": heading, "detail": detail}, now)
+def add_regime(heading, detail, now, score=None):
+    add("regime", {"heading": heading, "detail": detail, "score": score}, now)
 
 
 def add_recap(row, claims, story_link, now):
