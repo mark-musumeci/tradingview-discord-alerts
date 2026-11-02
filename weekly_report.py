@@ -42,6 +42,7 @@ MAX_AHEAD = 5
 MAX_TAKEAWAYS = 3
 POST_ATTEMPTS = 5
 PAGE_COLOUR = "#22252f"
+RESULT_COLOURS = {"Beat": "#4ade80", "Miss": "#ff6b6b"}
 
 COUNTRIES = {"US": "US", "AU": "AU"}
 
@@ -102,6 +103,12 @@ def verdict(percent):
         return "n/a"
     label = "Beat" if percent > 0 else "Miss" if percent < 0 else "In line"
     return f"{label} {percent:+.1f}%"
+
+
+def coloured(text):
+    """Colour a result green for a beat and red for a miss. Others stay as they are."""
+    colour = RESULT_COLOURS.get(text.split(" ")[0])
+    return f'<font color="{colour}">{clean(text)}</font>' if colour else clean(text)
 
 
 def source_lines(results, earnings):
@@ -282,7 +289,7 @@ def build_pdf(day, items, notes, ahead, earnings_ahead):
 
     def table(header, rows, widths):
         data = [[Paragraph(clean(c), head) for c in header]]
-        data += [[Paragraph(clean(c), cell) for c in row] for row in rows]
+        data += [[Paragraph(coloured(c), cell) for c in row] for row in rows]
         grid = Table(data, colWidths=[w * inch for w in widths], repeatRows=1)
         grid.setStyle(TableStyle([("LINEBELOW", (0, 0), (-1, -1), 0.4, line),
                                   ("LINEBELOW", (0, 0), (-1, 0), 0.8, muted),
