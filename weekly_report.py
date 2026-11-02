@@ -24,6 +24,7 @@ import urllib.error
 import urllib.request
 import uuid
 from datetime import datetime, timedelta
+from pathlib import Path
 from xml.sax.saxutils import escape
 
 import ai
@@ -42,6 +43,8 @@ MAX_AHEAD = 5
 MAX_TAKEAWAYS = 3
 POST_ATTEMPTS = 5
 PAGE_COLOUR = "#22252f"
+ASSETS = Path(__file__).with_name("assets")
+FLAG_WIDTH, FLAG_HEIGHT = 12, 9
 RESULT_COLOURS = {"Beat": "#4ade80", "Miss": "#ff6b6b"}
 
 COUNTRIES = {"US": "US", "AU": "AU"}
@@ -103,6 +106,16 @@ def verdict(percent):
         return "n/a"
     label = "Beat" if percent > 0 else "Miss" if percent < 0 else "In line"
     return f"{label} {percent:+.1f}%"
+
+
+def with_flag(text):
+    """Put a flag image before the first US or AU in text. PDF fonts can't show emoji."""
+    def swap(match):
+        code = match.group(1)
+        path = ASSETS / f"flag-{code.lower()}.png"
+        return (f'<img src="{path}" width="{FLAG_WIDTH}" height="{FLAG_HEIGHT}" valign="-1.5"/>'
+                f"&nbsp;{code} ")
+    return re.sub(r"\b(US|AU) ", swap, clean(text), count=1)
 
 
 def coloured(text):
@@ -287,9 +300,11 @@ def build_pdf(day, items, notes, ahead, earnings_ahead):
         flow.append(Paragraph("Key takeaways", section))
         flow += [Paragraph(f"•&nbsp; {clean(note)}", body) for note in notes]
 
-    def table(header, rows, widths):
+    def table(header, rows, widths, flags=False):
+        first = with_flag if flags else coloured
         data = [[Paragraph(clean(c), head) for c in header]]
-        data += [[Paragraph(coloured(c), cell) for c in row] for row in rows]
+        data += [[Paragraph(first(row[0]), cell), *[Paragraph(coloured(c), cell) for c in row[1:]]]
+                 for row in rows]
         grid = Table(data, colWidths=[w * inch for w in widths], repeatRows=1)
         grid.setStyle(TableStyle([("LINEBELOW", (0, 0), (-1, -1), 0.4, line),
                                   ("LINEBELOW", (0, 0), (-1, 0), 0.8, muted),
@@ -304,7 +319,8 @@ def build_pdf(day, items, notes, ahead, earnings_ahead):
     if results:
         rows = [[result_name(i), value(i, "actual"), value(i, "forecast"), value(i, "previous")]
                 for i in results]
-        flow.append(table(["Event", "Actual", "Forecast", "Previous"], rows, [4.1, 1, 1, 1]))
+        flow.append(table(["Event", "Actual", "Forecast", "Previous"], rows, [4.1, 1, 1, 1],
+                          flags=True))
     else:
         flow.append(Paragraph("No high-importance results were saved this week.", body))
 
@@ -327,7 +343,7 @@ def build_pdf(day, items, notes, ahead, earnings_ahead):
 
     flow.append(Paragraph("Next week", section))
     if ahead:
-        flow += [Paragraph(f"•&nbsp; {clean(entry)}", body) for entry in ahead]
+        flow += [Paragraph(f"•&nbsp; {with_flag(entry)}", body) for entry in ahead]
     if earnings_ahead:
         flow.append(Paragraph(f"•&nbsp; Earnings to watch: {clean(earnings_ahead)}", body))
     if not ahead and not earnings_ahead:
