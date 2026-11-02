@@ -41,6 +41,7 @@ MAX_EARNINGS = 7
 MAX_AHEAD = 5
 MAX_TAKEAWAYS = 3
 POST_ATTEMPTS = 5
+PAGE_COLOUR = "#22252f"
 
 COUNTRIES = {"US": "US", "AU": "AU"}
 
@@ -189,7 +190,7 @@ def gauge(score):
     width, height, cx, cy, radius = 148, 112, 74, 34, 50
     drawing = Drawing(width, height)
     drawing.add(Rect(0, 0, width, height, rx=10, ry=10, strokeWidth=0.8,
-                     fillColor=colors.HexColor("#22252f"),
+                     fillColor=colors.HexColor(PAGE_COLOUR),
                      strokeColor=colors.HexColor("#3a3f4c")))
     drawing.add(String(12, height - 18, "Market Sentiment", fontName="Helvetica",
                        fontSize=9.5, fillColor=colors.HexColor("#9aa3b2")))
@@ -208,7 +209,7 @@ def gauge(score):
 
     x, y = point(score)
     drawing.add(Circle(x, y, 5.5, fillColor=colors.white,
-                       strokeColor=colors.HexColor("#22252f"), strokeWidth=2))
+                       strokeColor=colors.HexColor(PAGE_COLOUR), strokeWidth=2))
     drawing.add(String(cx, cy + 3, str(score), fontName="Helvetica-Bold", fontSize=21,
                        fillColor=colors.white, textAnchor="middle"))
 
@@ -230,11 +231,12 @@ def build_pdf(day, items, notes, ahead, earnings_ahead):
     from reportlab.platypus import (KeepInFrame, Paragraph, SimpleDocTemplate, Spacer, Table,
                                     TableStyle)
 
-    ink = colors.HexColor("#17202e")
-    muted = colors.HexColor("#5d6878")
-    line = colors.HexColor("#d9dee6")
-    accent = colors.HexColor("#14532d")
-    band = colors.HexColor("#f3f6f4")
+    page = colors.HexColor(PAGE_COLOUR)
+    ink = colors.HexColor("#f2f4f8")
+    muted = colors.HexColor("#9aa3b2")
+    line = colors.HexColor("#3a3f4c")
+    accent = colors.HexColor("#4ade80")
+    band = colors.HexColor("#2c303c")
 
     body = ParagraphStyle("body", fontName="Helvetica", fontSize=8.8, leading=11.6, textColor=ink)
     small = ParagraphStyle("small", parent=body, fontSize=7.4, leading=9.6, textColor=muted)
@@ -259,7 +261,7 @@ def build_pdf(day, items, notes, ahead, earnings_ahead):
         if len(scored) > 1:
             text.append(f"Week's change: {scored[0]['score']} to {scored[-1]['score']}")
         text.append(
-            "<font size=7 color='#5d6878'>Our own score from the VIX, yield curve, breadth "
+            "<font size=7 color='#9aa3b2'>Our own score from the VIX, yield curve, breadth "
             "and trend. It isn't CNN's Fear &amp; Greed Index.</font>")
         words = Paragraph("<br/>".join(text), body)
         if scored:
@@ -342,7 +344,14 @@ def build_pdf(day, items, notes, ahead, earnings_ahead):
     frame_doc = SimpleDocTemplate(output, pagesize=letter, leftMargin=margin, rightMargin=margin,
                                   topMargin=margin, bottomMargin=margin,
                                   title="Weekly Market Recap", author="TradingView Discord alerts")
-    frame_doc.build([fitted])
+
+    def paint_page(canvas, _doc):
+        canvas.saveState()
+        canvas.setFillColor(page)
+        canvas.rect(0, 0, width, height, stroke=0, fill=1)
+        canvas.restoreState()
+
+    frame_doc.build([fitted], onFirstPage=paint_page)
     return output.getvalue()
 
 
