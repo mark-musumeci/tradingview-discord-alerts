@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Post new TradingView US-stock top stories to a Discord channel.
+"""Post new TradingView top stories to a Discord channel.
 
 Each run checks the feed once, posts any stories it has not seen, and records
-them in seen.json. Run it on a schedule. The very first run only records what
+them in seen_top_stories.json. Run it on a schedule. The very first run only records what
 is already in the feed, so the channel isn't flooded with old stories.
 
 If GEMINI_API_KEY is set, stories get a verified AI tag (see ai.py), and those
@@ -33,12 +33,12 @@ from tv_data import SITE_URL, fetch_json
 
 NEWS_URL = "https://news-mediator.tradingview.com/public/news-flow/v2/news"
 STORY_URL = "https://news-mediator.tradingview.com/public/news/v1/story"
-FEED_PAGE = f"{SITE_URL}/news-flow/?market=stock&market_country=us&priority=top_stories"
+FEED_PAGE = f"{SITE_URL}/news-flow/?priority=top_stories"
 
 # The API rejects filters that aren't in alphabetical order.
-FILTERS = sorted(["lang:en", "market:stock", "market_country:US", "priority:top_stories"])
+FILTERS = sorted(["lang:en", "priority:top_stories"])
 
-STATE_FILE = Path(__file__).with_name("seen.json")
+STATE_FILE = Path(__file__).with_name("seen_top_stories.json")
 TITLES_FILE = Path(__file__).with_name("seen_titles.json")
 TITLE_MEMORY_HOURS = 48
 SIMILAR_TITLE = 0.8   # Share of headline words that must match to count as a repeat.

@@ -32,10 +32,6 @@ jobs:
         with:
           ref: main
 
-      - name: Compare feed settings
-        continue-on-error: true
-        run: python3 probe_feed.py
-
       - name: Check for new stories
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
