@@ -13,6 +13,10 @@ on:
         description: Read the feeds and print them, posting nothing
         type: boolean
         default: false
+      weekly_pdf:
+        description: Send the weekly PDF now, as a test
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -44,6 +48,17 @@ jobs:
           DISCORD_CALENDAR_WEBHOOK_URL: ${{ secrets.DISCORD_CALENDAR_WEBHOOK_URL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 calendar_watcher.py ${{ inputs.dry_run && '--dry-run' || inputs.test && '--test' || '' }}
+
+      - name: Send the weekly PDF
+        if: always()
+        env:
+          DISCORD_WEEKLY_WEBHOOK_URL: ${{ secrets.DISCORD_WEEKLY_WEBHOOK_URL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MODE: ${{ inputs.weekly_pdf && '--test' || '' }}
+        run: |
+          python3 weekly_report.py --check $MODE || exit 0
+          python3 -m pip install --quiet --break-system-packages reportlab==5.0.1
+          python3 weekly_report.py $MODE
 
       - name: Save progress
         if: always()

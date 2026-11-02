@@ -22,6 +22,7 @@ import urllib.parse
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import archive
 import recaps
 import regime
 from tv_data import EASTERN, SITE_URL, day_range, fetch_json, large_us_companies, money, scan
@@ -208,9 +209,9 @@ def section(heading, build):
     return [f"**{heading}**", *lines, *more]
 
 
-def build_brief(day, events):
+def build_brief(day, events, reading=None):
     """Build the single morning post."""
-    heading, detail = regime.daily_reading()
+    heading, detail = reading or regime.daily_reading()
     lines = [f"**☀️ Morning brief · {day.strftime('%a, %b')} {day.day}**", heading, detail]
     sections = [
         ("🏛️ Economic", lambda: economic_lines(events)),
@@ -254,7 +255,7 @@ def save_state(state):
     STATE_FILE.write_text(json.dumps(state, indent=0) + "\n")
 
 
-def post_results(webhook, state, events, first_run):
+def post_results(webhook, state, events, first_run, now):
     """Post any economic results not seen yet. A first run only records them."""
     released = [e for e in events if e.get("actual") is not None]
     for event in released:
@@ -262,6 +263,7 @@ def post_results(webhook, state, events, first_run):
             continue
         if not first_run:
             post_to_discord(webhook, result_message(event))
+            archive.add_result(event, now)
             print(f"Posted result: {event.get('title')}")
             time.sleep(1)
         state["posted"].append(event["id"])
@@ -274,10 +276,12 @@ def run(webhook, now):
     events = fetch_economic(day)
     try:
         if in_morning and state.get("morning_date") != day.isoformat():
-            post_to_discord(webhook, build_brief(day, events))
+            reading = regime.daily_reading()
+            post_to_discord(webhook, build_brief(day, events, reading))
             state["morning_date"] = day.isoformat()
+            archive.add_regime(*reading, now)
             print("Posted the morning brief.")
-        post_results(webhook, state, events, first_run)
+        post_results(webhook, state, events, first_run, now)
         recaps.post_recaps(lambda text: post_to_discord(webhook, text), state, now, first_run)
     finally:
         save_state(state)

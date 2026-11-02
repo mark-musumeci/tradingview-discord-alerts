@@ -9,6 +9,7 @@ import urllib.parse
 from datetime import datetime, timedelta, timezone
 
 import ai
+import archive
 from tv_data import SITE_URL, day_range, large_us_companies, money, scan
 from watcher import NEWS_URL, escape_markdown, fetch_json, story_text, story_url
 
@@ -129,6 +130,7 @@ def post_recaps(post, state, now, first_run):
         claims, story = verified_claims(articles)
         post(recap_message(row, claims, story))
         recaps[key] = "done"
+        archive.add_recap(row, claims, story_url(story) if story else None, now)
         posted += 1
         print(f"Posted recap: {row['symbol']}")
         time.sleep(1)
