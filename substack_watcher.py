@@ -243,6 +243,10 @@ def check_feed(webhook, feed, state, now):
     saved.update(cache)
     logo, items = parse_feed(text)
     print(f"Read {feed['url']}: {len(items)} items. Next check in {wait} minutes.")
+    for item in items:
+        status = "included" if is_wanted(item, feed) else "filtered"
+        print(f"Item ({status}): {item['date']} title={clip(item['title'], 60)!r} "
+              f"body={clip(item['body'], 60)!r} image={bool(item['image'])}")
 
     if not saved.get("started", True):
         saved["seen"] = [i["id"] for i in items][:MAX_SEEN]
