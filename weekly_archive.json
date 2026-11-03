@@ -139,5 +139,35 @@
 "revenue_surprise_percent_fq": 0.22899014671985377,
 "claims": {},
 "link": null
+},
+{
+"kind": "recap",
+"at": "2026-11-03T08:05:14.567791-05:00",
+"symbol": "NASDAQ:SHOP",
+"description": "Shopify Inc.",
+"market_cap_basic": 200965318471.4194,
+"earnings_per_share_fq": 0.48156591099916035,
+"earnings_per_share_forecast_fq": 0.46129241130000004,
+"eps_surprise_percent_fq": 4.394934580004506,
+"revenue_fq": 3677591099.9160376,
+"revenue_forecast_fq": 3700188029.5650005,
+"revenue_surprise_percent_fq": -0.6106967934713172,
+"claims": {},
+"link": null
+},
+{
+"kind": "recap",
+"at": "2026-11-03T08:05:14.567791-05:00",
+"symbol": "AMEX:ET",
+"description": "Energy Transfer LP",
+"market_cap_basic": 70036713587,
+"earnings_per_share_fq": 0.33,
+"earnings_per_share_forecast_fq": 0.406414,
+"eps_surprise_percent_fq": -18.802009773285363,
+"revenue_fq": 37103000000,
+"revenue_forecast_fq": 32427041344,
+"revenue_surprise_percent_fq": 14.419936146487803,
+"claims": {},
+"link": null
 }
 ]
