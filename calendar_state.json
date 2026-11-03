@@ -1,9 +1,11 @@
 {
-"morning_date": "",
+"morning_date": "2026-11-03",
 "morning_done": [],
 "posted": [
 "397194",
 "394028"
 ],
-"recaps": {}
+"recaps": {
+"NYSE:ETN:2026-11-03": "done"
+}
 }

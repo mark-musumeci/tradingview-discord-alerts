@@ -12,5 +12,27 @@
 "unit": "%",
 "scale": null,
 "date": "2026-11-03T03:30:00.000Z"
+},
+{
+"kind": "regime",
+"at": "2026-11-03T07:00:23.202175-05:00",
+"heading": "🟡 Regime: Neutral (+1/4)",
+"detail": "VIX 21.5 · 10Y-2Y +0.32 · Breadth 59% · S&P above 200-day",
+"score": 62
+},
+{
+"kind": "recap",
+"at": "2026-11-03T07:00:23.202175-05:00",
+"symbol": "NYSE:ETN",
+"description": "Eaton Corporation, PLC",
+"market_cap_basic": 142181588610,
+"earnings_per_share_fq": 3.68,
+"earnings_per_share_forecast_fq": 3.544617,
+"eps_surprise_percent_fq": 3.819397130917107,
+"revenue_fq": 8947000000,
+"revenue_forecast_fq": 8530076647,
+"revenue_surprise_percent_fq": 4.887685893732626,
+"claims": {},
+"link": null
 }
 ]
