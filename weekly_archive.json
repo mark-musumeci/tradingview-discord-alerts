@@ -198,5 +198,50 @@
 "unit": null,
 "scale": "M",
 "date": "2026-11-03T15:00:00.000Z"
+},
+{
+"kind": "recap",
+"at": "2026-11-03T16:20:26.038839-05:00",
+"symbol": "NASDAQ:AMGN",
+"description": "Amgen Inc.",
+"market_cap_basic": 249371931643.80145,
+"earnings_per_share_fq": 6.45,
+"earnings_per_share_forecast_fq": 5.786152,
+"eps_surprise_percent_fq": 11.47304806372179,
+"revenue_fq": 10365000000,
+"revenue_forecast_fq": 10067845726,
+"revenue_surprise_percent_fq": 2.951517952173277,
+"claims": {},
+"link": null
+},
+{
+"kind": "recap",
+"at": "2026-11-03T16:20:26.038839-05:00",
+"symbol": "NYSE:ANET",
+"description": "Arista Networks, Inc.",
+"market_cap_basic": 214294672582.0326,
+"earnings_per_share_fq": 1.2,
+"earnings_per_share_forecast_fq": 1.080022,
+"eps_surprise_percent_fq": 11.108847782730344,
+"revenue_fq": 3657600000,
+"revenue_forecast_fq": 3334746575,
+"revenue_surprise_percent_fq": 9.681498061063305,
+"claims": {},
+"link": null
+},
+{
+"kind": "recap",
+"at": "2026-11-03T16:20:26.038839-05:00",
+"symbol": "NASDAQ:BKNG",
+"description": "Booking Holdings Inc. Common Stock",
+"market_cap_basic": 116967401370.87532,
+"earnings_per_share_fq": 4.66,
+"earnings_per_share_forecast_fq": 4.49315,
+"eps_surprise_percent_fq": 3.7134304441204984,
+"revenue_fq": 8893000000,
+"revenue_forecast_fq": 9546740039,
+"revenue_surprise_percent_fq": -6.8477829743908885,
+"claims": {},
+"link": null
 }
 ]
