@@ -86,9 +86,10 @@ def download(feed, saved):
     except urllib.error.HTTPError as error:
         if error.code == 304:
             return None, {}
-        wait = error.headers.get("Retry-After")
-        if error.code in (429, 503) and wait and wait.isdigit():
-            saved["next_check"] = time.time() + int(wait)
+        if error.code in (429, 503):
+            wait = error.headers.get("Retry-After") or ""
+            delay = int(wait) if wait.isdigit() else 0
+            saved["next_check"] = time.time() + max(delay, CHECK_EVERY_SECONDS)
         raise RuntimeError(f"HTTP {error.code}") from error
     except (urllib.error.URLError, TimeoutError) as error:
         raise RuntimeError(str(error)) from error
@@ -216,26 +217,23 @@ def save_state(state):
 
 def check_feed(webhook, feed, state, now):
     saved = state.get(feed["url"])
-    first_time = saved is None
-    saved = saved if saved is not None else {"seen": []}
-    if not first_time and now < saved.get("next_check", 0):
+    saved = saved if saved is not None else {"seen": [], "started": False}
+    if now < saved.get("next_check", 0):
         return
 
+    # Saved even if the check fails, so a failed feed still waits before retrying.
     saved["next_check"] = now + CHECK_EVERY_SECONDS
     state[feed["url"]] = saved
-    try:
-        text, cache = download(feed, saved)
-    except RuntimeError:
-        if first_time:
-            state.pop(feed["url"])
-        raise
+    text, cache = download(feed, saved)
     if text is None:
         return
     saved.update(cache)
     logo, items = parse_feed(text)
+    print(f"Read {feed['url']}: {len(items)} items.")
 
-    if first_time:
+    if not saved.get("started", True):
         saved["seen"] = [i["id"] for i in items][:MAX_SEEN]
+        saved["started"] = bool(items)
         print(f"First check of {feed['url']}: saved {len(items)} items without posting.")
         return
 
