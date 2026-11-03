@@ -184,5 +184,19 @@
 "revenue_surprise_percent_fq": 0.04873851628263193,
 "claims": {},
 "link": null
+},
+{
+"kind": "result",
+"at": "2026-11-03T10:05:14.924147-05:00",
+"id": "1001668384901",
+"title": "JOLTs Job Openings",
+"period": "Sep. 2026",
+"country": "US",
+"actual": 7.523,
+"forecast": 7.1,
+"previous": 7.19,
+"unit": null,
+"scale": "M",
+"date": "2026-11-03T15:00:00.000Z"
 }
 ]
