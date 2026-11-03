@@ -49,6 +49,10 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 calendar_watcher.py ${{ inputs.dry_run && '--dry-run' || inputs.test && '--test' || '' }}
 
+      - name: Compare Substack feeds
+        continue-on-error: true
+        run: python3 probe_substack.py
+
       - name: Check Substack
         if: always()
         env:

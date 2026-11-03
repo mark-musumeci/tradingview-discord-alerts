@@ -34,7 +34,7 @@ FEEDS_FILE = Path(__file__).with_name("substack_feeds.json")
 STATE_FILE = Path(__file__).with_name("substack_state.json")
 
 NOTES_URL = "https://openrss.org/substack.com/@{handle}"
-POSTS_URL = "https://{publication}.substack.com/feed"
+POSTS_URL = "https://openrss.org/{publication}.substack.com"
 USER_AGENT = ("TradingViewDiscordAlerts/1.0 "
               "(+https://github.com/mark-musumeci/tradingview-discord-alerts)")
 
