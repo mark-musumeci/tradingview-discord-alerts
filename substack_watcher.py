@@ -6,7 +6,7 @@ new. A person's current items are saved without posting the first time they're
 checked, so adding someone doesn't flood the channel.
 
 Notes come from Open RSS, a free outside service, so each feed is checked at most
-every 15 minutes and only downloaded if it has changed.
+once an hour and only downloaded if it has changed.
 
   python3 substack_watcher.py --dry-run   Print the latest items. Posts nothing.
   python3 substack_watcher.py --test      Post the latest item from each feed.
@@ -38,7 +38,7 @@ POSTS_URL = "https://openrss.org/{publication}.substack.com"
 USER_AGENT = ("TradingViewDiscordAlerts/1.0 "
               "(+https://github.com/mark-musumeci/tradingview-discord-alerts)")
 
-CHECK_EVERY_SECONDS = 15 * 60
+CHECK_EVERY_SECONDS = 60 * 60
 MAX_SEEN = 300
 MAX_POSTS_PER_FEED = 5
 MAX_FEED_BYTES = 5_000_000
