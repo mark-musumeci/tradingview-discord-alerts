@@ -39,6 +39,7 @@ USER_AGENT = ("TradingViewDiscordAlerts/1.0 "
               "(+https://github.com/mark-musumeci/tradingview-discord-alerts)")
 
 CHECK_EVERY_SECONDS = 60 * 60
+FEED_GAP_SECONDS = 2     # Open RSS asks for a gap between requests.
 MAX_SEEN = 300
 MAX_POSTS_PER_FEED = 5
 MAX_FEED_BYTES = 5_000_000
@@ -48,6 +49,10 @@ ORANGE = 0xFF6719
 MEDIA = "{http://search.yahoo.com/mrss/}"
 CONTENT = "{http://purl.org/rss/1.0/modules/content/}"
 ATOM = "{http://www.w3.org/2005/Atom}"
+
+
+class RateLimited(RuntimeError):
+    """Open RSS asked us to stop, so no more requests are made in this run."""
 
 
 def load_feeds():
@@ -81,6 +86,10 @@ def download(feed, saved):
     try:
         with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
             text = response.read(MAX_FEED_BYTES).decode("utf-8", "replace")
+            match = re.search(r"max-age=(\d+)", response.headers.get("Cache-Control") or "")
+            if match:
+                saved["next_check"] = max(saved.get("next_check", 0),
+                                          time.time() + int(match.group(1)))
             return text, {"etag": response.headers.get("ETag"),
                           "modified": response.headers.get("Last-Modified")}
     except urllib.error.HTTPError as error:
@@ -90,6 +99,7 @@ def download(feed, saved):
             wait = error.headers.get("Retry-After") or ""
             delay = int(wait) if wait.isdigit() else 0
             saved["next_check"] = time.time() + max(delay, CHECK_EVERY_SECONDS)
+            raise RateLimited(f"HTTP {error.code}") from error
         raise RuntimeError(f"HTTP {error.code}") from error
     except (urllib.error.URLError, TimeoutError) as error:
         raise RuntimeError(str(error)) from error
@@ -254,9 +264,14 @@ def run(webhook):
     state = load_state()
     now = time.time()
     try:
-        for feed in load_feeds():
+        for index, feed in enumerate(load_feeds()):
+            if index:
+                time.sleep(FEED_GAP_SECONDS)
             try:
                 check_feed(webhook, feed, state, now)
+            except RateLimited as error:
+                print(f"Open RSS asked us to wait ({error}), so this run stops here.")
+                break
             except RuntimeError as error:
                 print(f"Skipped {feed['url']} this time: {error}")
     finally:
@@ -275,6 +290,7 @@ def preview(webhook):
     """Print or post the latest item from each feed."""
     state = load_state()
     for feed in load_feeds():
+        time.sleep(FEED_GAP_SECONDS)
         try:
             item, logo = latest_item(feed)
         except RuntimeError as error:
