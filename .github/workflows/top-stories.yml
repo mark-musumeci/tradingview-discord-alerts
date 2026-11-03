@@ -53,6 +53,7 @@ jobs:
         if: always()
         env:
           DISCORD_SUBSTACK_WEBHOOK_URL: ${{ secrets.DISCORD_SUBSTACK_WEBHOOK_URL }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: python3 substack_watcher.py ${{ inputs.dry_run && '--dry-run' || inputs.test && '--test' || '' }}
 
       - name: Send the weekly PDF

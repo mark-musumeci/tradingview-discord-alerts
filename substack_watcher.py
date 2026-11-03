@@ -1,32 +1,29 @@
 #!/usr/bin/env python3
-"""Post Substack activity to a Discord channel as preview cards.
+"""Post Substack Notes to a Discord channel as preview cards.
 
 Who to follow is set in substack_feeds.json. Add a line there to follow someone
-new. A person's current items are saved without posting the first time they're
+new. Their existing notes are saved without posting the first time they're
 checked, so adding someone doesn't flood the channel.
 
-Notes come from Open RSS, a free outside service, so each feed is checked at most
-once an hour, or less often if Open RSS says so, and only downloaded if it has
-changed. Open RSS can take several hours to pick up a new note.
+Notes come from an Apify Actor, checked about once an hour per person. Each run
+logs its cost, so usage can be compared with Apify's monthly free credit.
 
-  python3 substack_watcher.py --dry-run   Print the latest items. Posts nothing.
-  python3 substack_watcher.py --test      Post the latest item from each feed.
+  python3 substack_watcher.py --dry-run   Print each person's latest note.
+  python3 substack_watcher.py --test      Post each person's latest note.
   python3 substack_watcher.py             Normal run.
 
-The webhook URL is read from the DISCORD_SUBSTACK_WEBHOOK_URL environment variable.
+Reads DISCORD_SUBSTACK_WEBHOOK_URL and APIFY_TOKEN from the environment.
 """
 import argparse
-import html
 import json
 import os
 import re
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
-import xml.etree.ElementTree as ElementTree
-from datetime import timezone
-from email.utils import parsedate_to_datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from watcher import post_to_discord
@@ -34,159 +31,82 @@ from watcher import post_to_discord
 FEEDS_FILE = Path(__file__).with_name("substack_feeds.json")
 STATE_FILE = Path(__file__).with_name("substack_state.json")
 
-NOTES_URL = "https://openrss.org/substack.com/@{handle}"
-POSTS_URL = "https://openrss.org/{publication}.substack.com"
-USER_AGENT = ("TradingViewDiscordAlerts/1.0 "
-              "(+https://github.com/mark-musumeci/tradingview-discord-alerts)")
+API_BASE = "https://api.apify.com/v2"
+ACTOR = "automation-lab~substack-notes-search-author-monitor"
+RUN_TIMEOUT_SECONDS = 150
+POLL_SECONDS = 5
+MAX_WAIT_SECONDS = 210
 
-CHECK_EVERY_SECONDS = 60 * 60
-FEED_GAP_SECONDS = 2     # Open RSS asks for a gap between requests.
+CHECK_EVERY_SECONDS = 58 * 60   # Runs start on a 5-minute timer, so this gives about hourly.
+LOOKBACK_HOURS = 48
+MAX_NOTES_PER_RUN = 10
+MAX_POSTS_PER_PERSON = 5
 MAX_SEEN = 300
-MAX_POSTS_PER_FEED = 5
-MAX_FEED_BYTES = 5_000_000
-TIMEOUT = 30
+TIMEOUT = 150
 ORANGE = 0xFF6719
 
-MEDIA = "{http://search.yahoo.com/mrss/}"
-CONTENT = "{http://purl.org/rss/1.0/modules/content/}"
-ATOM = "{http://www.w3.org/2005/Atom}"
 
-
-class RateLimited(RuntimeError):
-    """Open RSS asked us to stop, so no more requests are made in this run."""
-
-
-def load_feeds():
-    """Return one entry per feed from the people listed in substack_feeds.json."""
+def load_people():
     try:
-        people = json.loads(FEEDS_FILE.read_text())
+        return json.loads(FEEDS_FILE.read_text())
     except ValueError as error:
         raise RuntimeError(f"substack_feeds.json isn't valid: {error}") from error
 
-    feeds = []
-    for person in people:
-        if person.get("handle"):
-            feeds.append({**person, "kind": "note",
-                          "url": NOTES_URL.format(handle=person["handle"])})
-        if person.get("publication"):
-            feeds.append({**person, "kind": "post",
-                          "url": POSTS_URL.format(publication=person["publication"])})
-    return feeds
 
-
-def download(feed, saved):
-    """Return (feed text or None if unchanged, new saved values)."""
-    headers = {"User-Agent": USER_AGENT,
-               "Accept": "application/rss+xml, application/atom+xml, application/xml"}
-    if saved.get("etag"):
-        headers["If-None-Match"] = saved["etag"]
-    if saved.get("modified"):
-        headers["If-Modified-Since"] = saved["modified"]
-    request = urllib.request.Request(feed["url"], headers=headers)
-
+def apify(path, token, payload=None):
+    """Call Apify and return its JSON reply."""
+    data = json.dumps(payload).encode() if payload is not None else None
+    headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+    request = urllib.request.Request(f"{API_BASE}{path}", data=data, headers=headers)
     try:
         with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
-            text = response.read(MAX_FEED_BYTES).decode("utf-8", "replace")
-            match = re.search(r"max-age=(\d+)", response.headers.get("Cache-Control") or "")
-            if match:
-                saved["next_check"] = max(saved.get("next_check", 0),
-                                          time.time() + int(match.group(1)))
-            return text, {"etag": response.headers.get("ETag"),
-                          "modified": response.headers.get("Last-Modified")}
+            return json.load(response)
     except urllib.error.HTTPError as error:
-        if error.code == 304:
-            return None, {}
-        if error.code in (429, 503):
-            wait = error.headers.get("Retry-After") or ""
-            delay = int(wait) if wait.isdigit() else 0
-            saved["next_check"] = time.time() + max(delay, CHECK_EVERY_SECONDS)
-            raise RateLimited(f"HTTP {error.code}") from error
-        raise RuntimeError(f"HTTP {error.code}") from error
-    except (urllib.error.URLError, TimeoutError) as error:
-        raise RuntimeError(str(error)) from error
+        raise RuntimeError(f"Apify returned HTTP {error.code}") from error
+    except (urllib.error.URLError, TimeoutError, ValueError) as error:
+        raise RuntimeError(f"Could not reach Apify: {error}") from error
 
 
-def find_text(node, *names):
-    for name in names:
-        found = node.find(name)
-        if found is not None and (found.text or "").strip():
-            return found.text.strip()
-    return ""
+def fetch_notes(person, token, seen, limit=MAX_NOTES_PER_RUN, since=None):
+    """Run the Actor for one person and return their notes, newest first."""
+    payload = {"startUrls": [{"url": f"https://substack.com/@{person['handle']}"}],
+               "maxItems": limit, "existingIds": seen[-MAX_SEEN:]}
+    if since:
+        payload["publishedAfter"] = since.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    query = urllib.parse.urlencode({"waitForFinish": 120, "timeout": RUN_TIMEOUT_SECONDS})
+    run = apify(f"/acts/{ACTOR}/runs?{query}", token, payload)["data"]
+
+    waited = 0
+    while run.get("status") in ("READY", "RUNNING") and waited < MAX_WAIT_SECONDS:
+        time.sleep(POLL_SECONDS)
+        waited += POLL_SECONDS
+        run = apify(f"/actor-runs/{run['id']}", token)["data"]
+    run = apify(f"/actor-runs/{run['id']}", token)["data"]
+    if run.get("status") != "SUCCEEDED":
+        raise RuntimeError(f"Apify run ended as {run.get('status')}")
+
+    cost = run.get("usageTotalUsd")
+    if cost is not None:
+        print(f"Apify cost for {person['handle']}: ${cost:.4f} (about ${cost * 720:.2f} a month "
+              "at hourly, against the $5 free credit)")
+
+    items = apify(f"/datasets/{run['defaultDatasetId']}/items?clean=true", token)
+    return own_notes(items, person)
 
 
-def plain_text(markup):
-    text = re.sub(r"(?i)<br\s*/?>|</p>", "\n", markup or "")
-    text = re.sub(r"<[^>]+>", "", text)
-    text = html.unescape(text)
-    return "\n".join(" ".join(line.split()) for line in text.splitlines() if line.strip())
+def own_notes(items, person):
+    """Keep this person's own notes, newest first."""
+    owner = f"/@{person['handle'].lower()}/"
+    notes = [i for i in items if i.get("id") and owner in str(i.get("url", "")).lower()]
+    return sorted(notes, key=lambda n: n.get("publishedAt") or "", reverse=True)
 
 
-def find_image(node, markup):
-    """Return a preview image from the feed item, if it has one."""
-    for tag in (f"{MEDIA}content", f"{MEDIA}thumbnail", "enclosure"):
-        found = node.find(tag)
-        if found is None:
-            continue
-        url = found.get("url", "")
-        kind = found.get("type", "image")
-        if url.startswith("https://") and kind.startswith("image"):
+def first_image(note):
+    for url in note.get("mediaUrls") or []:
+        if isinstance(url, str) and url.startswith("https://"):
             return url
-    match = re.search(r"""<img[^>]+src=["'](https://[^"']+)""", markup or "")
-    return html.unescape(match.group(1)) if match else None
-
-
-def item_date(node):
-    """Return an ISO date for Discord's timestamp, or None if it can't be read."""
-    raw = find_text(node, "pubDate", f"{ATOM}published", f"{ATOM}updated")
-    if not raw:
-        return None
-    try:
-        moment = parsedate_to_datetime(raw)
-    except (TypeError, ValueError):
-        return raw if re.match(r"\d{4}-\d{2}-\d{2}T", raw) else None
-    return moment.astimezone(timezone.utc).isoformat()
-
-
-def item_link(node):
-    link = find_text(node, "link")
-    if link:
-        return link
-    atom = node.find(f"{ATOM}link")
-    return atom.get("href", "") if atom is not None else ""
-
-
-def parse_feed(text):
-    """Return (feed image, items newest first)."""
-    try:
-        root = ElementTree.fromstring(text)
-    except ElementTree.ParseError as error:
-        raise RuntimeError(f"couldn't read the feed: {error}") from error
-
-    logo = root.find("./channel/image/url")
-    items = []
-    for node in list(root.iter("item")) + list(root.iter(f"{ATOM}entry")):
-        markup = (find_text(node, f"{CONTENT}encoded", f"{ATOM}content")
-                  or find_text(node, "description", f"{ATOM}summary"))
-        body = plain_text(markup)
-        link = item_link(node)
-        key = find_text(node, "guid", f"{ATOM}id") or link
-        if not key or not link.startswith("https://"):
-            continue
-        items.append({
-            "id": key, "link": link, "title": plain_text(find_text(node, "title", f"{ATOM}title")),
-            "body": body, "image": find_image(node, markup), "date": item_date(node),
-        })
-    return (logo.text.strip() if logo is not None and logo.text else None), items
-
-
-def is_wanted(item, feed):
-    """Leave out restacks and comments unless the person's entry asks for them."""
-    opening = f"{item['title']} {item['body']}".lstrip().lower()
-    if opening.startswith("restacked"):
-        return bool(feed.get("include_restacks"))
-    if opening.startswith("commented on"):
-        return bool(feed.get("include_comments"))
-    return True
+    return None
 
 
 def clip(text, limit):
@@ -196,25 +116,25 @@ def clip(text, limit):
     return text[:limit - 1].rsplit(" ", 1)[0].rstrip(" ,.;:") + "…"
 
 
-def build_card(item, feed, logo):
+def build_card(note, person):
     """Build a Discord card: who posted, the title, a preview image and when."""
-    title = clip(item["title"] or item["body"].split("\n")[0] or "New note", 240)
-    label = "published a new post" if feed["kind"] == "post" else "posted a new note"
+    text = (note.get("text") or "").strip()
+    lines = [line for line in text.splitlines() if line.strip()]
+    title = clip(lines[0], 240) if lines else "New note"
     card = {
         "color": ORANGE,
-        "author": {"name": f"{feed['name']} {label} on Substack"[:256]},
+        "author": {"name": f"{person['name']} posted a new note on Substack"[:256]},
         "title": title,
-        "url": item["link"],
+        "url": note["url"],
         "footer": {"text": "Published"},
     }
-    if logo:
-        card["author"]["icon_url"] = logo
-    if item["body"] and " ".join(item["body"].split()) != title:
-        card["description"] = clip(item["body"], 500)
-    if item["image"]:
-        card["image"] = {"url": item["image"]}
-    if item["date"]:
-        card["timestamp"] = item["date"]
+    if " ".join(text.split()) != title and text:
+        card["description"] = clip(text, 700)
+    image = first_image(note)
+    if image:
+        card["image"] = {"url": image}
+    if note.get("publishedAt"):
+        card["timestamp"] = note["publishedAt"]
     return card
 
 
@@ -226,115 +146,98 @@ def save_state(state):
     STATE_FILE.write_text(json.dumps(state, indent=0) + "\n")
 
 
-def check_feed(webhook, feed, state, now):
-    saved = state.get(feed["url"])
-    saved = saved if saved is not None else {"seen": [], "started": False}
-    if now < saved.get("next_check", 0):
-        return
+def carry_over(state, handle):
+    """Move IDs saved under the old feed address to this person's record."""
+    old = state.pop(f"https://openrss.org/substack.com/@{handle}", None)
+    if old and handle not in state:
+        ids = [re.sub(r".*c-", "", str(i)) for i in old.get("seen", [])]
+        state[handle] = {"seen": ids, "started": True, "next_check": 0}
 
-    # Saved even if the check fails, so a failed feed still waits before retrying.
+
+def check_person(webhook, token, person, state, now):
+    handle = person["handle"]
+    carry_over(state, handle)
+    saved = state.setdefault(handle, {"seen": [], "started": False, "next_check": 0})
+    if now < saved["next_check"]:
+        return
     saved["next_check"] = now + CHECK_EVERY_SECONDS
-    state[feed["url"]] = saved
-    text, cache = download(feed, saved)
-    wait = round((saved["next_check"] - now) / 60)
-    if text is None:
-        print(f"No change at {feed['url']}. Next check in {wait} minutes.")
-        return
-    saved.update(cache)
-    logo, items = parse_feed(text)
-    print(f"Read {feed['url']}: {len(items)} items. Next check in {wait} minutes.")
-    for item in items:
-        status = "included" if is_wanted(item, feed) else "filtered"
-        print(f"Item ({status}): {item['date']} title={clip(item['title'], 60)!r} "
-              f"body={clip(item['body'], 60)!r} image={bool(item['image'])}")
 
-    if not saved.get("started", True):
-        saved["seen"] = [i["id"] for i in items][:MAX_SEEN]
-        saved["started"] = bool(items)
-        print(f"First check of {feed['url']}: saved {len(items)} items without posting.")
+    since = None
+    if saved["started"]:
+        since = datetime.fromtimestamp(now, timezone.utc) - timedelta(hours=LOOKBACK_HOURS)
+    notes = fetch_notes(person, token, saved["seen"], since=since)
+    new = [n for n in notes if str(n["id"]) not in saved["seen"]]
+    print(f"Checked {handle}: {len(new)} new notes.")
+
+    if not saved["started"]:
+        saved["seen"] = [str(n["id"]) for n in notes]
+        saved["started"] = bool(notes)
+        print(f"First check of {handle}: saved {len(notes)} notes without posting.")
         return
 
-    new = [i for i in items if i["id"] not in saved["seen"]]
     new.reverse()  # Oldest first, so the channel reads in order.
-    skipped, to_post = new[:-MAX_POSTS_PER_FEED], new[-MAX_POSTS_PER_FEED:]
-    saved["seen"] += [i["id"] for i in skipped]
-    for item in to_post:
-        if is_wanted(item, feed):
-            post_to_discord(webhook, "", [build_card(item, feed, logo)])
-            print(f"Posted: {feed['name']}: {clip(item['title'] or item['body'], 70)}")
-            time.sleep(1)
-        saved["seen"].append(item["id"])
+    skipped, to_post = new[:-MAX_POSTS_PER_PERSON], new[-MAX_POSTS_PER_PERSON:]
+    saved["seen"] += [str(n["id"]) for n in skipped]
+    for note in to_post:
+        post_to_discord(webhook, "", [build_card(note, person)])
+        saved["seen"].append(str(note["id"]))
+        print(f"Posted: {person['name']}: {clip(note.get('text') or '', 70)}")
+        time.sleep(1)
     saved["seen"] = saved["seen"][-MAX_SEEN:]
 
 
-def run(webhook):
+def run(webhook, token):
     state = load_state()
     now = time.time()
     try:
-        for index, feed in enumerate(load_feeds()):
-            if index:
-                time.sleep(FEED_GAP_SECONDS)
+        for person in load_people():
             try:
-                check_feed(webhook, feed, state, now)
-            except RateLimited as error:
-                print(f"Open RSS asked us to wait ({error}), so this run stops here.")
-                break
+                check_person(webhook, token, person, state, now)
             except RuntimeError as error:
-                print(f"Skipped {feed['url']} this time: {error}")
+                print(f"Skipped {person['handle']} this time: {error}")
     finally:
         save_state(state)
 
 
-def latest_item(feed):
-    """Return the newest wanted item and the feed image, without using saved values."""
-    text, _ = download(feed, {})
-    logo, items = parse_feed(text)
-    wanted = [i for i in items if is_wanted(i, feed)]
-    return (wanted[0] if wanted else None), logo
-
-
-def preview(webhook):
-    """Print or post the latest item from each feed."""
+def preview(webhook, token):
+    """Print or post each person's latest note."""
     state = load_state()
-    for feed in load_feeds():
-        time.sleep(FEED_GAP_SECONDS)
-        try:
-            item, logo = latest_item(feed)
-        except RuntimeError as error:
-            print(f"Couldn't read {feed['url']}: {error}")
+    for person in load_people():
+        notes = fetch_notes(person, token, [], limit=1)
+        if not notes:
+            print(f"{person['handle']}: no notes found.")
             continue
-        if item is None:
-            print(f"{feed['url']}: nothing to show.")
-            continue
-        card = build_card(item, feed, logo)
+        card = build_card(notes[0], person)
         print(json.dumps(card, indent=1, ensure_ascii=False))
         if webhook:
             post_to_discord(webhook, "", [card])
             # A test post counts as sent, so a normal run won't post it again.
-            saved = state.get(feed["url"])
-            if saved is not None and item["id"] not in saved["seen"]:
-                saved["seen"].append(item["id"])
-            time.sleep(1)
+            saved = state.get(person["handle"])
+            if saved is not None and str(notes[0]["id"]) not in saved["seen"]:
+                saved["seen"].append(str(notes[0]["id"]))
     if webhook:
         save_state(state)
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Post Substack activity to Discord.")
-    parser.add_argument("--dry-run", action="store_true", help="print the latest items only")
-    parser.add_argument("--test", action="store_true", help="post the latest item from each feed")
+    parser = argparse.ArgumentParser(description="Post Substack Notes to Discord.")
+    parser.add_argument("--dry-run", action="store_true", help="print the latest notes only")
+    parser.add_argument("--test", action="store_true", help="post each person's latest note")
     args = parser.parse_args()
 
     webhook = os.environ.get("DISCORD_SUBSTACK_WEBHOOK_URL", "").strip()
+    token = os.environ.get("APIFY_TOKEN", "").strip()
     try:
-        if args.dry_run:
-            preview("")
+        if not token:
+            print("No Apify token set, so skipping.")
+        elif args.dry_run:
+            preview("", token)
         elif not webhook:
             print("No Substack webhook set, so skipping.")
         elif args.test:
-            preview(webhook)
+            preview(webhook, token)
         else:
-            run(webhook)
+            run(webhook, token)
     except RuntimeError as error:
         sys.exit(str(error))
 
