@@ -6,7 +6,8 @@ new. A person's current items are saved without posting the first time they're
 checked, so adding someone doesn't flood the channel.
 
 Notes come from Open RSS, a free outside service, so each feed is checked at most
-once an hour and only downloaded if it has changed.
+once an hour, or less often if Open RSS says so, and only downloaded if it has
+changed. Open RSS can take several hours to pick up a new note.
 
   python3 substack_watcher.py --dry-run   Print the latest items. Posts nothing.
   python3 substack_watcher.py --test      Post the latest item from each feed.
@@ -235,11 +236,13 @@ def check_feed(webhook, feed, state, now):
     saved["next_check"] = now + CHECK_EVERY_SECONDS
     state[feed["url"]] = saved
     text, cache = download(feed, saved)
+    wait = round((saved["next_check"] - now) / 60)
     if text is None:
+        print(f"No change at {feed['url']}. Next check in {wait} minutes.")
         return
     saved.update(cache)
     logo, items = parse_feed(text)
-    print(f"Read {feed['url']}: {len(items)} items.")
+    print(f"Read {feed['url']}: {len(items)} items. Next check in {wait} minutes.")
 
     if not saved.get("started", True):
         saved["seen"] = [i["id"] for i in items][:MAX_SEEN]

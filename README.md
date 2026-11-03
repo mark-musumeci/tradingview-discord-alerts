@@ -6,6 +6,6 @@ Also posts a short morning brief with a daily market regime reading and the day'
 
 A one-page PDF recap of the week goes out every Friday after the close.
 
-Substack activity from the people listed in `substack_feeds.json` is posted as preview cards.
+Substack Notes from the people listed in `substack_feeds.json` is posted as preview cards.
 
 AI summaries are only posted when their quotes and numbers match the source article.

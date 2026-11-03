@@ -1,7 +1,6 @@
 {
 "https://openrss.org/substack.com/@chamath": {
 "seen": [
-"https://substack.com/@chamath/note/c-377162609",
 "https://substack.com/@chamath/note/c-376867215",
 "https://substack.com/@chamath/note/c-376286071",
 "https://substack.com/@chamath/note/c-376096624",
@@ -13,11 +12,6 @@
 "started": true,
 "next_check": 1793736401.1594436,
 "etag": null,
-"modified": "Tue, 03 Nov 2026 12:00:32 GMT"
-},
-"https://openrss.org/chamath.substack.com": {
-"seen": [],
-"started": false,
-"next_check": 1793735436.5028572
+"modified": null
 }
 }
