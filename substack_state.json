@@ -1,1 +1,23 @@
-{}
+{
+"https://openrss.org/substack.com/@chamath": {
+"seen": [
+"https://substack.com/@chamath/note/c-377162609",
+"https://substack.com/@chamath/note/c-376867215",
+"https://substack.com/@chamath/note/c-376286071",
+"https://substack.com/@chamath/note/c-376096624",
+"https://substack.com/@chamath/note/c-375455656",
+"https://substack.com/@chamath/note/c-375273677",
+"https://substack.com/@chamath/note/c-374634929",
+"https://substack.com/@chamath/note/c-374383019"
+],
+"started": true,
+"next_check": 1793708403.9746644,
+"etag": null,
+"modified": "Tue, 03 Nov 2026 04:47:03 GMT"
+},
+"https://openrss.org/chamath.substack.com": {
+"seen": [],
+"started": false,
+"next_check": 1793685628.9977717
+}
+}
