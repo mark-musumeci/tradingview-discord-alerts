@@ -1,17 +1,17 @@
 {
-"https://openrss.org/substack.com/@chamath": {
+"chamath": {
 "seen": [
-"https://substack.com/@chamath/note/c-376867215",
-"https://substack.com/@chamath/note/c-376286071",
-"https://substack.com/@chamath/note/c-376096624",
-"https://substack.com/@chamath/note/c-375455656",
-"https://substack.com/@chamath/note/c-375273677",
-"https://substack.com/@chamath/note/c-374634929",
-"https://substack.com/@chamath/note/c-374383019"
+"376867215",
+"376286071",
+"376096624",
+"375455656",
+"375273677",
+"374634929",
+"374383019",
+"377162609",
+"377766503"
 ],
 "started": true,
-"next_check": 1793740234.4513607,
-"etag": null,
-"modified": null
+"next_check": 1793741898.6279666
 }
 }
