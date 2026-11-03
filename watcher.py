@@ -138,9 +138,12 @@ def format_message(story, tag=None):
     return "\n".join(lines)
 
 
-def post_to_discord(webhook, content):
+def post_to_discord(webhook, content, embeds=None):
     """Send one message, waiting and retrying if Discord asks us to slow down."""
-    body = json.dumps({"content": content, "allowed_mentions": {"parse": []}}).encode()
+    payload = {"content": content, "allowed_mentions": {"parse": []}}
+    if embeds:
+        payload["embeds"] = embeds
+    body = json.dumps(payload).encode()
     request = urllib.request.Request(
         webhook,
         data=body,

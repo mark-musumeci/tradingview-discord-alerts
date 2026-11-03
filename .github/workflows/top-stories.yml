@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       test:
-        description: Post test messages to both Discord channels now
+        description: Post test messages to all Discord channels now
         type: boolean
         default: false
       dry_run:
@@ -48,6 +48,12 @@ jobs:
           DISCORD_CALENDAR_WEBHOOK_URL: ${{ secrets.DISCORD_CALENDAR_WEBHOOK_URL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 calendar_watcher.py ${{ inputs.dry_run && '--dry-run' || inputs.test && '--test' || '' }}
+
+      - name: Check Substack
+        if: always()
+        env:
+          DISCORD_SUBSTACK_WEBHOOK_URL: ${{ secrets.DISCORD_SUBSTACK_WEBHOOK_URL }}
+        run: python3 substack_watcher.py ${{ inputs.dry_run && '--dry-run' || inputs.test && '--test' || '' }}
 
       - name: Send the weekly PDF
         if: always()
