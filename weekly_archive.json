@@ -109,5 +109,35 @@
 "revenue_surprise_percent_fq": 0.13540825570551496,
 "claims": {},
 "link": null
+},
+{
+"kind": "recap",
+"at": "2026-11-03T08:00:23.792850-05:00",
+"symbol": "NYSE:APO",
+"description": "Apollo Global Management, Inc. (New)",
+"market_cap_basic": 70546291670.99998,
+"earnings_per_share_fq": 2.17,
+"earnings_per_share_forecast_fq": 2.194084,
+"eps_surprise_percent_fq": -1.0976790314318055,
+"revenue_fq": 1374000000,
+"revenue_forecast_fq": 5790566736,
+"revenue_surprise_percent_fq": -76.27175261692727,
+"claims": {},
+"link": null
+},
+{
+"kind": "recap",
+"at": "2026-11-03T08:00:23.792850-05:00",
+"symbol": "NASDAQ:KDP",
+"description": "Keurig Dr Pepper Inc.",
+"market_cap_basic": 50105614739,
+"earnings_per_share_fq": 0.66,
+"earnings_per_share_forecast_fq": 0.618068,
+"eps_surprise_percent_fq": 6.784366768705075,
+"revenue_fq": 7344000000,
+"revenue_forecast_fq": 7327221385,
+"revenue_surprise_percent_fq": 0.22899014671985377,
+"claims": {},
+"link": null
 }
 ]
