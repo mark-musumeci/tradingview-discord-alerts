@@ -273,5 +273,20 @@
 "revenue_surprise_percent_fq": -8.031440885837323,
 "claims": {},
 "link": null
+},
+{
+"kind": "recap",
+"at": "2026-11-03T20:40:16.857291-05:00",
+"symbol": "NYSE:SU",
+"description": "Suncor Energy Inc.",
+"market_cap_basic": 88248556237.87679,
+"earnings_per_share_fq": 2.7881310000000004,
+"earnings_per_share_forecast_fq": 2.4876905715,
+"eps_surprise_percent_fq": 12.077081930605388,
+"revenue_fq": 13258019400.000002,
+"revenue_forecast_fq": 11852518591.393501,
+"revenue_surprise_percent_fq": 11.85824597336705,
+"claims": {},
+"link": null
 }
 ]
