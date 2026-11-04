@@ -348,5 +348,27 @@
 "revenue_surprise_percent_fq": 0.45909646643095564,
 "claims": {},
 "link": null
+},
+{
+"kind": "regime",
+"at": "2026-11-04T07:00:26.053914-05:00",
+"heading": "🟡 Regime: Neutral (+1/4)",
+"detail": "VIX 18.1 · 10Y-2Y +0.31 · Breadth 58% · S&P above 200-day",
+"score": 65
+},
+{
+"kind": "recap",
+"at": "2026-11-04T07:00:26.053914-05:00",
+"symbol": "NYSE:EMR",
+"description": "Emerson Electric Company",
+"market_cap_basic": 92812339628,
+"earnings_per_share_fq": 1.86,
+"earnings_per_share_forecast_fq": 1.851874,
+"eps_surprise_percent_fq": 0.4387987519669307,
+"revenue_fq": 5201000000,
+"revenue_forecast_fq": 5109291226,
+"revenue_surprise_percent_fq": 1.794941214807159,
+"claims": {},
+"link": null
 }
 ]
