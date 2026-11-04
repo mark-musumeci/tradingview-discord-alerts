@@ -25,6 +25,7 @@ from pathlib import Path
 import archive
 import recaps
 import regime
+import status
 from tv_data import EASTERN, SITE_URL, day_range, fetch_json, large_us_companies, money, scan
 from watcher import escape_markdown, post_to_discord
 
@@ -203,6 +204,7 @@ def section(heading, build):
         lines, total = build()
     except RuntimeError as error:
         print(f"{heading}: {error}", file=sys.stderr)
+        status.note(f"calendar:{heading}", f"{heading} data was missing from the morning brief.")
         return [f"**{heading}**", "Unavailable right now."]
     if not lines:
         return []

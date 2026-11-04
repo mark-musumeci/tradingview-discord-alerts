@@ -31,6 +31,7 @@ import ai
 import archive
 import calendar_watcher as cal
 import recaps
+import status
 from tv_data import EASTERN, day_range, large_us_companies, money, scan
 from watcher import retry_delay
 
@@ -169,6 +170,7 @@ def week_ahead(day):
                     rows.append((date, f"{date.strftime('%a')}: {result_name(event)}", event))
     except RuntimeError as error:
         print(f"Week ahead economic data unavailable: {error}")
+        status.note("weekly:ahead", "Next week's calendar was unavailable for the weekly PDF.")
 
     rows.sort(key=lambda r: ("rate decision" not in r[2].get("title", "").lower(),
                              r[2].get("forecast") is None, r[0]))

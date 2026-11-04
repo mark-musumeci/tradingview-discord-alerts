@@ -3,6 +3,7 @@
 Each of the four inputs scores +1, 0 or -1, and the total sets the reading.
 The thresholds are simple rules of thumb, not a tested trading signal.
 """
+import status
 from tv_data import large_us_companies, lookup, scan
 
 MIN_CAP = 10e9
@@ -74,6 +75,7 @@ def safe(read):
         return read()
     except RuntimeError as error:
         print(f"Regime input unavailable: {error}")
+        status.note(f"regime:{read.__name__}", f"A regime input is unavailable ({read.__name__}).")
         return None
 
 

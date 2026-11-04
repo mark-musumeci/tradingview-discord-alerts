@@ -14,6 +14,8 @@ import re
 import urllib.error
 import urllib.request
 
+import status
+
 # Tried in order, because providers get busy and retire model names over time.
 PROVIDERS = [
     {"key": "GROQ_API_KEY", "url": "https://api.groq.com/openai/v1/chat/completions",
@@ -136,6 +138,7 @@ def ask_json(system, source):
             if not try_next:
                 break
     _failures += 1
+    status.note("ai", "Every AI provider failed, so posts are going out without AI text.")
     return None
 
 

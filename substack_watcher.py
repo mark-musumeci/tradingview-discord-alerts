@@ -27,6 +27,7 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import status
 from watcher import post_to_discord
 
 FEEDS_FILE = Path(__file__).with_name("substack_feeds.json")
@@ -240,8 +241,10 @@ def run(webhook, token):
                 post_new(webhook, person, found[person["handle"]], records[person["handle"]])
             except RuntimeError as error:
                 print(f"Couldn't post for {person['handle']}: {error}")
+                status.note("substack", f"A Substack note couldn't be posted: {error}")
     except RuntimeError as error:
         print(f"Skipped this check: {error}")
+        status.note("substack", f"The Substack check failed: {error}")
     finally:
         save_state(state)
 

@@ -37,6 +37,7 @@ jobs:
           ref: main
 
       - name: Check for new stories
+        id: news
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -44,6 +45,7 @@ jobs:
         run: python3 watcher.py ${{ inputs.dry_run && '--dry-run' || inputs.test && '--test' || '' }}
 
       - name: Check the calendars
+        id: calendar
         if: always()
         env:
           DISCORD_CALENDAR_WEBHOOK_URL: ${{ secrets.DISCORD_CALENDAR_WEBHOOK_URL }}
@@ -52,6 +54,7 @@ jobs:
         run: python3 calendar_watcher.py ${{ inputs.dry_run && '--dry-run' || inputs.test && '--test' || '' }}
 
       - name: Check Substack
+        id: substack
         if: always()
         env:
           DISCORD_SUBSTACK_WEBHOOK_URL: ${{ secrets.DISCORD_SUBSTACK_WEBHOOK_URL }}
@@ -59,6 +62,7 @@ jobs:
         run: python3 substack_watcher.py ${{ inputs.dry_run && '--dry-run' || inputs.test && '--test' || '' }}
 
       - name: Send the weekly PDF
+        id: weekly
         if: always()
         env:
           DISCORD_WEEKLY_WEBHOOK_URL: ${{ secrets.DISCORD_WEEKLY_WEBHOOK_URL }}
@@ -70,7 +74,19 @@ jobs:
           python3 -m pip install --quiet --break-system-packages reportlab==5.0.1
           python3 weekly_report.py $MODE
 
+      - name: Report bot status
+        if: always()
+        continue-on-error: true
+        env:
+          DISCORD_STATUS_WEBHOOK_URL: ${{ secrets.DISCORD_STATUS_WEBHOOK_URL }}
+          STEP_NEWS: ${{ steps.news.outcome }}
+          STEP_CALENDAR: ${{ steps.calendar.outcome }}
+          STEP_SUBSTACK: ${{ steps.substack.outcome }}
+          STEP_WEEKLY: ${{ steps.weekly.outcome }}
+        run: python3 status_report.py ${{ inputs.test && '--test' || '' }}
+
       - name: Save progress
+        id: save
         if: always()
         run: |
           git add '*.json'
@@ -84,3 +100,9 @@ jobs:
             sleep "$wait"
           done
           exit 1
+
+      - name: Report a failed save
+        if: always() && steps.save.outcome == 'failure'
+        env:
+          DISCORD_STATUS_WEBHOOK_URL: ${{ secrets.DISCORD_STATUS_WEBHOOK_URL }}
+        run: python3 status_report.py --save-failed
