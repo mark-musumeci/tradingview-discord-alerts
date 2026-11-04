@@ -667,5 +667,49 @@
 ]
 },
 "link": "https://www.tradingview.com/news/DJN_DN20261104003693:0-qualcomm-s-stock-falls-as-supply-costs-eat-into-profit-outlook-barrons-com/"
+},
+{
+"kind": "recap",
+"at": "2026-11-04T17:30:23.561489-05:00",
+"symbol": "NASDAQ:MELI",
+"description": "MercadoLibre, Inc.",
+"market_cap_basic": 88206350601.03438,
+"earnings_per_share_fq": 9.4467,
+"earnings_per_share_forecast_fq": 9.270462,
+"eps_surprise_percent_fq": 1.9010703026451075,
+"revenue_fq": 10750000000,
+"revenue_forecast_fq": 10690528627,
+"revenue_surprise_percent_fq": 0.5562996468649745,
+"claims": {
+"guidance": [
+"The company expects continued leadership as investments drive scale and efficiency.",
+"giving us room to keep investing"
+],
+"highlight": [
+"Revenue surged 45% YoY, highlighting strong growth momentum.",
+"Net revenue and financial income grew 45% YoY, reaching $10.75 billion"
+]
+},
+"link": "https://www.tradingview.com/news/business_wire:0c103a991278e:0-mercado-libre-revenue-reaches-10-75-billion-in-q3-2026-up-45-year-over-year/"
+},
+{
+"kind": "recap",
+"at": "2026-11-04T17:30:23.561489-05:00",
+"symbol": "NYSE:MFC",
+"description": "Manulife Financial Corporation",
+"market_cap_basic": 76308878502.86562,
+"earnings_per_share_fq": 0.872462879705635,
+"earnings_per_share_forecast_fq": 0.8274091266000001,
+"eps_surprise_percent_fq": 5.445160278902205,
+"revenue_fq": null,
+"revenue_forecast_fq": null,
+"revenue_surprise_percent_fq": null,
+"claims": {
+"highlight": [
+"Record core earnings reached $2.1B, with 17.8% core ROE and stronger Asia results.",
+"Record core earnings reached $2.1B, with 17.8% core ROE and stronger Asia results."
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3687702:0-mfc-record-core-earnings-and-17-8-core-roe-offset-market-driven-pressure-on-net-income/"
 }
 ]
