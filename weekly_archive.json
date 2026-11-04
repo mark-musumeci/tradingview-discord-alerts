@@ -430,5 +430,19 @@
 "revenue_surprise_percent_fq": 2.028570820237293,
 "claims": {},
 "link": null
+},
+{
+"kind": "result",
+"at": "2026-11-04T10:05:29.485355-05:00",
+"id": "1001659458203",
+"title": "ISM Services PMI",
+"period": "Oct. 2026",
+"country": "US",
+"actual": 54.5,
+"forecast": 54.8,
+"previous": 54.9,
+"unit": null,
+"scale": null,
+"date": "2026-11-04T15:00:00.000Z"
 }
 ]
