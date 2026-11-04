@@ -33,7 +33,8 @@ ALERT_AFTER_SIGHTINGS = 2
 REMIND_SECONDS = 6 * 3600
 CLEAR_SECONDS = {"ai": 24 * 3600}  # AI is only called when there's something new.
 DEFAULT_CLEAR_SECONDS = 3 * 3600
-TIMER_GAP_SECONDS = 30 * 60
+SAVE_LAST_RUN_SECONDS = 30 * 60   # Saving every run would add a commit every 5 minutes.
+TIMER_GAP_SECONDS = 90 * 60
 SUMMARY_HOUR = 8
 BRIEF_DEADLINE_HOUR = 12
 APIFY_WARNING = 0.8
@@ -104,25 +105,31 @@ def check_timer(state, stamp, post):
     """Warn if runs stopped for a while. GitHub's backup schedule makes this visible."""
     last = state.get("last_run")
     if last and stamp - last >= TIMER_GAP_SECONDS:
-        post(f"🟠 **Gap in checks:** no run for {round((stamp - last) / 60)} minutes. "
+        post("🟠 **Gap in checks:** no check ran for at least an hour. "
              "Check cron-job.org if this repeats.")
+    if not last or stamp - last >= SAVE_LAST_RUN_SECONDS:
+        state["last_run"] = stamp
 
 
 def count_run(state, now, failed):
+    """Track runs using GitHub's run number, so counting doesn't need a save each run."""
     today = now.date().isoformat()
+    number = int(os.environ.get("GITHUB_RUN_NUMBER", "0"))
     if state.get("day") != today:
-        state["yesterday"] = {"runs": state.get("runs", 0), "failed": state.get("failed", 0)}
-        state.update(day=today, runs=0, failed=0)
-    state["runs"] += 1
-    state["failed"] += 1 if failed else 0
+        if "day" in state:
+            state["yesterday"] = {"runs": number - state.get("first_run", number),
+                                  "failed": state.get("failed", 0)}
+        state.update(day=today, first_run=number, failed=0)
+    if failed:
+        state["failed"] = state.get("failed", 0) + 1
 
 
 def summary(state):
     spent = read_json(SUBSTACK_STATE, {}).get("_budget", {}).get("spent", 0)
-    past = state.get("yesterday") or {"runs": state.get("runs", 0), "failed": state.get("failed", 0)}
+    past = state.get("yesterday")
     open_issues = [i["message"] for i in state.get("issues", {}).values() if i["alerted"]]
-    lines = ["📊 **Daily status**",
-             f"Runs in the last day: {past['runs']}, with {past['failed']} failed",
+    runs = f"{past['runs']}, with {past['failed']} failed" if past else "counting starts today"
+    lines = ["📊 **Daily status**", f"Runs yesterday: {runs}",
              f"Apify: ${spent:.2f} of $4.75 this month"]
     lines.append(f"Open problems: {len(open_issues)}" if open_issues else "Open problems: none")
     lines += [f"- {message}" for message in open_issues]
@@ -142,19 +149,20 @@ def run(webhook):
     now = datetime.now(EASTERN)
     stamp = time.time()
     state = read_json(STATE_FILE, {})
+    before = json.dumps(state)
     post = lambda text: post_to_discord(webhook, text)
 
     found = {**run_issues(), **missing_issues(now)}
     count_run(state, now, any(k.startswith("step:") for k in found))
     check_timer(state, stamp, post)
-    state["last_run"] = stamp
     update_issues(state, found, stamp, post)
     check_apify(state, now.strftime("%Y-%m"), post)
 
     if now.hour >= SUMMARY_HOUR and state.get("summary_day") != now.date().isoformat():
         post(summary(state))
         state["summary_day"] = now.date().isoformat()
-    STATE_FILE.write_text(json.dumps(state, indent=0) + "\n")
+    if json.dumps(state) != before:
+        STATE_FILE.write_text(json.dumps(state, indent=0) + "\n")
 
 
 def main():
