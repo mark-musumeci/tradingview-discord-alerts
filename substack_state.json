@@ -17,7 +17,13 @@
 },
 "_budget": {
 "month": "2026-11",
-"spent": 0.015,
-"next_check": 1793767099.586788
+"spent": 0.02,
+"next_check": 1793768896.1703782
+},
+"raydalio": {
+"seen": [
+"377754034"
+],
+"started": true
 }
 }
