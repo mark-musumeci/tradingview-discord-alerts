@@ -73,14 +73,17 @@ def day_range(day):
 
 def large_us_companies(rows, min_cap):
     """Keep large US-listed companies, biggest first, one row per company."""
-    keep = {}
+    keep, bases = {}, set()
     rows = sorted(rows, key=lambda r: r.get("market_cap_basic") or 0, reverse=True)
     for row in rows:
         exchange, _, ticker = row["symbol"].partition(":")
         name = row.get("description") or ticker
+        base = ticker.split(".")[0]  # BRK.A and BRK.B are one company.
         if (exchange in US_EXCHANGES and "/" not in ticker and name not in keep
+                and base not in bases
                 and (row.get("market_cap_basic") or 0) >= min_cap):
             keep[name] = row
+            bases.add(base)
     return list(keep.values())
 
 

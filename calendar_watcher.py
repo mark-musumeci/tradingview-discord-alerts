@@ -156,7 +156,8 @@ def dividends_lines(day):
         parts = [f"**{ticker(row)}** {short_name(row)}"]
         if amount is not None:
             currency = row.get("fundamental_currency_code") or "USD"
-            parts.append(f"${amount:.2f}" if currency == "USD" else f"{amount:.2f} {currency}")
+            shown = f"{amount:.2f}" if abs(amount) >= 0.01 else f"{amount:.4f}"
+            parts.append(f"${shown}" if currency == "USD" else f"{shown} {currency}")
         if row.get("dividends_yield") is not None:
             parts.append(f"Yield {row['dividends_yield']:.2f}%")
         lines.append(" · ".join(parts))
