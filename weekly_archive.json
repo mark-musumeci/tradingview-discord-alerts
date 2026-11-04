@@ -385,5 +385,35 @@
 "revenue_surprise_percent_fq": 0.7271307523366615,
 "claims": {},
 "link": null
+},
+{
+"kind": "recap",
+"at": "2026-11-04T08:10:17.649495-05:00",
+"symbol": "NYSE:MCD",
+"description": "McDonald's Corporation",
+"market_cap_basic": 186138020812,
+"earnings_per_share_fq": 3.57,
+"earnings_per_share_forecast_fq": 3.38009,
+"eps_surprise_percent_fq": 5.618489448505803,
+"revenue_fq": 7157000000,
+"revenue_forecast_fq": 7284337628,
+"revenue_surprise_percent_fq": -1.7481016737957278,
+"claims": {},
+"link": null
+},
+{
+"kind": "recap",
+"at": "2026-11-04T08:10:17.649495-05:00",
+"symbol": "NASDAQ:DDOG",
+"description": "Datadog, Inc.",
+"market_cap_basic": 79183229921,
+"earnings_per_share_fq": 0.81,
+"earnings_per_share_forecast_fq": 0.643007,
+"eps_surprise_percent_fq": 25.970634845343838,
+"revenue_fq": 1197090000,
+"revenue_forecast_fq": 1146235610,
+"revenue_surprise_percent_fq": 4.436643701899996,
+"claims": {},
+"link": null
 }
 ]
