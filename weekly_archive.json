@@ -503,5 +503,53 @@
 ]
 },
 "link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3962867:0-app-q3-revenue-grew-55-with-an-84-adjusted-ebitda-margin/"
+},
+{
+"kind": "recap",
+"at": "2026-11-04T16:25:14.414913-05:00",
+"symbol": "NYSE:MSI",
+"description": "Motorola Solutions, Inc.",
+"market_cap_basic": 82248750945.73651,
+"earnings_per_share_fq": 4.69,
+"earnings_per_share_forecast_fq": 4.424225,
+"eps_surprise_percent_fq": 6.007266809441214,
+"revenue_fq": 3376000000,
+"revenue_forecast_fq": 3252454333,
+"revenue_surprise_percent_fq": 3.79853656195824,
+"claims": {
+"guidance": [
+"FY revenue, non-GAAP EPS and operating cash flow outlooks increased again.",
+"FY revenue, non-GAAP EPS and operating cash flow outlooks increased again"
+],
+"highlight": [
+"Q3 sales rose 12% and backlog reached a record $16.6B.",
+"Q3 sales rose 12% and backlog reached a record $16.6B"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3962865:0-msi-record-demand-and-backlog-lifted-fy-guidance-despite-supply-chain-and-trade-pressures/"
+},
+{
+"kind": "recap",
+"at": "2026-11-04T16:25:14.414913-05:00",
+"symbol": "NYSE:ALL",
+"description": "Allstate Corporation (The)",
+"market_cap_basic": 68033961622.83962,
+"earnings_per_share_fq": 9.76,
+"earnings_per_share_forecast_fq": 6.889817,
+"eps_surprise_percent_fq": 41.65833432150665,
+"revenue_fq": 17348000000,
+"revenue_forecast_fq": 15873020987,
+"revenue_surprise_percent_fq": 9.29236478807662,
+"claims": {
+"guidance": [
+"Allstate plans additional capabilities for ALLIE in early 2027.",
+"ALLIE has been expanded to handle millions of service calls with additional capabilities planned for early 2027."
+],
+"highlight": [
+"Net income fell 44.5% year over year, reflecting higher catastrophe and investment losses.",
+"Net income attributable to Allstate was $2.08B, compared with $3.75B; YoY change (44.5%)."
+]
+},
+"link": "https://www.tradingview.com/news/prnewswire:e291f357c26f0:0-allstate-reports-excellent-q3-2026-results/"
 }
 ]
