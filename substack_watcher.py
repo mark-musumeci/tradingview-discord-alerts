@@ -40,6 +40,7 @@ MAX_WAIT_SECONDS = 210
 
 CHECK_EVERY_SECONDS = 58 * 60   # Runs start on a 5-minute timer, so this gives about hourly.
 MAX_PEOPLE = 5
+START_FEE = 0.005
 MONTHLY_BUDGET = 4.75           # Leaves a little of Apify's $5 credit for test runs.
 LOOKBACK_HOURS = 48
 NOTES_PER_PERSON = 10
@@ -95,7 +96,8 @@ def fetch_notes(people, token, seen, since=None):
     if run.get("status") != "SUCCEEDED":
         raise RuntimeError(f"Apify run ended as {run.get('status')}")
 
-    cost = run.get("usageTotalUsd") or 0.0
+    # Apify can report 0 before its usage updates, so count at least the start fee.
+    cost = max(run.get("usageTotalUsd") or 0.0, START_FEE)
     print(f"Apify run for {len(people)} people cost ${cost:.4f} "
           f"(events: {run.get('chargedEventCounts')})")
     items = apify(f"/datasets/{run['defaultDatasetId']}/items?clean=true", token)

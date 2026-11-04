@@ -75,5 +75,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898732+github-actions[bot]@users.noreply.github.com"
           git commit -m "Update saved progress"
-          git pull --rebase origin main
-          git push
+          # Retry, because a lost save could make a later run repeat its posts.
+          for wait in 10 30 60; do
+            git pull --rebase origin main && git push && exit 0
+            sleep "$wait"
+          done
+          exit 1
