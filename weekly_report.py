@@ -277,7 +277,7 @@ def build_pdf(day, items, notes, ahead, earnings_ahead):
     if regimes:
         last = regimes[-1]
         scored = [r for r in regimes if r.get("score") is not None]
-        text = ["<b>Market sentiment</b>", clean(last["heading"]), clean(last["detail"])]
+        text = ["<b>Market sentiment</b>", clean(last["detail"])]
         if len(scored) > 1:
             text.append(f"Week's change: {scored[0]['score']} to {scored[-1]['score']}")
         text.append(

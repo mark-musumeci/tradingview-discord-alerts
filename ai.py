@@ -5,8 +5,8 @@ The code then rejects any claim whose quote isn't in the source, or which has a
 number the source doesn't contain. These checks prove the source says the quoted
 words. The reading of those words is still the AI's judgement.
 
-Set GEMINI_API_KEY to turn this on. Without it, or if a call fails, the rest of
-the system carries on without AI text.
+Set GROQ_API_KEY, GEMINI_API_KEY or both to turn this on. Groq is tried first, with
+Gemini as the backup. If both fail, the rest of the system carries on without AI text.
 """
 import json
 import os
@@ -14,9 +14,14 @@ import re
 import urllib.error
 import urllib.request
 
-API_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
-# Tried in order, because Google retires model names over time.
-MODELS = ("gemini-3.8-flash", "gemini-3.7-flash", "gemini-flash-latest")
+# Tried in order, because providers get busy and retire model names over time.
+PROVIDERS = [
+    {"key": "GROQ_API_KEY", "url": "https://api.groq.com/openai/v1/chat/completions",
+     "models": ("openai/gpt-oss-120b", "openai/gpt-oss-20b")},
+    {"key": "GEMINI_API_KEY",
+     "url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+     "models": ("gemini-3.8-flash", "gemini-3.7-flash", "gemini-flash-latest")},
+]
 TIMEOUT = 20
 PACE_SECONDS = 4      # Gap after each call, to stay inside free-tier limits.
 MAX_FAILURES = 3      # Skip AI for the rest of a run after this many failed calls.
@@ -54,8 +59,12 @@ _SMART = str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"', "–": "
 _failures = 0
 
 
+def has_key(provider):
+    return bool(os.environ.get(provider["key"], "").strip())
+
+
 def enabled():
-    return bool(os.environ.get("GEMINI_API_KEY", "").strip()) and _failures < MAX_FAILURES
+    return any(has_key(p) for p in PROVIDERS) and _failures < MAX_FAILURES
 
 
 def normalize(text):
@@ -112,24 +121,27 @@ def check_claim(result, key, source):
 
 
 def ask_json(system, source):
-    """Return the AI's JSON reply, or None if the call fails for any reason."""
+    """Return the AI's JSON reply, or None if every provider fails."""
     global _failures
-    key = os.environ.get("GEMINI_API_KEY", "").strip()
-    if not key or not enabled():
+    if not enabled():
         return None
-    for model in MODELS:
-        result, try_next = ask_model(key, model, system, source)
-        if result is not None:
-            _failures = 0
-            return result
-        if not try_next:
-            break
+    for provider in PROVIDERS:
+        if not has_key(provider):
+            continue
+        for model in provider["models"]:
+            result, try_next = ask_model(provider, model, system, source)
+            if result is not None:
+                _failures = 0
+                return result
+            if not try_next:
+                break
     _failures += 1
     return None
 
 
-def ask_model(key, model, system, source):
+def ask_model(provider, model, system, source):
     """Return (reply, try_next). Try the next model if this one is gone or busy."""
+    key = os.environ[provider["key"]].strip()
     body = json.dumps({
         "model": model,
         "temperature": 0.1,
@@ -137,8 +149,9 @@ def ask_model(key, model, system, source):
         "messages": [{"role": "system", "content": system},
                      {"role": "user", "content": f"SOURCE:\n{source}"}],
     }).encode()
-    request = urllib.request.Request(API_URL, data=body, headers={
-        "Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+    request = urllib.request.Request(provider["url"], data=body, headers={
+        "Authorization": f"Bearer {key}", "Content-Type": "application/json",
+        "User-Agent": "tv-top-stories/1.0"})
     try:
         with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
             reply = json.load(response)
