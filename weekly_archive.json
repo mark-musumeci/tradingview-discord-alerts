@@ -444,5 +444,20 @@
 "unit": null,
 "scale": null,
 "date": "2026-11-04T15:00:00.000Z"
+},
+{
+"kind": "recap",
+"at": "2026-11-04T10:45:17.119300-05:00",
+"symbol": "NASDAQ:MDLN",
+"description": "Medline Inc.",
+"market_cap_basic": 50050913618.19917,
+"earnings_per_share_fq": 0.44,
+"earnings_per_share_forecast_fq": 0.343205,
+"eps_surprise_percent_fq": 28.203260442009885,
+"revenue_fq": 7856000000,
+"revenue_forecast_fq": 7721974771,
+"revenue_surprise_percent_fq": 1.7356341217706888,
+"claims": {},
+"link": null
 }
 ]
