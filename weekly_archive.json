@@ -619,5 +619,53 @@
 ]
 },
 "link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:4452135:0-ew-strong-q3-growth-drove-higher-fy26-sales-tavr-tmtt-and-adjusted-eps-guidance/"
+},
+{
+"kind": "recap",
+"at": "2026-11-04T17:00:24.813228-05:00",
+"symbol": "NASDAQ:ARM",
+"description": "Arm Holdings plc",
+"market_cap_basic": 215460563107,
+"earnings_per_share_fq": 0.52,
+"earnings_per_share_forecast_fq": 0.475756,
+"eps_surprise_percent_fq": 9.299725069153096,
+"revenue_fq": 1443000000,
+"revenue_forecast_fq": 1378265034,
+"revenue_surprise_percent_fq": 4.696844540278746,
+"claims": {
+"guidance": [
+"Arm expects third‑quarter revenue around $1.54 billion and adjusted earnings of about 56 cents per share.",
+"In the current third quarter, Arm expects revenue of $1.54 billion, plus or minus $50 million."
+],
+"highlight": [
+"Revenue rose 27% to $1.44 billion, beating analysts' estimate.",
+"Revenue rose 27% to $1.44 billion."
+]
+},
+"link": "https://www.tradingview.com/news/DJN_DN20261104017770:0-arm-holdings-2q-sales-climb-27-on-ai-demand/"
+},
+{
+"kind": "recap",
+"at": "2026-11-04T17:00:24.813228-05:00",
+"symbol": "NASDAQ:QCOM",
+"description": "QUALCOMM Incorporated",
+"market_cap_basic": 184939110877.59222,
+"earnings_per_share_fq": 2.17,
+"earnings_per_share_forecast_fq": 2.162307,
+"eps_surprise_percent_fq": 0.35577741736024193,
+"revenue_fq": 10442000000,
+"revenue_forecast_fq": 10117753688,
+"revenue_surprise_percent_fq": 3.204726286078373,
+"claims": {
+"guidance": [
+"Qualcomm expects FY2027 Q1 adjusted earnings around $2.25 per share with revenue $10.4‑$11.2 billion.",
+"expects adjusted earnings of $2.25 a share, plus or minus 10 cents, on revenue between $10.4 billion and $11.2 billion."
+],
+"highlight": [
+"Automotive revenue surged 89% to a record $1.99 billion.",
+"Within QCT, automotive revenue surged 89% to a record $1.99 billion"
+]
+},
+"link": "https://www.tradingview.com/news/DJN_DN20261104003693:0-qualcomm-s-stock-falls-as-supply-costs-eat-into-profit-outlook-barrons-com/"
 }
 ]
