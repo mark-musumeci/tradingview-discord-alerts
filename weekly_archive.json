@@ -288,5 +288,20 @@
 "revenue_surprise_percent_fq": 11.85824597336705,
 "claims": {},
 "link": null
+},
+{
+"kind": "recap",
+"at": "2026-11-04T03:25:18.308985-05:00",
+"symbol": "NYSE:NVO",
+"description": "Novo Nordisk A/S",
+"market_cap_basic": 178825029828.29306,
+"earnings_per_share_fq": 0.8672793,
+"earnings_per_share_forecast_fq": 0.73102,
+"eps_surprise_percent_fq": 18.63961314327925,
+"revenue_fq": 11862554000,
+"revenue_forecast_fq": 11069822187,
+"revenue_surprise_percent_fq": 7.161197349050067,
+"claims": {},
+"link": null
 }
 ]
