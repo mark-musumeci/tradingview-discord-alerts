@@ -551,5 +551,73 @@
 ]
 },
 "link": "https://www.tradingview.com/news/prnewswire:e291f357c26f0:0-allstate-reports-excellent-q3-2026-results/"
+},
+{
+"kind": "recap",
+"at": "2026-11-04T16:30:20.689269-05:00",
+"symbol": "NYSE:MET",
+"description": "MetLife, Inc.",
+"market_cap_basic": 65384220006.084236,
+"earnings_per_share_fq": 2.78,
+"earnings_per_share_forecast_fq": 2.773881,
+"eps_surprise_percent_fq": 0.22059345732567426,
+"revenue_fq": 20522000000,
+"revenue_forecast_fq": 19855065228,
+"revenue_surprise_percent_fq": 3.3590157692329083,
+"claims": {
+"guidance": [
+"Management remained on track for full-year cash flow and expense targets.",
+"management remained on track for full-year cash flow and expense targets"
+],
+"highlight": [
+"Record adjusted EPS and growth across all six segments marked a strong quarter.",
+"Record adjusted EPS and growth across all six segments marked a strong quarter"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3968381:0-met-record-adjusted-eps-and-growth-across-all-six-segments-marked-a-strong-quarter/"
+},
+{
+"kind": "recap",
+"at": "2026-11-04T16:30:20.689269-05:00",
+"symbol": "NYSE:AFL",
+"description": "AFLAC Incorporated",
+"market_cap_basic": 62818318804.32844,
+"earnings_per_share_fq": 2.43,
+"earnings_per_share_forecast_fq": 1.796402,
+"eps_surprise_percent_fq": 35.27039048052719,
+"revenue_fq": 3271000000,
+"revenue_forecast_fq": 4119023222,
+"revenue_surprise_percent_fq": -20.587968950275563,
+"claims": {
+"highlight": [
+"Adjusted EPS beat expectations while revenue fell 31% year‑over‑year.",
+"Adjusted EPS for Q3 beat analyst expectations"
+]
+},
+"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46L1EG:0-aflac-q3-revenue-misses-on-japan-segment-pressure/"
+},
+{
+"kind": "recap",
+"at": "2026-11-04T16:30:20.689269-05:00",
+"symbol": "NYSE:EW",
+"description": "Edwards Lifesciences Corporation",
+"market_cap_basic": 57276871894.836334,
+"earnings_per_share_fq": 0.8,
+"earnings_per_share_forecast_fq": 0.737584,
+"eps_surprise_percent_fq": 8.462222607865684,
+"revenue_fq": 1715500000,
+"revenue_forecast_fq": 1678011192,
+"revenue_surprise_percent_fq": 2.2341214515570407,
+"claims": {
+"guidance": [
+"FY26 sales, TAVR, TMTT and adjusted EPS guidance were raised.",
+"FY26 sales, TAVR, TMTT and adjusted EPS guidance were raised."
+],
+"highlight": [
+"Q3 sales rose 10.5% (11.2% constant currency), with TMTT up 44%.",
+"Q3 sales rose 10.5% (11.2% constant currency), with TMTT up 44%"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:4452135:0-ew-strong-q3-growth-drove-higher-fy26-sales-tavr-tmtt-and-adjusted-eps-guidance/"
 }
 ]
