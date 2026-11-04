@@ -459,5 +459,49 @@
 "revenue_surprise_percent_fq": 1.7356341217706888,
 "claims": {},
 "link": null
+},
+{
+"kind": "recap",
+"at": "2026-11-04T16:20:17.365009-05:00",
+"symbol": "NYSE:MCK",
+"description": "McKesson Corporation",
+"market_cap_basic": 124686396715.41234,
+"earnings_per_share_fq": 11.68,
+"earnings_per_share_forecast_fq": 10.718311,
+"eps_surprise_percent_fq": 8.972393131716366,
+"revenue_fq": 110957000000,
+"revenue_forecast_fq": 109895642014,
+"revenue_surprise_percent_fq": 0.9657871472872325,
+"claims": {
+"guidance": [
+"McKesson raised its FY27 adjusted EPS guidance to $45.60‑$46.40.",
+"FY27 adjusted EPS guidance was raised to $45.60-$46.40"
+],
+"highlight": [
+"Q2 revenue rose 8% to $111.0B and adjusted EPS increased 18% to $11.68.",
+"Q2 revenue rose 8% to $111.0B and adjusted EPS increased 18% to $11.68"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4249482:0-mck-adjusted-eps-rose-18-as-fy27-guidance-increased-to-45-60-46-40/"
+},
+{
+"kind": "recap",
+"at": "2026-11-04T16:20:17.365009-05:00",
+"symbol": "NASDAQ:APP",
+"description": "Applovin Corporation",
+"market_cap_basic": 90941405357.1046,
+"earnings_per_share_fq": 4.3,
+"earnings_per_share_forecast_fq": 4.033387,
+"eps_surprise_percent_fq": 6.610151716163104,
+"revenue_fq": 2184815000,
+"revenue_forecast_fq": 2074766783,
+"revenue_surprise_percent_fq": 5.30412468050391,
+"claims": {
+"highlight": [
+"Revenue grew 55% YoY to $2.185B, while net income rose 72% to $1.439B.",
+"Q3 revenue rose 55% YoY to $2.185B, while net income from continuing operations increased 72% to $1.439B."
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3962867:0-app-q3-revenue-grew-55-with-an-84-adjusted-ebitda-margin/"
 }
 ]
