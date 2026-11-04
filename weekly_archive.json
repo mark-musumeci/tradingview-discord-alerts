@@ -258,5 +258,20 @@
 "revenue_surprise_percent_fq": 2.133773169680151,
 "claims": {},
 "link": null
+},
+{
+"kind": "recap",
+"at": "2026-11-03T19:25:14.026619-05:00",
+"symbol": "NYSE:ITUB",
+"description": "Itau Unibanco Banco Holding SA",
+"market_cap_basic": 82619213969.744,
+"earnings_per_share_fq": 0.20013282,
+"earnings_per_share_forecast_fq": 0.225376,
+"eps_surprise_percent_fq": -11.200473874769276,
+"revenue_fq": 8798020500,
+"revenue_forecast_fq": 9566335044,
+"revenue_surprise_percent_fq": -8.031440885837323,
+"claims": {},
+"link": null
 }
 ]
