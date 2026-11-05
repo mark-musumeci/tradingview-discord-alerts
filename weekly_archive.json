@@ -1103,5 +1103,101 @@
 ]
 },
 "link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3969110:0-cnq-strong-output-and-cash-flow-with-net-debt-below-target-and-buybacks-prioritized/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T09:20:18.363799-05:00",
+"symbol": "NYSE:TRP",
+"description": "TC Energy Corporation",
+"market_cap_basic": 65235803729.49371,
+"earnings_per_share_fq": 0.6615603538414209,
+"earnings_per_share_forecast_fq": 0.6167963796,
+"eps_surprise_percent_fq": 7.2574962697496455,
+"revenue_fq": 2806871243.518389,
+"revenue_forecast_fq": 2794857996.7029004,
+"revenue_surprise_percent_fq": 0.42983388886522556,
+"claims": {
+"guidance": [
+"TC Energy expects full-year comparable EBITDA of C$11.8-$12 billion and 5%-7% annual growth through 2031.",
+"TC Energy said it is now anticipating comparable Ebitda for the full year of between C$11.8 billion and C$12 billion"
+],
+"highlight": [
+"TC Energy reported net income of C$1.03 billion, up from C$609 million a year earlier.",
+"TC Energy reported net income of C$1.03 billion, and that it plans to expand the 416-mile Coastal GasLink pipeline"
+]
+},
+"link": "https://www.tradingview.com/news/DJN_DN20261105011471:0-tc-energy-raises-guidance-after-quarterly-earning-rise-sharply/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T09:20:18.363799-05:00",
+"symbol": "NYSE:CMI",
+"description": "Cummins Inc.",
+"market_cap_basic": 64955612338,
+"earnings_per_share_fq": 8.793085,
+"earnings_per_share_forecast_fq": 8.204338,
+"eps_surprise_percent_fq": 7.1760451604992355,
+"revenue_fq": 9438000000,
+"revenue_forecast_fq": 9885153895,
+"revenue_surprise_percent_fq": -4.523489464601805,
+"claims": {
+"guidance": [
+"Cummins expects about 10% full-year revenue growth and roughly 18.2% EBITDA margin.",
+"expects revenue growth of approximately 10 percent, compared with its previous forecast of 10 percent to 13 percent"
+],
+"highlight": [
+"Profit more than doubled, rising to $1.14 billion, driven by strong power‑systems demand.",
+"profit for the third quarter more than doubled, supported by stronger demand across its businesses, particularly Power Systems"
+]
+},
+"link": "https://www.tradingview.com/news/dpa_afx:be1c0e8620ece:0-cummins-q3-profit-more-than-doubles-cuts-fy26-revenue-outlook/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T09:20:18.363799-05:00",
+"symbol": "NYSE:TRGP",
+"description": "Targa Resources, Inc.",
+"market_cap_basic": 61112839279.00001,
+"earnings_per_share_fq": 2.7634,
+"earnings_per_share_forecast_fq": 2.738923,
+"eps_surprise_percent_fq": 0.8936724398604721,
+"revenue_fq": 5598600000,
+"revenue_forecast_fq": 4767630269,
+"revenue_surprise_percent_fq": 17.429407989187343,
+"claims": {
+"guidance": [
+"FY26 EBITDA outlook is above $6 billion.",
+"FY26 EBITDA outlook is above $6 billion"
+],
+"highlight": [
+"Adjusted EBITDA rose 18% YoY to $1.50 billion.",
+"Adjusted EBITDA rose 18% YoY to $1.50 billion"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4262270:0-trgp-adjusted-ebitda-rose-18-yoy-fy26-outlook-exceeds-6-billion/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T09:20:18.363799-05:00",
+"symbol": "NYSE:SRE",
+"description": "DBA Sempra",
+"market_cap_basic": 54208343381,
+"earnings_per_share_fq": 1.4,
+"earnings_per_share_forecast_fq": 1.224685,
+"eps_surprise_percent_fq": 14.31510959961132,
+"revenue_fq": 3191000000,
+"revenue_forecast_fq": 3312966332,
+"revenue_surprise_percent_fq": -3.681484198071229,
+"claims": {
+"guidance": [
+"Sempra expects to achieve the high end of its 2026 adjusted earnings guidance.",
+"results support guidance at the high end of the 2026 range"
+],
+"highlight": [
+"Adjusted EPS of $1.40 beat the average analyst target of $1.22.",
+"adjusted earnings of $1.40 a share, compared with the average analyst target of $1.22 a share"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4257002:0-sre-q3-adjusted-eps-rose-to-1-40-as-utility-growth-and-asset-sale-proceeds-support-the-outlook/"
 }
 ]
