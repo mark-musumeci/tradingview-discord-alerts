@@ -1327,5 +1327,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/seekingalpha:6b174c59c094b:0-cloudflare-catapults-as-q3-revenue-surges-39-raises-full-year-guidance/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T17:24:11.277644-05:00",
+"symbol": "NYSE:WPM",
+"description": "Wheaton Precious Metals Corp",
+"market_cap_basic": 60158028643.47412,
+"earnings_per_share_fq": 0.901,
+"earnings_per_share_forecast_fq": 0.887441,
+"eps_surprise_percent_fq": 1.527876219376836,
+"revenue_fq": 771734000,
+"revenue_forecast_fq": 787101178,
+"revenue_surprise_percent_fq": -1.9523764453062475,
+"claims": {
+"guidance": [
+"FY2026 production guidance remains 860–940K GEOs, targeting 1.2M GEOs annually.",
+"FY2026 guidance remains 860–940K GEOs, with a long-term target of 1.2M GEOs annually."
+],
+"highlight": [
+"Q3 cash flow rose 68% YoY.",
+"Q3 cash flow rose 68% YoY"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4251785:0-wpm-q3-cash-flow-rose-68-yoy-as-fy2026-production-guidance-remained-on-track/"
 }
 ]
