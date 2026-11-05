@@ -19,12 +19,13 @@
 },
 "_budget": {
 "month": "2026-11",
-"spent": 0.14015,
-"next_check": 1793869705.106601
+"spent": 0.14515,
+"next_check": 1793873299.0584133
 },
 "alwaysbecurious": {
 "seen": [
-"378513263"
+"378513263",
+"379249341"
 ],
 "started": true
 },
