@@ -904,5 +904,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/tradingview:43ef70831605a:0-air-products-reports-fy2026-adjusted-eps-of-13-45-sets-fy2027-outlook/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T06:40:18.122211-05:00",
+"symbol": "NYSE:BDX",
+"description": "Becton, Dickinson and Company",
+"market_cap_basic": 56980597512.00001,
+"earnings_per_share_fq": 4.15,
+"earnings_per_share_forecast_fq": 4.067765,
+"eps_surprise_percent_fq": 2.021626126386375,
+"revenue_fq": 5274000000,
+"revenue_forecast_fq": 5113399207,
+"revenue_surprise_percent_fq": 3.1407833908243497,
+"claims": {
+"guidance": [
+"Guidance expects low‑single‑digit revenue growth and adjusted EPS of $13.10‑$13.30 despite a ~200 bps Alaris headwind.",
+"low-single-digit FXN revenue growth and adjusted EPS of $13.10–$13.30, with an ~200 bps Alaris headwind"
+],
+"highlight": [
+"Free cash flow surged 42% to $2.933 billion in FY26.",
+"free cash flow rose 42% to $2.933B"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4251983:0-bdx-fy26-free-cash-flow-surged-42-fy27-guidance-factors-in-a-200-bps-alaris-headwind/"
 }
 ]
