@@ -131,9 +131,10 @@ def build_card(note, person):
     text = (note.get("text") or "").strip()
     lines = [line for line in text.splitlines() if line.strip()]
     title = clip(lines[0], 240) if lines else "New note"
+    author = note.get("authorName") or person["name"]  # Substack's own display name.
     card = {
         "color": ORANGE,
-        "author": {"name": f"{person['name']} posted a new note on Substack"[:256]},
+        "author": {"name": f"{author} posted a new note on Substack"[:256]},
         "title": title,
         "url": note["url"],
         "footer": {"text": "Published"},
