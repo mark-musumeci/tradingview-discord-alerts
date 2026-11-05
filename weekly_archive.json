@@ -959,5 +959,29 @@
 "heading": "🟢 Regime: Risk-on (+3/4)",
 "detail": "VIX 16.8 · 10Y-2Y +0.29 · Breadth 63% · S&P above 200-day",
 "score": 71
+},
+{
+"kind": "recap",
+"at": "2026-11-05T08:05:16.897840-05:00",
+"symbol": "NYSE:COP",
+"description": "ConocoPhillips",
+"market_cap_basic": 164511163526,
+"earnings_per_share_fq": 3.27,
+"earnings_per_share_forecast_fq": 3.052776,
+"eps_surprise_percent_fq": 7.115621978160201,
+"revenue_fq": 19002742000,
+"revenue_forecast_fq": 18592932513,
+"revenue_surprise_percent_fq": 2.204114314476563,
+"claims": {
+"guidance": [
+"ConocoPhillips anticipates fourth‑quarter production of 2.32 million to 2.36 million barrels of oil equivalent per day.",
+"Looking ahead, ConocoPhillips said it anticipates fourth-quarter production of 2.32 million to 2.36 million barrels of oil equivalent per day."
+],
+"highlight": [
+"Third‑quarter profit jumped to about $4 billion, up from $1.73 billion a year earlier.",
+"posted a third-quarter profit of about $4 billion, or $3.34 a share, compared with $1.73 billion, or $1.38 a share, a year earlier"
+]
+},
+"link": "https://www.tradingview.com/news/DJN_DN20261105011433:0-conocophillips-3q-profit-rises-as-oil-prices-climb/"
 }
 ]
