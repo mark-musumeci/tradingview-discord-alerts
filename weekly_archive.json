@@ -856,5 +856,53 @@
 ]
 },
 "link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46M0I2:0-duke-energy-q3-adjusted-eps-beats-estimates/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T06:25:25.815905-05:00",
+"symbol": "NYSE:CI",
+"description": "The Cigna Group",
+"market_cap_basic": 80701694832,
+"earnings_per_share_fq": 7.98,
+"earnings_per_share_forecast_fq": 7.521274,
+"eps_surprise_percent_fq": 6.09904651791705,
+"revenue_fq": 73700000000,
+"revenue_forecast_fq": 72635293977,
+"revenue_surprise_percent_fq": 1.4658246214810389,
+"claims": {
+"guidance": [
+"Cigna expects adjusted income from operations of at least $30.60 per share in 2026.",
+"raised its 2026 adjusted income from operations outlook to at least $30.60 per share."
+],
+"highlight": [
+"Revenue growth was driven by Evernorth Health Services' 6% increase year over year.",
+"Evernorth Health Services’ adjusted revenue increased 6% year over year."
+]
+},
+"link": "https://www.tradingview.com/news/tradingview:41abd57f858ff:0-cigna-group-reports-q3-2026-revenue-growth-raises-full-year-adjusted-eps-outlook/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T06:25:25.815905-05:00",
+"symbol": "NYSE:APD",
+"description": "Air Products and Chemicals, Inc.",
+"market_cap_basic": 71007734379,
+"earnings_per_share_fq": 3.61,
+"earnings_per_share_forecast_fq": 3.611309,
+"eps_surprise_percent_fq": -0.03624724442023667,
+"revenue_fq": 3555600000,
+"revenue_forecast_fq": 3334276037,
+"revenue_surprise_percent_fq": 6.637841634705663,
+"claims": {
+"guidance": [
+"The company expects fiscal 2027 adjusted EPS of $14.15 to $14.50.",
+"The company expects fiscal 2027 adjusted EPS of $14.15 to $14.50."
+],
+"highlight": [
+"The company reported more than $2.0 billion in new electronics wins, expanding its industrial gas project backlog.",
+"The company reported more than $2.0 billion in new electronics wins, expanding its industrial gas project backlog."
+]
+},
+"link": "https://www.tradingview.com/news/tradingview:43ef70831605a:0-air-products-reports-fy2026-adjusted-eps-of-13-45-sets-fy2027-outlook/"
 }
 ]
