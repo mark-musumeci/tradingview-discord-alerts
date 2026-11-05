@@ -983,5 +983,125 @@
 ]
 },
 "link": "https://www.tradingview.com/news/DJN_DN20261105011433:0-conocophillips-3q-profit-rises-as-oil-prices-climb/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T09:15:19.819842-05:00",
+"symbol": "NYSE:PH",
+"description": "Parker-Hannifin Corporation",
+"market_cap_basic": 114786256129.99998,
+"earnings_per_share_fq": 8.9,
+"earnings_per_share_forecast_fq": 8.206298,
+"eps_surprise_percent_fq": 8.453287950303535,
+"revenue_fq": 5992000000,
+"revenue_forecast_fq": 5807718341,
+"revenue_surprise_percent_fq": 3.173047454781864,
+"claims": {
+"guidance": [
+"Parker Hannifin raised its FY2027 outlook, projecting 16%‑19% revenue growth and adjusted earnings of $36.45‑$37.25 per share.",
+"Adjusted earnings are projected at $36.45 to $37.25 a share"
+],
+"highlight": [
+"The order backlog reached a record $13.7 billion, giving greater visibility into future revenue.",
+"Its order backlog reached a record $13.7 billion, providing greater visibility into future revenue"
+]
+},
+"link": "https://www.tradingview.com/news/seekingalpha:d951dcb2f094b:0-parker-hannifin-shares-jump-as-earnings-beat-estimates-demand-speeds-up/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T09:15:19.819842-05:00",
+"symbol": "NYSE:SOJE",
+"description": "Southern Company (The) Series 2020C 4.20% Junior Subordinated Notes due October 15, 2060",
+"market_cap_basic": 107121809175,
+"earnings_per_share_fq": 1.94,
+"earnings_per_share_forecast_fq": 1.710938,
+"eps_surprise_percent_fq": 13.388094717634413,
+"revenue_fq": 8843000000,
+"revenue_forecast_fq": 8375038226.000001,
+"revenue_surprise_percent_fq": 5.587577768268911,
+"claims": {
+"guidance": [
+"The company is well positioned to meet growing demand in the Southeast.",
+"we believe Southern Company is well positioned for today and in the future"
+],
+"highlight": [
+"Operating revenue rose 13% to $8.84 billion, beating analyst estimates.",
+"Operating revenue climbed 13% to $8.84 billion, compared with analyst estimates of $8.38 billion"
+]
+},
+"link": "https://www.tradingview.com/news/DJN_DN20261105013321:0-southern-co-3q-revenue-climbs-on-increased-energy-demand-in-southeast-u-s/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T09:15:19.819842-05:00",
+"symbol": "NYSE:SOJD",
+"description": "Southern Company (The) Series 2020A 4.95% Junior Subordinated Notes due January 30, 2080",
+"market_cap_basic": 107121809175,
+"earnings_per_share_fq": 1.94,
+"earnings_per_share_forecast_fq": 1.710938,
+"eps_surprise_percent_fq": 13.388094717634413,
+"revenue_fq": 8843000000,
+"revenue_forecast_fq": 8375038226.000001,
+"revenue_surprise_percent_fq": 5.587577768268911,
+"claims": {
+"guidance": [
+"Southern Company is well positioned for today and in the future.",
+"we believe Southern Company is well positioned for today and in the future"
+],
+"highlight": [
+"Operating revenue climbed 13% to $8.84 billion.",
+"Operating revenue climbed 13% to $8.84 billion"
+]
+},
+"link": "https://www.tradingview.com/news/DJN_DN20261105013321:0-southern-co-3q-revenue-climbs-on-increased-energy-demand-in-southeast-u-s/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T09:15:19.819842-05:00",
+"symbol": "NYSE:SO",
+"description": "Southern Company (The)",
+"market_cap_basic": 107121809175,
+"earnings_per_share_fq": 1.94,
+"earnings_per_share_forecast_fq": 1.710938,
+"eps_surprise_percent_fq": 13.388094717634413,
+"revenue_fq": 8843000000,
+"revenue_forecast_fq": 8375038226.000001,
+"revenue_surprise_percent_fq": 5.587577768268911,
+"claims": {
+"guidance": [
+"Southern Company is well positioned for today and in the future.",
+"we believe Southern Company is well positioned for today and in the future"
+],
+"highlight": [
+"Operating revenue climbed 13% to $8.84 billion.",
+"Operating revenue climbed 13% to $8.84 billion"
+]
+},
+"link": "https://www.tradingview.com/news/DJN_DN20261105013321:0-southern-co-3q-revenue-climbs-on-increased-energy-demand-in-southeast-u-s/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T09:15:19.819842-05:00",
+"symbol": "NYSE:CNQ",
+"description": "Canadian Natural Resources Limited",
+"market_cap_basic": 102332855487.20752,
+"earnings_per_share_fq": 1.172841,
+"earnings_per_share_forecast_fq": 1.032886656,
+"eps_surprise_percent_fq": 13.549825935596166,
+"revenue_fq": 8740825800,
+"revenue_forecast_fq": 8791440072.9015,
+"revenue_surprise_percent_fq": -0.5757222079862978,
+"claims": {
+"guidance": [
+"The company plans to prioritize share repurchases as free‑cash‑flow returns shift focus.",
+"shifting the free-cash-flow return focus to share repurchases"
+],
+"highlight": [
+"Profit surged to C$3 billion, driven by higher oil prices and increased sales volumes.",
+"profit jumped in the third quarter on the back of higher prices and increased sales volumes"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3969110:0-cnq-strong-output-and-cash-flow-with-net-debt-below-target-and-buybacks-prioritized/"
 }
 ]
