@@ -808,5 +808,53 @@
 ]
 },
 "link": "https://www.tradingview.com/news/sharecast:c5847400b094b:0-national-grid-shares-rise-as-profits-jump-earnings-guidance-upgraded/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T06:20:17.565344-05:00",
+"symbol": "NYSE:DUK",
+"description": "Duke Energy Corporation (Holding Company)",
+"market_cap_basic": 101041606470,
+"earnings_per_share_fq": 1.99,
+"earnings_per_share_forecast_fq": 1.864483,
+"eps_surprise_percent_fq": 6.732000238135726,
+"revenue_fq": 9104000000,
+"revenue_forecast_fq": 8908651702,
+"revenue_surprise_percent_fq": 2.192793079520037,
+"claims": {
+"guidance": [
+"Duke Energy expects 2026 adjusted EPS near the top of its $6.70‑$6.80 range.",
+"Company expects 2026 results near top end of guidance range"
+],
+"highlight": [
+"Infrastructure investment recovery and favorable weather were the primary drivers of the higher Q3 results.",
+"Higher Q3 results were primarily driven by recovery of infrastructure investments"
+]
+},
+"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46M0I2:0-duke-energy-q3-adjusted-eps-beats-estimates/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T06:20:17.565344-05:00",
+"symbol": "NYSE:DUKU",
+"description": "Duke Energy Corporation Corporate",
+"market_cap_basic": 101041606470,
+"earnings_per_share_fq": 1.99,
+"earnings_per_share_forecast_fq": 1.864483,
+"eps_surprise_percent_fq": 6.732000238135726,
+"revenue_fq": 9104000000,
+"revenue_forecast_fq": 8908651702,
+"revenue_surprise_percent_fq": 2.192793079520037,
+"claims": {
+"guidance": [
+"Company expects 2026 results near top end of guidance range.",
+"Company expects 2026 results near top end of guidance range"
+],
+"highlight": [
+"Infrastructure investment recovery and favorable weather drove higher Q3 results.",
+"Higher results driven by infrastructure investment recovery and favorable weather"
+]
+},
+"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46M0I2:0-duke-energy-q3-adjusted-eps-beats-estimates/"
 }
 ]
