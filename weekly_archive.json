@@ -952,5 +952,12 @@
 ]
 },
 "link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46M0KX:0-cardinal-health-beats-q1-revenue-adjusted-eps-estimates-raises-outlook/"
+},
+{
+"kind": "regime",
+"at": "2026-11-05T07:00:25.381042-05:00",
+"heading": "🟢 Regime: Risk-on (+3/4)",
+"detail": "VIX 16.8 · 10Y-2Y +0.29 · Breadth 63% · S&P above 200-day",
+"score": 71
 }
 ]
