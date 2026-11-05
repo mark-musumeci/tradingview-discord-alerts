@@ -788,5 +788,25 @@
 ]
 },
 "link": "https://www.tradingview.com/news/dpa_afx:98cafbb70b81e:0-roundup-sony-group-h1-results-climb-lifts-fy-outlook-shares-up/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T05:10:17.614126-05:00",
+"symbol": "NYSE:NGG",
+"description": "National Grid Transco, PLC National Grid PLC (NEW)",
+"market_cap_basic": 85625437302.1685,
+"earnings_per_share_fq": 2.4585488,
+"earnings_per_share_forecast_fq": 2.271026,
+"eps_surprise_percent_fq": 8.257184197803106,
+"revenue_fq": 8724144000,
+"revenue_forecast_fq": 10153739154,
+"revenue_surprise_percent_fq": -14.079494581430332,
+"claims": {
+"guidance": [
+"National Grid expects underlying earnings per share to grow 15‑16% in FY27 and 8‑10% annually through 2030/31.",
+"now expects underlying earnings per share to increase by 15-16% in the year to March 2027, compared with previous guidance of growth slightly above 13-15%"
+]
+},
+"link": "https://www.tradingview.com/news/sharecast:c5847400b094b:0-national-grid-shares-rise-as-profits-jump-earnings-guidance-upgraded/"
 }
 ]
