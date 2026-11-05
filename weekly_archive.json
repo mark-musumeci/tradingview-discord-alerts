@@ -725,5 +725,44 @@
 "unit": "A$",
 "scale": "B",
 "date": "2026-11-05T00:30:00.000Z"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T00:35:14.116616-05:00",
+"symbol": "NYSE:TM",
+"description": "Toyota Motor Corporation",
+"market_cap_basic": 227579314128.38007,
+"earnings_per_share_fq": 4.1201715,
+"earnings_per_share_forecast_fq": 3.369246,
+"eps_surprise_percent_fq": 22.287642398328874,
+"revenue_fq": 84808516000,
+"revenue_forecast_fq": 84743268191,
+"revenue_surprise_percent_fq": 0.07699468098509035,
+"claims": {
+"guidance": [
+"Toyota expects operating profit of 3.9 trillion yen, a 15% increase over its prior forecast.",
+"now expects operating profit of 3.9 trillion yen ($24.6 billion) for the year ending March, up from its previous forecast of 3.4 trillion yen."
+],
+"highlight": [
+"Operating profit rose 34% in the July‑September quarter to 1.13 trillion yen.",
+"Operating profit for the July-September quarter jumped 34% to 1.13 trillion yen."
+]
+},
+"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46M050:0-toyota-posts-first-profit-rise-in-six-quarters-lifts-annual-outlook/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T00:35:14.116616-05:00",
+"symbol": "NASDAQ:KMB",
+"description": "Kimberly-Clark Corporation",
+"market_cap_basic": 66757883328.57964,
+"earnings_per_share_fq": 1.7,
+"earnings_per_share_forecast_fq": 1.65271,
+"eps_surprise_percent_fq": 2.861361037326576,
+"revenue_fq": 4134000000,
+"revenue_forecast_fq": 4126463833,
+"revenue_surprise_percent_fq": 0.1826301478697584,
+"claims": {},
+"link": null
 }
 ]
