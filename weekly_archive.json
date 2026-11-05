@@ -1239,5 +1239,49 @@
 ]
 },
 "link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3992300:0-spg-real-estate-ffo-rose-4-7-as-occupancy-rents-and-retailer-sales-strengthened/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T16:30:21.858522-05:00",
+"symbol": "NYSE:EOG",
+"description": "EOG Resources, Inc.",
+"market_cap_basic": 75999030875.57283,
+"earnings_per_share_fq": 4.87,
+"earnings_per_share_forecast_fq": 4.468897,
+"eps_surprise_percent_fq": 8.975436220615512,
+"revenue_fq": 8549000000,
+"revenue_forecast_fq": 7257345649,
+"revenue_surprise_percent_fq": 17.797889386431233,
+"claims": {
+"guidance": [
+"EOG expects FY 2026 production to grow and capital spending of $6.3‑$6.7 billion.",
+"FY 2026 production growth and $6.3B–$6.7B capital spending are expected"
+],
+"highlight": [
+"Q3 revenue rose 46% year‑over‑year to $8.55 billion.",
+"Q3 revenue rose 46% YoY to $8.549B"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3961092:0-eog-higher-prices-and-output-drove-q3-revenue-up-46-with-fy-production-growth-still-expected/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T16:30:21.858522-05:00",
+"symbol": "NASDAQ:NTRA",
+"description": "Natera, Inc.",
+"market_cap_basic": 52433881310.67448,
+"earnings_per_share_fq": -0.42,
+"earnings_per_share_forecast_fq": -0.281242,
+"eps_surprise_percent_fq": -49.337581157864044,
+"revenue_fq": 793981000,
+"revenue_forecast_fq": 707539119,
+"revenue_surprise_percent_fq": 12.217258195161362,
+"claims": {
+"guidance": [
+"Revenue guidance raised to $3.005-$3.035 billion for FY 2026.",
+"FY26 revenue guidance increased to $3.005B-$3.035B"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4247925:0-ntra-q3-revenue-rose-34-and-fy26-revenue-guidance-increased-by-140m-at-midpoint/"
 }
 ]
