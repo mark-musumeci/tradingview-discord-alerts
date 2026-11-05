@@ -764,5 +764,29 @@
 "revenue_surprise_percent_fq": 0.1826301478697584,
 "claims": {},
 "link": null
+},
+{
+"kind": "recap",
+"at": "2026-11-05T04:30:21.887830-05:00",
+"symbol": "NYSE:SONY",
+"description": "Sony Group Corporation",
+"market_cap_basic": 148030699040.11697,
+"earnings_per_share_fq": 0.484852,
+"earnings_per_share_forecast_fq": 0.402016,
+"eps_surprise_percent_fq": 20.605150043779357,
+"revenue_fq": 21645075319,
+"revenue_forecast_fq": 20149632192,
+"revenue_surprise_percent_fq": 7.421689451948087,
+"claims": {
+"guidance": [
+"Sony expects higher net income and operating income for FY2027.",
+"the Group now expects attributable net income of 1.330 trillion yen, up 29 percent from last year"
+],
+"highlight": [
+"Operating income rose sharply, up 42.9% year‑over‑year.",
+"Operating income climbed 42.9 percent year-over-year to 1.099 trillion yen"
+]
+},
+"link": "https://www.tradingview.com/news/dpa_afx:98cafbb70b81e:0-roundup-sony-group-h1-results-climb-lifts-fy-outlook-shares-up/"
 }
 ]
