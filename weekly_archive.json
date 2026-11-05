@@ -711,5 +711,19 @@
 ]
 },
 "link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3687702:0-mfc-record-core-earnings-and-17-8-core-roe-offset-market-driven-pressure-on-net-income/"
+},
+{
+"kind": "result",
+"at": "2026-11-04T19:40:17.108860-05:00",
+"id": "1001680887601",
+"title": "Balance of Trade",
+"period": "Sep. 2026",
+"country": "AU",
+"actual": 2.826,
+"forecast": 0.81,
+"previous": 0.184,
+"unit": "A$",
+"scale": "B",
+"date": "2026-11-05T00:30:00.000Z"
 }
 ]
