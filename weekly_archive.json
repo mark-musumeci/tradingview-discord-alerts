@@ -1283,5 +1283,25 @@
 ]
 },
 "link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4247925:0-ntra-q3-revenue-rose-34-and-fy26-revenue-guidance-increased-by-140m-at-midpoint/"
+},
+{
+"kind": "recap",
+"at": "2026-11-05T16:40:18.703621-05:00",
+"symbol": "NASDAQ:MNST",
+"description": "Monster Beverage Corporation",
+"market_cap_basic": 93701445575.81929,
+"earnings_per_share_fq": 0.3,
+"earnings_per_share_forecast_fq": 0.299108,
+"eps_surprise_percent_fq": 0.2982200409216751,
+"revenue_fq": 2563053000,
+"revenue_forecast_fq": 2493087545,
+"revenue_surprise_percent_fq": 2.8063777840581206,
+"claims": {
+"guidance": [
+"The company said it continued to increase marketing investments across social, digital, and media platforms to support existing products and new launches.",
+"The company said it continued to increase marketing investments across social, digital, and media platforms to support existing products and new launches."
+]
+},
+"link": "https://www.tradingview.com/news/seekingalpha:6776ee61d094b:0-monster-beverage-shares-slip-after-q3-results-as-margin-pressure-offsets-sales-growth/"
 }
 ]
