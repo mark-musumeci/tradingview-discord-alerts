@@ -1,5 +1,5 @@
 {
-"morning_date": "2026-11-05",
+"morning_date": "2026-11-06",
 "morning_done": [],
 "posted": [
 "397194",
@@ -8,5 +8,7 @@
 "1001659458203",
 "1001680887601"
 ],
-"recaps": {}
+"recaps": {
+"NASDAQ:MRNA:2026-11-06": "done"
+}
 }
