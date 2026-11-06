@@ -1382,5 +1382,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46N0FI:0-moderna-swings-to-q3-profit-raises-outlook-on-strong-covid-vaccine-demand/"
+},
+{
+"kind": "recap",
+"at": "2026-11-06T07:30:20.197861-05:00",
+"symbol": "NYSE:ENB",
+"description": "Enbridge Inc",
+"market_cap_basic": 109101141730.05295,
+"earnings_per_share_fq": 0.3449314186954692,
+"earnings_per_share_forecast_fq": 0.33924390810000005,
+"eps_surprise_percent_fq": 1.6765254908549914,
+"revenue_fq": 9895446405.246178,
+"revenue_forecast_fq": 9624936264.658201,
+"revenue_surprise_percent_fq": 2.810513577957524,
+"claims": {
+"guidance": [
+"2026 guidance reaffirmed, supported by a $38 billion project backlog.",
+"Guidance was reaffirmed, with a ~$38B backlog and new acquisitions expanding oil and gas infrastructure."
+],
+"highlight": [
+"Q3 adjusted EBITDA reached a record $4.434 billion.",
+"Q3 adjusted EBITDA reached a record $4.434B, and 2026 guidance was reaffirmed."
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3920935:0-enb-reaffirmed-guidance-grew-q3-adjusted-ebitda-and-advanced-a-38b-project-backlog/"
 }
 ]
