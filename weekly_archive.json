@@ -1499,5 +1499,53 @@
 "heading": "🟡 Regime: Neutral (+1/4)",
 "detail": "VIX 23.5 · 10Y-2Y +0.33 · Breadth 54% · S&P above 200-day",
 "score": 54
+},
+{
+"kind": "recap",
+"at": "2026-11-09T08:15:19.131430-05:00",
+"symbol": "NASDAQ:CEG",
+"description": "Constellation Energy Corporation",
+"market_cap_basic": 88559126812,
+"earnings_per_share_fq": 5.06,
+"earnings_per_share_forecast_fq": 3.897021,
+"eps_surprise_percent_fq": 29.84276964378687,
+"revenue_fq": 9550000000,
+"revenue_forecast_fq": 9233454906,
+"revenue_surprise_percent_fq": 3.4282410779339543,
+"claims": {
+"guidance": [
+"Constellation Energy raised its full-year adjusted earnings guidance to $12.50‑$12.80 per share.",
+"raised its full-year adjusted earnings guidance to $12.50 to $12.80 a share"
+],
+"highlight": [
+"Adjusted third-quarter earnings were $5.06 a share with revenue up 45% to $9.55 billion.",
+"posted adjusted third-quarter earnings of $5.06 a share with revenue growing 45% to $9.55 billion"
+]
+},
+"link": "https://www.tradingview.com/news/DJN_DN20261109004640:0-data-center-moratoriums-they-aren-t-showing-up-in-constellation-energy-s-guidance-barrons-com/"
+},
+{
+"kind": "recap",
+"at": "2026-11-09T08:15:19.131430-05:00",
+"symbol": "NYSE:KKR",
+"description": "KKR & Co. Inc.",
+"market_cap_basic": 86603887642,
+"earnings_per_share_fq": 1.78,
+"earnings_per_share_forecast_fq": 1.577026,
+"eps_surprise_percent_fq": 12.870681903785986,
+"revenue_fq": 2607805000,
+"revenue_forecast_fq": 2656370434,
+"revenue_surprise_percent_fq": -1.828262857408388,
+"claims": {
+"guidance": [
+"The company expects to return more than $40 billion to clients in 2026.",
+"In 2026, we expect to return more than $40 billion to our clients, exceeding our previous annual record by more than 50%"
+],
+"highlight": [
+"Fee-related earnings rose 27% to a record $1.3 billion, driving higher profit.",
+"Fee-related earnings climbed 27% to $1.32 billion, driven by growth in management fees and fee-related performance revenue"
+]
+},
+"link": "https://www.tradingview.com/news/dpa_afx:2fedfe15597ed:0-kkr-co-q3-net-income-rises-aum-up-11/"
 }
 ]
