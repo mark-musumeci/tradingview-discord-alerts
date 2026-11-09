@@ -1547,5 +1547,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/dpa_afx:2fedfe15597ed:0-kkr-co-q3-net-income-rises-aum-up-11/"
+},
+{
+"kind": "recap",
+"at": "2026-11-09T09:55:15.760573-05:00",
+"symbol": "NYSE:FERG",
+"description": "Ferguson Enterprises Inc.",
+"market_cap_basic": 50210651007.10976,
+"earnings_per_share_fq": 3.43,
+"earnings_per_share_forecast_fq": 3.307055,
+"eps_surprise_percent_fq": 3.7176581580892996,
+"revenue_fq": 9026000000,
+"revenue_forecast_fq": 8740682985,
+"revenue_surprise_percent_fq": 3.2642416558252516,
+"claims": {
+"guidance": [
+"The company raised its fiscal 2026 net sales growth guidance to around 7% and expects adjusted operating margin of 9.6%‑9.8%.",
+"Calendar 2026 sales growth guidance was raised to ~7%, while leverage stood at 1.7x"
+],
+"highlight": [
+"Adjusted EBITDA grew 9% to $1.028 billion, reflecting strong quarterly performance.",
+"Adjusted EBITDA grew 9 percent to $1.028 billion from $943 million last year"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4247519:0-ferg-q3-sales-rose-9-5-as-organic-growth-and-acquisitions-lifted-adjusted-eps-7-9/"
 }
 ]
