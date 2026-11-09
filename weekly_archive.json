@@ -1492,5 +1492,12 @@
 ]
 },
 "link": "https://www.tradingview.com/news/DJN_DN20261109002805:0-barrick-quarterly-earnings-benefit-from-higher-prices-as-production-remains-on-track-for-annual-target/"
+},
+{
+"kind": "regime",
+"at": "2026-11-09T07:00:25.517613-05:00",
+"heading": "🟡 Regime: Neutral (+1/4)",
+"detail": "VIX 23.5 · 10Y-2Y +0.33 · Breadth 54% · S&P above 200-day",
+"score": 54
 }
 ]
