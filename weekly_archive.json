@@ -1571,5 +1571,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4247519:0-ferg-q3-sales-rose-9-5-as-organic-growth-and-acquisitions-lifted-adjusted-eps-7-9/"
+},
+{
+"kind": "recap",
+"at": "2026-11-09T16:45:19.882503-05:00",
+"symbol": "NYSE:OXY",
+"description": "Occidental Petroleum Corporation",
+"market_cap_basic": 55739781930.36963,
+"earnings_per_share_fq": 1.91,
+"earnings_per_share_forecast_fq": 1.458322,
+"eps_surprise_percent_fq": 30.972446414440714,
+"revenue_fq": 6567000000,
+"revenue_forecast_fq": 6819715798,
+"revenue_surprise_percent_fq": -3.7056646564965843,
+"claims": {
+"guidance": [
+"Occidental aims to add over $4.0 billion annual sustainable cash flow by 2030.",
+"Management said Occidental is advancing a plan to add more than $4.0 billion in annual sustainable cash flow by 2030."
+],
+"highlight": [
+"Adjusted EPS of $1.91 beat expectations of $1.46.",
+"adjusted profit of $1.91 per share for the three months ended September 30, compared with expectations of $1.46"
+]
+},
+"link": "https://www.tradingview.com/news/tradingview:f8935a4b7a219:0-occidental-reports-1-61-eps-and-2-8-billion-free-cash-flow-in-q3-2026/"
 }
 ]
