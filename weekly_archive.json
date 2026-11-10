@@ -1640,5 +1640,33 @@
 "heading": "🟡 Regime: Neutral (+1/4)",
 "detail": "VIX 20.0 · 10Y-2Y +0.28 · Breadth 59% · S&P above 200-day",
 "score": 63
+},
+{
+"kind": "result",
+"at": "2026-11-10T08:35:15.670701-05:00",
+"id": "1001660738401",
+"title": "Core Inflation Rate MoM",
+"period": "Oct. 2026",
+"country": "US",
+"actual": 0.3,
+"forecast": 0.2,
+"previous": 0.3,
+"unit": "%",
+"scale": null,
+"date": "2026-11-10T13:30:00.000Z"
+},
+{
+"kind": "result",
+"at": "2026-11-10T08:35:15.670701-05:00",
+"id": "1001660738403",
+"title": "Inflation Rate MoM",
+"period": "Oct. 2026",
+"country": "US",
+"actual": 0.4,
+"forecast": 0.3,
+"previous": 0.6,
+"unit": "%",
+"scale": null,
+"date": "2026-11-10T13:30:00.000Z"
 }
 ]
