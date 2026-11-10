@@ -1595,5 +1595,19 @@
 ]
 },
 "link": "https://www.tradingview.com/news/tradingview:f8935a4b7a219:0-occidental-reports-1-61-eps-and-2-8-billion-free-cash-flow-in-q3-2026/"
+},
+{
+"kind": "result",
+"at": "2026-11-09T22:45:19.112552-05:00",
+"id": "1001669568402",
+"title": "NAB Business Confidence",
+"period": "Oct. 2026",
+"country": "AU",
+"actual": -15,
+"forecast": null,
+"previous": -14,
+"unit": null,
+"scale": null,
+"date": "2026-11-10T00:30:00.000Z"
 }
 ]
