@@ -1668,5 +1668,29 @@
 "unit": "%",
 "scale": null,
 "date": "2026-11-10T13:30:00.000Z"
+},
+{
+"kind": "recap",
+"at": "2026-11-10T20:30:21.664189-05:00",
+"symbol": "NYSE:PBR.A",
+"description": "Petroleo Brasileiro S.A. Petrobras",
+"market_cap_basic": 112217563291.8126,
+"earnings_per_share_fq": 1.2,
+"earnings_per_share_forecast_fq": 1.315792,
+"eps_surprise_percent_fq": -8.80017510366381,
+"revenue_fq": 32962000000,
+"revenue_forecast_fq": 33085080797.000004,
+"revenue_surprise_percent_fq": -0.37201298601986243,
+"claims": {
+"guidance": [
+"Petrobras raised its 2026 oil production forecast to 2.7–2.8 million barrels per day.",
+"raised 2026 oil forecast of 2.7–2.8 MMbpd."
+],
+"highlight": [
+"Revenue rose 32.4% to R$169.35 billion, surpassing analyst expectations.",
+"Revenue rose 32.4% to R$169.35 billion from a year ago; analysts expected R$177.10 billion."
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4561253:0-petrobras-record-output-lifts-2026-production-guidance-and-supports-accelerated-investment/"
 }
 ]
