@@ -1730,5 +1730,29 @@
 "heading": "🟡 Regime: Neutral (+1/4)",
 "detail": "VIX 18.4 · 10Y-2Y +0.24 · Breadth 60% · S&P above 200-day",
 "score": 65
+},
+{
+"kind": "recap",
+"at": "2026-11-12T07:45:17.265011-05:00",
+"symbol": "NYSE:BN",
+"description": "Brookfield Corporation",
+"market_cap_basic": 103152720409.16614,
+"earnings_per_share_fq": 0.6409125909026095,
+"earnings_per_share_forecast_fq": 0.6833603736,
+"eps_surprise_percent_fq": -6.21162483767854,
+"revenue_fq": 1871981501.212035,
+"revenue_forecast_fq": 1869522352.7904003,
+"revenue_surprise_percent_fq": 0.1315388616757758,
+"claims": {
+"guidance": [
+"Brookfield expects to complete its corporate simplification transaction on December 1, 2026.",
+"Brookfield expects to complete its corporate simplification transaction on December 1, 2026"
+],
+"highlight": [
+"Distributable earnings rose to $1.72 billion, beating analysts’ expectations.",
+"Distributable earnings, a measure of cash that can be returned to shareholders, rose to $1.72 billion"
+]
+},
+"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46T0MX:0-brookfield-q3-revenue-rises-9-eps-climbs/"
 }
 ]
