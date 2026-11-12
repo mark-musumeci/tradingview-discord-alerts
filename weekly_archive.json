@@ -1754,5 +1754,19 @@
 ]
 },
 "link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46T0MX:0-brookfield-q3-revenue-rises-9-eps-climbs/"
+},
+{
+"kind": "result",
+"at": "2026-11-12T10:05:15.146501-05:00",
+"id": "1001658835901",
+"title": "Existing Home Sales",
+"period": "Oct. 2026",
+"country": "US",
+"actual": 3.75,
+"forecast": 3.85,
+"previous": 3.97,
+"unit": null,
+"scale": "M",
+"date": "2026-11-12T15:00:00.000Z"
 }
 ]
