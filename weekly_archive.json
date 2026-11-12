@@ -1768,5 +1768,44 @@
 "unit": null,
 "scale": "M",
 "date": "2026-11-12T15:00:00.000Z"
+},
+{
+"kind": "recap",
+"at": "2026-11-12T16:15:17.934822-05:00",
+"symbol": "NASDAQ:CSCO",
+"description": "Cisco Systems, Inc.",
+"market_cap_basic": 401631021222.2373,
+"earnings_per_share_fq": 1.4,
+"earnings_per_share_forecast_fq": 1.325853,
+"eps_surprise_percent_fq": 5.592399760757789,
+"revenue_fq": 18517000000,
+"revenue_forecast_fq": 18122843375,
+"revenue_surprise_percent_fq": 2.1749160263876086,
+"claims": {
+"guidance": [
+"Cisco expects FY27 revenue of $74.8‑$75.8 billion.",
+"Cisco expects FY27 revenue of $74.8 billion to $75.8 billion"
+],
+"highlight": [
+"Cisco reported record first-quarter fiscal 2027 revenue of $18.5 billion, up 24% year over year.",
+"Cisco reported record first-quarter fiscal 2027 revenue of $18.5 billion, up 24% year over year"
+]
+},
+"link": "https://www.tradingview.com/news/tradingview:565a5011a35e8:0-cisco-reports-record-q1-revenue-of-18-5-billion-raises-fy27-guidance/"
+},
+{
+"kind": "recap",
+"at": "2026-11-12T16:15:17.934822-05:00",
+"symbol": "NASDAQ:AMAT",
+"description": "Applied Materials, Inc.",
+"market_cap_basic": 302503451266.5931,
+"earnings_per_share_fq": 4.16,
+"earnings_per_share_forecast_fq": 4.063745,
+"eps_surprise_percent_fq": 2.3686279527873966,
+"revenue_fq": 10409000000,
+"revenue_forecast_fq": 10303798882,
+"revenue_surprise_percent_fq": 1.0209935112745536,
+"claims": {},
+"link": null
 }
 ]
