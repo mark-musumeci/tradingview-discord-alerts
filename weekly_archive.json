@@ -1831,5 +1831,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/seekingalpha:9ebce699b094b:0-earnings-snapshot-nu-reports-record-quarterly-net-income-of-1-1b-improves-fy26-efficiency-ratio-outlook/"
+},
+{
+"kind": "recap",
+"at": "2026-11-13T00:25:13.787768-05:00",
+"symbol": "NYSE:SMFG",
+"description": "Sumitomo Mitsui Financial Group Inc Unsponsored",
+"market_cap_basic": 156085543809.53204,
+"earnings_per_share_fq": 0.49681073,
+"earnings_per_share_forecast_fq": 0.507527,
+"eps_surprise_percent_fq": -2.1114679613104275,
+"revenue_fq": 27496154000,
+"revenue_forecast_fq": 8660875437,
+"revenue_surprise_percent_fq": 217.47545845693702,
+"claims": {
+"guidance": [
+"SMFG raised its annual net profit forecast to 1.9 trillion yen.",
+"SMFG raised its annual net profit forecast to 1.9 trillion yen from 1.7 trillion yen"
+],
+"highlight": [
+"Second-quarter net profit fell 10% to 501.8 billion yen despite strong corporate lending demand.",
+"its second-quarter net profit fell 10% from a year earlier, though it boosted its annual earnings forecast"
+]
+},
+"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L6N46U0A8:0-smfg-second-quarter-profit-falls-10-raises-annual-earnings-forecast/"
 }
 ]
