@@ -1855,5 +1855,53 @@
 ]
 },
 "link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L6N46U0A8:0-smfg-second-quarter-profit-falls-10-raises-annual-earnings-forecast/"
+},
+{
+"kind": "recap",
+"at": "2026-11-13T03:40:17.520144-05:00",
+"symbol": "NYSE:MUFG",
+"description": "Mitsubishi UFJ Financial Group, Inc.",
+"market_cap_basic": 246597054869.468,
+"earnings_per_share_fq": 0.4562852,
+"earnings_per_share_forecast_fq": 0.429791,
+"eps_surprise_percent_fq": 6.164438064082316,
+"revenue_fq": 25563178000,
+"revenue_forecast_fq": 10719117577,
+"revenue_surprise_percent_fq": 138.48211213627218,
+"claims": {
+"guidance": [
+"Mitsubishi UFJ raised its annual net profit target to Y2.800 trillion, indicating a more optimistic outlook.",
+"targets net profit of Y2.800 trillion, up from Y2.700 trillion forecast previously"
+],
+"highlight": [
+"First‑half net profit surged 26% to 1.631 trillion yen, beating analysts’ estimates.",
+"net profit climbed 26% from a year earlier to 1.631 trillion yen, equivalent to $10.20 billion, for the six months ended September"
+]
+},
+"link": "https://www.tradingview.com/news/DJN_DN20261113001977:0-mitsubishi-ufj-posts-first-half-profit-beat-raises-annual-target/"
+},
+{
+"kind": "recap",
+"at": "2026-11-13T03:40:17.520144-05:00",
+"symbol": "NYSE:MFG",
+"description": "Mizuho Financial Group, Inc. Sponosred",
+"market_cap_basic": 123163804059.29803,
+"earnings_per_share_fq": 0.31633523,
+"earnings_per_share_forecast_fq": 0.199321,
+"eps_surprise_percent_fq": 58.70642330712771,
+"revenue_fq": 15461063000,
+"revenue_forecast_fq": 6778059136,
+"revenue_surprise_percent_fq": 128.1045752150841,
+"claims": {
+"guidance": [
+"The company projects full‑year EPS of JPY 660.42.",
+"Full year EPS guidance: JPY 660.42"
+],
+"highlight": [
+"H1 earnings jumped 29.9% YoY to JPY 896.4 billion.",
+"FY26 H1 net income rose 29.9% YoY to JPY 896.4B"
+]
+},
+"link": "https://www.tradingview.com/news/dpa_afx:68fbb3f449c18:0-mizuho-financial-group-inc-reports-advance-in-h1-bottom-line/"
 }
 ]
