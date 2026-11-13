@@ -1903,5 +1903,12 @@
 ]
 },
 "link": "https://www.tradingview.com/news/dpa_afx:68fbb3f449c18:0-mizuho-financial-group-inc-reports-advance-in-h1-bottom-line/"
+},
+{
+"kind": "regime",
+"at": "2026-11-13T07:01:45.073938-05:00",
+"heading": "🟡 Regime: Neutral (+1/4)",
+"detail": "VIX 18.3 · 10Y-2Y +0.28 · Breadth 58% · S&P above 200-day",
+"score": 65
 }
 ]
