@@ -5,10 +5,10 @@
 "last_run": 1794650716.1214662,
 "issues": {
 "substack": {
-"count": 61,
+"count": 62,
 "alerted": 1794647418.2791426,
 "message": "The Substack check failed: Apify returned HTTP 401",
-"last_seen": 1794647418.2791426
+"last_seen": 1794651017.744149
 }
 },
 "summary_day": "2026-11-13",
