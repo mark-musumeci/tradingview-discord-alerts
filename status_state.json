@@ -2,13 +2,13 @@
 "day": "2026-11-15",
 "first_run": 3640,
 "failed": 0,
-"last_run": 1794764416.6069646,
+"last_run": 1794766219.7135239,
 "issues": {
 "substack": {
-"count": 93,
+"count": 94,
 "alerted": 1794759017.6944103,
 "message": "The Substack check failed: Apify returned HTTP 401",
-"last_seen": 1794762624.0064638
+"last_seen": 1794766219.7135239
 }
 },
 "summary_day": "2026-11-15",
