@@ -1,66 +1,6 @@
 [
 {
 "kind": "recap",
-"at": "2026-11-03T08:00:23.792850-05:00",
-"symbol": "NYSE:APO",
-"description": "Apollo Global Management, Inc. (New)",
-"market_cap_basic": 70546291670.99998,
-"earnings_per_share_fq": 2.17,
-"earnings_per_share_forecast_fq": 2.194084,
-"eps_surprise_percent_fq": -1.0976790314318055,
-"revenue_fq": 1374000000,
-"revenue_forecast_fq": 5790566736,
-"revenue_surprise_percent_fq": -76.27175261692727,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
-"at": "2026-11-03T08:00:23.792850-05:00",
-"symbol": "NASDAQ:KDP",
-"description": "Keurig Dr Pepper Inc.",
-"market_cap_basic": 50105614739,
-"earnings_per_share_fq": 0.66,
-"earnings_per_share_forecast_fq": 0.618068,
-"eps_surprise_percent_fq": 6.784366768705075,
-"revenue_fq": 7344000000,
-"revenue_forecast_fq": 7327221385,
-"revenue_surprise_percent_fq": 0.22899014671985377,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
-"at": "2026-11-03T08:05:14.567791-05:00",
-"symbol": "NASDAQ:SHOP",
-"description": "Shopify Inc.",
-"market_cap_basic": 200965318471.4194,
-"earnings_per_share_fq": 0.48156591099916035,
-"earnings_per_share_forecast_fq": 0.46129241130000004,
-"eps_surprise_percent_fq": 4.394934580004506,
-"revenue_fq": 3677591099.9160376,
-"revenue_forecast_fq": 3700188029.5650005,
-"revenue_surprise_percent_fq": -0.6106967934713172,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
-"at": "2026-11-03T08:05:14.567791-05:00",
-"symbol": "AMEX:ET",
-"description": "Energy Transfer LP",
-"market_cap_basic": 70036713587,
-"earnings_per_share_fq": 0.33,
-"earnings_per_share_forecast_fq": 0.406414,
-"eps_surprise_percent_fq": -18.802009773285363,
-"revenue_fq": 37103000000,
-"revenue_forecast_fq": 32427041344,
-"revenue_surprise_percent_fq": 14.419936146487803,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
 "at": "2026-11-03T09:40:18.536496-05:00",
 "symbol": "NYSE:RACE",
 "description": "Ferrari N.V.",
@@ -1875,5 +1815,19 @@
 ]
 },
 "link": "https://www.tradingview.com/news/seekingalpha:136d141fc094b:0-disney-quarterly-earnings-exceed-forecasts-as-streaming-profitability-improves/"
+},
+{
+"kind": "result",
+"at": "2026-11-17T08:35:14.472377-05:00",
+"id": "1001661350203",
+"title": "Retail Sales MoM",
+"period": "Oct. 2026",
+"country": "US",
+"actual": 0.2,
+"forecast": 0.2,
+"previous": 0.8,
+"unit": "%",
+"scale": null,
+"date": "2026-11-17T13:30:00.000Z"
 }
 ]
