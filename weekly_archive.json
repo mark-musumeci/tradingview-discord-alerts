@@ -1,95 +1,6 @@
 [
 {
 "kind": "recap",
-"at": "2026-11-03T09:40:18.536496-05:00",
-"symbol": "NYSE:RACE",
-"description": "Ferrari N.V.",
-"market_cap_basic": 88589604560.26357,
-"earnings_per_share_fq": 2.7668972385703308,
-"earnings_per_share_forecast_fq": 2.67903519056,
-"eps_surprise_percent_fq": 3.279615300311336,
-"revenue_fq": 2150015231.2825193,
-"revenue_forecast_fq": 2148967856.234,
-"revenue_surprise_percent_fq": 0.04873851628263193,
-"claims": {},
-"link": null
-},
-{
-"kind": "result",
-"at": "2026-11-03T10:05:14.924147-05:00",
-"id": "1001668384901",
-"title": "JOLTs Job Openings",
-"period": "Sep. 2026",
-"country": "US",
-"actual": 7.523,
-"forecast": 7.1,
-"previous": 7.19,
-"unit": null,
-"scale": "M",
-"date": "2026-11-03T15:00:00.000Z"
-},
-{
-"kind": "recap",
-"at": "2026-11-03T16:20:26.038839-05:00",
-"symbol": "NASDAQ:AMGN",
-"description": "Amgen Inc.",
-"market_cap_basic": 249371931643.80145,
-"earnings_per_share_fq": 6.45,
-"earnings_per_share_forecast_fq": 5.786152,
-"eps_surprise_percent_fq": 11.47304806372179,
-"revenue_fq": 10365000000,
-"revenue_forecast_fq": 10067845726,
-"revenue_surprise_percent_fq": 2.951517952173277,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
-"at": "2026-11-03T16:20:26.038839-05:00",
-"symbol": "NYSE:ANET",
-"description": "Arista Networks, Inc.",
-"market_cap_basic": 214294672582.0326,
-"earnings_per_share_fq": 1.2,
-"earnings_per_share_forecast_fq": 1.080022,
-"eps_surprise_percent_fq": 11.108847782730344,
-"revenue_fq": 3657600000,
-"revenue_forecast_fq": 3334746575,
-"revenue_surprise_percent_fq": 9.681498061063305,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
-"at": "2026-11-03T16:20:26.038839-05:00",
-"symbol": "NASDAQ:BKNG",
-"description": "Booking Holdings Inc. Common Stock",
-"market_cap_basic": 116967401370.87532,
-"earnings_per_share_fq": 4.66,
-"earnings_per_share_forecast_fq": 4.49315,
-"eps_surprise_percent_fq": 3.7134304441204984,
-"revenue_fq": 8893000000,
-"revenue_forecast_fq": 9546740039,
-"revenue_surprise_percent_fq": -6.8477829743908885,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
-"at": "2026-11-03T16:25:26.833413-05:00",
-"symbol": "NASDAQ:AMD",
-"description": "Advanced Micro Devices, Inc.",
-"market_cap_basic": 789954634489.0189,
-"earnings_per_share_fq": 2.09,
-"earnings_per_share_forecast_fq": 1.948682,
-"eps_surprise_percent_fq": 7.251978516761577,
-"revenue_fq": 13377000000,
-"revenue_forecast_fq": 13097528452,
-"revenue_surprise_percent_fq": 2.133773169680151,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
 "at": "2026-11-03T19:25:14.026619-05:00",
 "symbol": "NYSE:ITUB",
 "description": "Itau Unibanco Banco Holding SA",
@@ -1829,5 +1740,29 @@
 "unit": "%",
 "scale": null,
 "date": "2026-11-17T13:30:00.000Z"
+},
+{
+"kind": "recap",
+"at": "2026-11-17T16:30:20.834800-05:00",
+"symbol": "NASDAQ:NVDA",
+"description": "NVIDIA Corporation",
+"market_cap_basic": 3744819455361.964,
+"earnings_per_share_fq": 2.68,
+"earnings_per_share_forecast_fq": 2.475355,
+"eps_surprise_percent_fq": 8.267299033875956,
+"revenue_fq": 115844000000,
+"revenue_forecast_fq": 108966119146,
+"revenue_surprise_percent_fq": 6.311944398776431,
+"claims": {
+"guidance": [
+"Nvidia projects fourth-quarter revenue of $130 billion, plus or minus 3%.",
+"Q4 revenue guidance is $130.0B ±3%"
+],
+"highlight": [
+"Nvidia posted record-breaking quarterly revenue of $115.8 billion, beating analysts' expectations.",
+"revenue of $115.8 billion, 6.3% higher than the $108.9 billion predicted"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4667651:0-nvda-revenue-more-than-doubled-yoy-as-vera-rubin-ramped-and-q4-guidance-reached-130b/"
 }
 ]
