@@ -1,19 +1,5 @@
 [
 {
-"kind": "result",
-"at": "2026-11-02T22:30:22.146056-05:00",
-"id": "394028",
-"title": "RBA Interest Rate Decision",
-"period": "",
-"country": "AU",
-"actual": 4.85,
-"forecast": 4.85,
-"previous": 4.6,
-"unit": "%",
-"scale": null,
-"date": "2026-11-03T03:30:00.000Z"
-},
-{
 "kind": "regime",
 "at": "2026-11-03T07:00:23.202175-05:00",
 "heading": "🟡 Regime: Neutral (+1/4)",
@@ -1931,5 +1917,29 @@
 "heading": "🟡 Regime: Neutral (+1/4)",
 "detail": "VIX 20.4 · 10Y-2Y +0.28 · Breadth 59% · S&P above 200-day",
 "score": 62
+},
+{
+"kind": "recap",
+"at": "2026-11-17T06:25:14.761868-05:00",
+"symbol": "NYSE:HD",
+"description": "Home Depot, Inc. (The)",
+"market_cap_basic": 346707135230,
+"earnings_per_share_fq": 3.86,
+"earnings_per_share_forecast_fq": 3.836732,
+"eps_surprise_percent_fq": 0.6064536172972166,
+"revenue_fq": 43398000000,
+"revenue_forecast_fq": 42801560077,
+"revenue_surprise_percent_fq": 1.3935004283185115,
+"claims": {
+"guidance": [
+"Home Depot expects total sales growth of about 4.5% for fiscal 2026.",
+"the company now expects total sales growth of about 4.5% for the year"
+],
+"highlight": [
+"Comparable sales rose 2.2% in Q3, the strongest increase in four years.",
+"Third-quarter comparable sales, which account for store openings and closings, increased 2.2%--a figure McPhail said marked the company's best in four years"
+]
+},
+"link": "https://www.tradingview.com/news/DJN_DN20261117002452:0-home-depot-elevates-finance-chief-richard-mcphail-to-ceo/"
 }
 ]
