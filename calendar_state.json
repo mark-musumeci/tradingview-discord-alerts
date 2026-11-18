@@ -1,5 +1,5 @@
 {
-"morning_date": "2026-11-17",
+"morning_date": "2026-11-18",
 "morning_done": [],
 "posted": [
 "397194",
@@ -18,7 +18,8 @@
 "1001661350203"
 ],
 "recaps": {
-"NYSE:LOW:2026-11-18": "done"
+"NYSE:LOW:2026-11-18": "done",
+"NYSE:TGT:2026-11-18": "done"
 },
 "weekly_sent": "2026-11-13"
 }
