@@ -1,42 +1,5 @@
 [
 {
-"kind": "regime",
-"at": "2026-11-04T07:00:26.053914-05:00",
-"heading": "🟡 Regime: Neutral (+1/4)",
-"detail": "VIX 18.1 · 10Y-2Y +0.31 · Breadth 58% · S&P above 200-day",
-"score": 65
-},
-{
-"kind": "recap",
-"at": "2026-11-04T07:00:26.053914-05:00",
-"symbol": "NYSE:EMR",
-"description": "Emerson Electric Company",
-"market_cap_basic": 92812339628,
-"earnings_per_share_fq": 1.86,
-"earnings_per_share_forecast_fq": 1.851874,
-"eps_surprise_percent_fq": 0.4387987519669307,
-"revenue_fq": 5201000000,
-"revenue_forecast_fq": 5109291226,
-"revenue_surprise_percent_fq": 1.794941214807159,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
-"at": "2026-11-04T07:05:13.376448-05:00",
-"symbol": "NYSE:UBER",
-"description": "Uber Technologies, Inc.",
-"market_cap_basic": 136034504916,
-"earnings_per_share_fq": 0.88,
-"earnings_per_share_forecast_fq": 0.863652,
-"eps_surprise_percent_fq": 1.8928920444808823,
-"revenue_fq": 14766000000,
-"revenue_forecast_fq": 14659406944,
-"revenue_surprise_percent_fq": 0.7271307523366615,
-"claims": {},
-"link": null
-},
-{
 "kind": "recap",
 "at": "2026-11-04T08:10:17.649495-05:00",
 "symbol": "NYSE:MCD",
@@ -1729,5 +1692,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/DJN_DN20261118002906:0-target-raises-full-year-guidance-on-strong-3q-momentum-company-talk/"
+},
+{
+"kind": "recap",
+"at": "2026-11-18T07:50:17.429929-05:00",
+"symbol": "NYSE:TJX",
+"description": "TJX Companies, Inc. (The)",
+"market_cap_basic": 142831630486.99997,
+"earnings_per_share_fq": 1.34,
+"earnings_per_share_forecast_fq": 1.341742,
+"eps_surprise_percent_fq": -0.12983121941475412,
+"revenue_fq": 15952000000,
+"revenue_forecast_fq": 15816283881,
+"revenue_surprise_percent_fq": 0.858078421082432,
+"claims": {
+"guidance": [
+"The company expects sales momentum to accelerate during the holiday season.",
+"we are expecting sales momentum to accelerate throughout the holiday season"
+],
+"highlight": [
+"TJX reported quarterly revenue of $15.95 billion, beating the $15.84 billion estimate.",
+"quarterly revenue of $15.95 billion, above analysts' average estimate of $15.84 billion"
+]
+},
+"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L6N46Z0ZT:0-off-price-retailer-tjx-beats-quarterly-sales-estimates/"
 }
 ]
