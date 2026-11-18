@@ -1,194 +1,5 @@
 [
 {
-"kind": "result",
-"at": "2026-11-04T10:05:29.485355-05:00",
-"id": "1001659458203",
-"title": "ISM Services PMI",
-"period": "Oct. 2026",
-"country": "US",
-"actual": 54.5,
-"forecast": 54.8,
-"previous": 54.9,
-"unit": null,
-"scale": null,
-"date": "2026-11-04T15:00:00.000Z"
-},
-{
-"kind": "recap",
-"at": "2026-11-04T10:45:17.119300-05:00",
-"symbol": "NASDAQ:MDLN",
-"description": "Medline Inc.",
-"market_cap_basic": 50050913618.19917,
-"earnings_per_share_fq": 0.44,
-"earnings_per_share_forecast_fq": 0.343205,
-"eps_surprise_percent_fq": 28.203260442009885,
-"revenue_fq": 7856000000,
-"revenue_forecast_fq": 7721974771,
-"revenue_surprise_percent_fq": 1.7356341217706888,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
-"at": "2026-11-04T16:20:17.365009-05:00",
-"symbol": "NYSE:MCK",
-"description": "McKesson Corporation",
-"market_cap_basic": 124686396715.41234,
-"earnings_per_share_fq": 11.68,
-"earnings_per_share_forecast_fq": 10.718311,
-"eps_surprise_percent_fq": 8.972393131716366,
-"revenue_fq": 110957000000,
-"revenue_forecast_fq": 109895642014,
-"revenue_surprise_percent_fq": 0.9657871472872325,
-"claims": {
-"guidance": [
-"McKesson raised its FY27 adjusted EPS guidance to $45.60‑$46.40.",
-"FY27 adjusted EPS guidance was raised to $45.60-$46.40"
-],
-"highlight": [
-"Q2 revenue rose 8% to $111.0B and adjusted EPS increased 18% to $11.68.",
-"Q2 revenue rose 8% to $111.0B and adjusted EPS increased 18% to $11.68"
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4249482:0-mck-adjusted-eps-rose-18-as-fy27-guidance-increased-to-45-60-46-40/"
-},
-{
-"kind": "recap",
-"at": "2026-11-04T16:20:17.365009-05:00",
-"symbol": "NASDAQ:APP",
-"description": "Applovin Corporation",
-"market_cap_basic": 90941405357.1046,
-"earnings_per_share_fq": 4.3,
-"earnings_per_share_forecast_fq": 4.033387,
-"eps_surprise_percent_fq": 6.610151716163104,
-"revenue_fq": 2184815000,
-"revenue_forecast_fq": 2074766783,
-"revenue_surprise_percent_fq": 5.30412468050391,
-"claims": {
-"highlight": [
-"Revenue grew 55% YoY to $2.185B, while net income rose 72% to $1.439B.",
-"Q3 revenue rose 55% YoY to $2.185B, while net income from continuing operations increased 72% to $1.439B."
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3962867:0-app-q3-revenue-grew-55-with-an-84-adjusted-ebitda-margin/"
-},
-{
-"kind": "recap",
-"at": "2026-11-04T16:25:14.414913-05:00",
-"symbol": "NYSE:MSI",
-"description": "Motorola Solutions, Inc.",
-"market_cap_basic": 82248750945.73651,
-"earnings_per_share_fq": 4.69,
-"earnings_per_share_forecast_fq": 4.424225,
-"eps_surprise_percent_fq": 6.007266809441214,
-"revenue_fq": 3376000000,
-"revenue_forecast_fq": 3252454333,
-"revenue_surprise_percent_fq": 3.79853656195824,
-"claims": {
-"guidance": [
-"FY revenue, non-GAAP EPS and operating cash flow outlooks increased again.",
-"FY revenue, non-GAAP EPS and operating cash flow outlooks increased again"
-],
-"highlight": [
-"Q3 sales rose 12% and backlog reached a record $16.6B.",
-"Q3 sales rose 12% and backlog reached a record $16.6B"
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3962865:0-msi-record-demand-and-backlog-lifted-fy-guidance-despite-supply-chain-and-trade-pressures/"
-},
-{
-"kind": "recap",
-"at": "2026-11-04T16:25:14.414913-05:00",
-"symbol": "NYSE:ALL",
-"description": "Allstate Corporation (The)",
-"market_cap_basic": 68033961622.83962,
-"earnings_per_share_fq": 9.76,
-"earnings_per_share_forecast_fq": 6.889817,
-"eps_surprise_percent_fq": 41.65833432150665,
-"revenue_fq": 17348000000,
-"revenue_forecast_fq": 15873020987,
-"revenue_surprise_percent_fq": 9.29236478807662,
-"claims": {
-"guidance": [
-"Allstate plans additional capabilities for ALLIE in early 2027.",
-"ALLIE has been expanded to handle millions of service calls with additional capabilities planned for early 2027."
-],
-"highlight": [
-"Net income fell 44.5% year over year, reflecting higher catastrophe and investment losses.",
-"Net income attributable to Allstate was $2.08B, compared with $3.75B; YoY change (44.5%)."
-]
-},
-"link": "https://www.tradingview.com/news/prnewswire:e291f357c26f0:0-allstate-reports-excellent-q3-2026-results/"
-},
-{
-"kind": "recap",
-"at": "2026-11-04T16:30:20.689269-05:00",
-"symbol": "NYSE:MET",
-"description": "MetLife, Inc.",
-"market_cap_basic": 65384220006.084236,
-"earnings_per_share_fq": 2.78,
-"earnings_per_share_forecast_fq": 2.773881,
-"eps_surprise_percent_fq": 0.22059345732567426,
-"revenue_fq": 20522000000,
-"revenue_forecast_fq": 19855065228,
-"revenue_surprise_percent_fq": 3.3590157692329083,
-"claims": {
-"guidance": [
-"Management remained on track for full-year cash flow and expense targets.",
-"management remained on track for full-year cash flow and expense targets"
-],
-"highlight": [
-"Record adjusted EPS and growth across all six segments marked a strong quarter.",
-"Record adjusted EPS and growth across all six segments marked a strong quarter"
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3968381:0-met-record-adjusted-eps-and-growth-across-all-six-segments-marked-a-strong-quarter/"
-},
-{
-"kind": "recap",
-"at": "2026-11-04T16:30:20.689269-05:00",
-"symbol": "NYSE:AFL",
-"description": "AFLAC Incorporated",
-"market_cap_basic": 62818318804.32844,
-"earnings_per_share_fq": 2.43,
-"earnings_per_share_forecast_fq": 1.796402,
-"eps_surprise_percent_fq": 35.27039048052719,
-"revenue_fq": 3271000000,
-"revenue_forecast_fq": 4119023222,
-"revenue_surprise_percent_fq": -20.587968950275563,
-"claims": {
-"highlight": [
-"Adjusted EPS beat expectations while revenue fell 31% year‑over‑year.",
-"Adjusted EPS for Q3 beat analyst expectations"
-]
-},
-"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46L1EG:0-aflac-q3-revenue-misses-on-japan-segment-pressure/"
-},
-{
-"kind": "recap",
-"at": "2026-11-04T16:30:20.689269-05:00",
-"symbol": "NYSE:EW",
-"description": "Edwards Lifesciences Corporation",
-"market_cap_basic": 57276871894.836334,
-"earnings_per_share_fq": 0.8,
-"earnings_per_share_forecast_fq": 0.737584,
-"eps_surprise_percent_fq": 8.462222607865684,
-"revenue_fq": 1715500000,
-"revenue_forecast_fq": 1678011192,
-"revenue_surprise_percent_fq": 2.2341214515570407,
-"claims": {
-"guidance": [
-"FY26 sales, TAVR, TMTT and adjusted EPS guidance were raised.",
-"FY26 sales, TAVR, TMTT and adjusted EPS guidance were raised."
-],
-"highlight": [
-"Q3 sales rose 10.5% (11.2% constant currency), with TMTT up 44%.",
-"Q3 sales rose 10.5% (11.2% constant currency), with TMTT up 44%"
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:4452135:0-ew-strong-q3-growth-drove-higher-fy26-sales-tavr-tmtt-and-adjusted-eps-guidance/"
-},
-{
 "kind": "recap",
 "at": "2026-11-04T17:00:24.813228-05:00",
 "symbol": "NASDAQ:ARM",
@@ -1699,5 +1510,29 @@
 "unit": null,
 "scale": "M",
 "date": "2026-11-18T13:30:00.000Z"
+},
+{
+"kind": "recap",
+"at": "2026-11-18T16:35:17.811529-05:00",
+"symbol": "NASDAQ:PANW",
+"description": "Palo Alto Networks, Inc.",
+"market_cap_basic": 278316852152.3091,
+"earnings_per_share_fq": 1.05,
+"earnings_per_share_forecast_fq": 0.971719,
+"eps_surprise_percent_fq": 8.05592974923821,
+"revenue_fq": 3445000000,
+"revenue_forecast_fq": 3307029548,
+"revenue_surprise_percent_fq": 4.172035659114105,
+"claims": {
+"guidance": [
+"The company expects fiscal 2027 revenue of $14.52‑$14.57 billion, reflecting 26‑27% growth.",
+"raises its full-year fiscal 2027 revenue forecast to between $14.52 billion and $14.57 billion, representing 26% to 27% growth."
+],
+"highlight": [
+"First‑quarter revenue surged 39% year over year to $3.44 billion.",
+"First-quarter revenue surged 39% year over year to $3.44 billion."
+]
+},
+"link": "https://www.tradingview.com/news/DJN_DN20261118008029:0-palo-alto-networks-lifts-fiscal-2027-revenue-outlook-to-14-57-billion-company-talk/"
 }
 ]
