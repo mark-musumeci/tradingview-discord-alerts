@@ -1,51 +1,6 @@
 [
 {
 "kind": "recap",
-"at": "2026-11-03T19:25:14.026619-05:00",
-"symbol": "NYSE:ITUB",
-"description": "Itau Unibanco Banco Holding SA",
-"market_cap_basic": 82619213969.744,
-"earnings_per_share_fq": 0.20013282,
-"earnings_per_share_forecast_fq": 0.225376,
-"eps_surprise_percent_fq": -11.200473874769276,
-"revenue_fq": 8798020500,
-"revenue_forecast_fq": 9566335044,
-"revenue_surprise_percent_fq": -8.031440885837323,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
-"at": "2026-11-03T20:40:16.857291-05:00",
-"symbol": "NYSE:SU",
-"description": "Suncor Energy Inc.",
-"market_cap_basic": 88248556237.87679,
-"earnings_per_share_fq": 2.7881310000000004,
-"earnings_per_share_forecast_fq": 2.4876905715,
-"eps_surprise_percent_fq": 12.077081930605388,
-"revenue_fq": 13258019400.000002,
-"revenue_forecast_fq": 11852518591.393501,
-"revenue_surprise_percent_fq": 11.85824597336705,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
-"at": "2026-11-04T03:25:18.308985-05:00",
-"symbol": "NYSE:NVO",
-"description": "Novo Nordisk A/S",
-"market_cap_basic": 178825029828.29306,
-"earnings_per_share_fq": 0.8672793,
-"earnings_per_share_forecast_fq": 0.73102,
-"eps_surprise_percent_fq": 18.63961314327925,
-"revenue_fq": 11862554000,
-"revenue_forecast_fq": 11069822187,
-"revenue_surprise_percent_fq": 7.161197349050067,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
 "at": "2026-11-04T06:40:16.011606-05:00",
 "symbol": "NYSE:CVS",
 "description": "CVS Health Corporation",
@@ -1764,5 +1719,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4667651:0-nvda-revenue-more-than-doubled-yoy-as-vera-rubin-ramped-and-q4-guidance-reached-130b/"
+},
+{
+"kind": "recap",
+"at": "2026-11-18T06:25:14.956284-05:00",
+"symbol": "NYSE:LOW",
+"description": "Lowe's Companies, Inc.",
+"market_cap_basic": 123689972159.00002,
+"earnings_per_share_fq": 3.1,
+"earnings_per_share_forecast_fq": 2.879165,
+"eps_surprise_percent_fq": 7.67010574246353,
+"revenue_fq": 22756000000,
+"revenue_forecast_fq": 22393695908,
+"revenue_surprise_percent_fq": 1.6178843076571798,
+"claims": {
+"guidance": [
+"Lowe's projects FY 2026 revenue of $92.5 billion and adjusted EPS of $12.25.",
+"Full year EPS guidance: $ 12.25"
+],
+"highlight": [
+"Revenue rose 9.3% to $22.756 billion, surpassing last year’s $20.813 billion.",
+"The company's revenue for the period rose 9.3% to $22.756 billion from $20.813 billion last year."
+]
+},
+"link": "https://www.tradingview.com/news/dpa_afx:bb4cd7266c3ec:0-lowe-s-companies-inc-profit-climbs-in-q3/"
 }
 ]
