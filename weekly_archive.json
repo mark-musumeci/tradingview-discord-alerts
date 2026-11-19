@@ -1,246 +1,6 @@
 [
 {
 "kind": "recap",
-"at": "2026-11-05T08:05:16.897840-05:00",
-"symbol": "NYSE:COP",
-"description": "ConocoPhillips",
-"market_cap_basic": 164511163526,
-"earnings_per_share_fq": 3.27,
-"earnings_per_share_forecast_fq": 3.052776,
-"eps_surprise_percent_fq": 7.115621978160201,
-"revenue_fq": 19002742000,
-"revenue_forecast_fq": 18592932513,
-"revenue_surprise_percent_fq": 2.204114314476563,
-"claims": {
-"guidance": [
-"ConocoPhillips anticipates fourth‑quarter production of 2.32 million to 2.36 million barrels of oil equivalent per day.",
-"Looking ahead, ConocoPhillips said it anticipates fourth-quarter production of 2.32 million to 2.36 million barrels of oil equivalent per day."
-],
-"highlight": [
-"Third‑quarter profit jumped to about $4 billion, up from $1.73 billion a year earlier.",
-"posted a third-quarter profit of about $4 billion, or $3.34 a share, compared with $1.73 billion, or $1.38 a share, a year earlier"
-]
-},
-"link": "https://www.tradingview.com/news/DJN_DN20261105011433:0-conocophillips-3q-profit-rises-as-oil-prices-climb/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T09:15:19.819842-05:00",
-"symbol": "NYSE:PH",
-"description": "Parker-Hannifin Corporation",
-"market_cap_basic": 114786256129.99998,
-"earnings_per_share_fq": 8.9,
-"earnings_per_share_forecast_fq": 8.206298,
-"eps_surprise_percent_fq": 8.453287950303535,
-"revenue_fq": 5992000000,
-"revenue_forecast_fq": 5807718341,
-"revenue_surprise_percent_fq": 3.173047454781864,
-"claims": {
-"guidance": [
-"Parker Hannifin raised its FY2027 outlook, projecting 16%‑19% revenue growth and adjusted earnings of $36.45‑$37.25 per share.",
-"Adjusted earnings are projected at $36.45 to $37.25 a share"
-],
-"highlight": [
-"The order backlog reached a record $13.7 billion, giving greater visibility into future revenue.",
-"Its order backlog reached a record $13.7 billion, providing greater visibility into future revenue"
-]
-},
-"link": "https://www.tradingview.com/news/seekingalpha:d951dcb2f094b:0-parker-hannifin-shares-jump-as-earnings-beat-estimates-demand-speeds-up/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T09:15:19.819842-05:00",
-"symbol": "NYSE:SOJE",
-"description": "Southern Company (The) Series 2020C 4.20% Junior Subordinated Notes due October 15, 2060",
-"market_cap_basic": 107121809175,
-"earnings_per_share_fq": 1.94,
-"earnings_per_share_forecast_fq": 1.710938,
-"eps_surprise_percent_fq": 13.388094717634413,
-"revenue_fq": 8843000000,
-"revenue_forecast_fq": 8375038226.000001,
-"revenue_surprise_percent_fq": 5.587577768268911,
-"claims": {
-"guidance": [
-"The company is well positioned to meet growing demand in the Southeast.",
-"we believe Southern Company is well positioned for today and in the future"
-],
-"highlight": [
-"Operating revenue rose 13% to $8.84 billion, beating analyst estimates.",
-"Operating revenue climbed 13% to $8.84 billion, compared with analyst estimates of $8.38 billion"
-]
-},
-"link": "https://www.tradingview.com/news/DJN_DN20261105013321:0-southern-co-3q-revenue-climbs-on-increased-energy-demand-in-southeast-u-s/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T09:15:19.819842-05:00",
-"symbol": "NYSE:SOJD",
-"description": "Southern Company (The) Series 2020A 4.95% Junior Subordinated Notes due January 30, 2080",
-"market_cap_basic": 107121809175,
-"earnings_per_share_fq": 1.94,
-"earnings_per_share_forecast_fq": 1.710938,
-"eps_surprise_percent_fq": 13.388094717634413,
-"revenue_fq": 8843000000,
-"revenue_forecast_fq": 8375038226.000001,
-"revenue_surprise_percent_fq": 5.587577768268911,
-"claims": {
-"guidance": [
-"Southern Company is well positioned for today and in the future.",
-"we believe Southern Company is well positioned for today and in the future"
-],
-"highlight": [
-"Operating revenue climbed 13% to $8.84 billion.",
-"Operating revenue climbed 13% to $8.84 billion"
-]
-},
-"link": "https://www.tradingview.com/news/DJN_DN20261105013321:0-southern-co-3q-revenue-climbs-on-increased-energy-demand-in-southeast-u-s/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T09:15:19.819842-05:00",
-"symbol": "NYSE:SO",
-"description": "Southern Company (The)",
-"market_cap_basic": 107121809175,
-"earnings_per_share_fq": 1.94,
-"earnings_per_share_forecast_fq": 1.710938,
-"eps_surprise_percent_fq": 13.388094717634413,
-"revenue_fq": 8843000000,
-"revenue_forecast_fq": 8375038226.000001,
-"revenue_surprise_percent_fq": 5.587577768268911,
-"claims": {
-"guidance": [
-"Southern Company is well positioned for today and in the future.",
-"we believe Southern Company is well positioned for today and in the future"
-],
-"highlight": [
-"Operating revenue climbed 13% to $8.84 billion.",
-"Operating revenue climbed 13% to $8.84 billion"
-]
-},
-"link": "https://www.tradingview.com/news/DJN_DN20261105013321:0-southern-co-3q-revenue-climbs-on-increased-energy-demand-in-southeast-u-s/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T09:15:19.819842-05:00",
-"symbol": "NYSE:CNQ",
-"description": "Canadian Natural Resources Limited",
-"market_cap_basic": 102332855487.20752,
-"earnings_per_share_fq": 1.172841,
-"earnings_per_share_forecast_fq": 1.032886656,
-"eps_surprise_percent_fq": 13.549825935596166,
-"revenue_fq": 8740825800,
-"revenue_forecast_fq": 8791440072.9015,
-"revenue_surprise_percent_fq": -0.5757222079862978,
-"claims": {
-"guidance": [
-"The company plans to prioritize share repurchases as free‑cash‑flow returns shift focus.",
-"shifting the free-cash-flow return focus to share repurchases"
-],
-"highlight": [
-"Profit surged to C$3 billion, driven by higher oil prices and increased sales volumes.",
-"profit jumped in the third quarter on the back of higher prices and increased sales volumes"
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3969110:0-cnq-strong-output-and-cash-flow-with-net-debt-below-target-and-buybacks-prioritized/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T09:20:18.363799-05:00",
-"symbol": "NYSE:TRP",
-"description": "TC Energy Corporation",
-"market_cap_basic": 65235803729.49371,
-"earnings_per_share_fq": 0.6615603538414209,
-"earnings_per_share_forecast_fq": 0.6167963796,
-"eps_surprise_percent_fq": 7.2574962697496455,
-"revenue_fq": 2806871243.518389,
-"revenue_forecast_fq": 2794857996.7029004,
-"revenue_surprise_percent_fq": 0.42983388886522556,
-"claims": {
-"guidance": [
-"TC Energy expects full-year comparable EBITDA of C$11.8-$12 billion and 5%-7% annual growth through 2031.",
-"TC Energy said it is now anticipating comparable Ebitda for the full year of between C$11.8 billion and C$12 billion"
-],
-"highlight": [
-"TC Energy reported net income of C$1.03 billion, up from C$609 million a year earlier.",
-"TC Energy reported net income of C$1.03 billion, and that it plans to expand the 416-mile Coastal GasLink pipeline"
-]
-},
-"link": "https://www.tradingview.com/news/DJN_DN20261105011471:0-tc-energy-raises-guidance-after-quarterly-earning-rise-sharply/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T09:20:18.363799-05:00",
-"symbol": "NYSE:CMI",
-"description": "Cummins Inc.",
-"market_cap_basic": 64955612338,
-"earnings_per_share_fq": 8.793085,
-"earnings_per_share_forecast_fq": 8.204338,
-"eps_surprise_percent_fq": 7.1760451604992355,
-"revenue_fq": 9438000000,
-"revenue_forecast_fq": 9885153895,
-"revenue_surprise_percent_fq": -4.523489464601805,
-"claims": {
-"guidance": [
-"Cummins expects about 10% full-year revenue growth and roughly 18.2% EBITDA margin.",
-"expects revenue growth of approximately 10 percent, compared with its previous forecast of 10 percent to 13 percent"
-],
-"highlight": [
-"Profit more than doubled, rising to $1.14 billion, driven by strong power‑systems demand.",
-"profit for the third quarter more than doubled, supported by stronger demand across its businesses, particularly Power Systems"
-]
-},
-"link": "https://www.tradingview.com/news/dpa_afx:be1c0e8620ece:0-cummins-q3-profit-more-than-doubles-cuts-fy26-revenue-outlook/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T09:20:18.363799-05:00",
-"symbol": "NYSE:TRGP",
-"description": "Targa Resources, Inc.",
-"market_cap_basic": 61112839279.00001,
-"earnings_per_share_fq": 2.7634,
-"earnings_per_share_forecast_fq": 2.738923,
-"eps_surprise_percent_fq": 0.8936724398604721,
-"revenue_fq": 5598600000,
-"revenue_forecast_fq": 4767630269,
-"revenue_surprise_percent_fq": 17.429407989187343,
-"claims": {
-"guidance": [
-"FY26 EBITDA outlook is above $6 billion.",
-"FY26 EBITDA outlook is above $6 billion"
-],
-"highlight": [
-"Adjusted EBITDA rose 18% YoY to $1.50 billion.",
-"Adjusted EBITDA rose 18% YoY to $1.50 billion"
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4262270:0-trgp-adjusted-ebitda-rose-18-yoy-fy26-outlook-exceeds-6-billion/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T09:20:18.363799-05:00",
-"symbol": "NYSE:SRE",
-"description": "DBA Sempra",
-"market_cap_basic": 54208343381,
-"earnings_per_share_fq": 1.4,
-"earnings_per_share_forecast_fq": 1.224685,
-"eps_surprise_percent_fq": 14.31510959961132,
-"revenue_fq": 3191000000,
-"revenue_forecast_fq": 3312966332,
-"revenue_surprise_percent_fq": -3.681484198071229,
-"claims": {
-"guidance": [
-"Sempra expects to achieve the high end of its 2026 adjusted earnings guidance.",
-"results support guidance at the high end of the 2026 range"
-],
-"highlight": [
-"Adjusted EPS of $1.40 beat the average analyst target of $1.22.",
-"adjusted earnings of $1.40 a share, compared with the average analyst target of $1.22 a share"
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4257002:0-sre-q3-adjusted-eps-rose-to-1-40-as-utility-growth-and-asset-sale-proceeds-support-the-outlook/"
-},
-{
-"kind": "recap",
 "at": "2026-11-05T16:20:18.540796-05:00",
 "symbol": "NASDAQ:ABNB",
 "description": "Airbnb, Inc.",
@@ -1265,5 +1025,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/DJN_DN20261119004303:0-walmart-sales-rise-powered-by-e-commerce-gains-wsj/"
+},
+{
+"kind": "recap",
+"at": "2026-11-19T16:10:17.448651-05:00",
+"symbol": "NASDAQ:ROST",
+"description": "Ross Stores, Inc.",
+"market_cap_basic": 70493720904.72061,
+"earnings_per_share_fq": 1.91,
+"earnings_per_share_forecast_fq": 1.871348,
+"eps_surprise_percent_fq": 2.0654629710775287,
+"revenue_fq": 6255954000,
+"revenue_forecast_fq": 6248088836,
+"revenue_surprise_percent_fq": 0.1258811167133668,
+"claims": {
+"guidance": [
+"The company raised its FY2026 EPS guidance to $8.75–$8.84.",
+"FY2026 EPS guidance increased to $8.75–$8.84, including the tariff-refund benefit."
+],
+"highlight": [
+"Q3 sales rose 12% and comparable sales grew 8% driven by traffic.",
+"Q3 sales rose 12% and comparable sales grew 8%, led by traffic;"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:4074568:0-rost-traffic-led-q3-growth-lifted-eps-to-1-91-and-raised-fy2026-guidance/"
 }
 ]
