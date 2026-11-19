@@ -1,151 +1,6 @@
 [
 {
 "kind": "recap",
-"at": "2026-11-04T17:00:24.813228-05:00",
-"symbol": "NASDAQ:ARM",
-"description": "Arm Holdings plc",
-"market_cap_basic": 215460563107,
-"earnings_per_share_fq": 0.52,
-"earnings_per_share_forecast_fq": 0.475756,
-"eps_surprise_percent_fq": 9.299725069153096,
-"revenue_fq": 1443000000,
-"revenue_forecast_fq": 1378265034,
-"revenue_surprise_percent_fq": 4.696844540278746,
-"claims": {
-"guidance": [
-"Arm expects third‑quarter revenue around $1.54 billion and adjusted earnings of about 56 cents per share.",
-"In the current third quarter, Arm expects revenue of $1.54 billion, plus or minus $50 million."
-],
-"highlight": [
-"Revenue rose 27% to $1.44 billion, beating analysts' estimate.",
-"Revenue rose 27% to $1.44 billion."
-]
-},
-"link": "https://www.tradingview.com/news/DJN_DN20261104017770:0-arm-holdings-2q-sales-climb-27-on-ai-demand/"
-},
-{
-"kind": "recap",
-"at": "2026-11-04T17:00:24.813228-05:00",
-"symbol": "NASDAQ:QCOM",
-"description": "QUALCOMM Incorporated",
-"market_cap_basic": 184939110877.59222,
-"earnings_per_share_fq": 2.17,
-"earnings_per_share_forecast_fq": 2.162307,
-"eps_surprise_percent_fq": 0.35577741736024193,
-"revenue_fq": 10442000000,
-"revenue_forecast_fq": 10117753688,
-"revenue_surprise_percent_fq": 3.204726286078373,
-"claims": {
-"guidance": [
-"Qualcomm expects FY2027 Q1 adjusted earnings around $2.25 per share with revenue $10.4‑$11.2 billion.",
-"expects adjusted earnings of $2.25 a share, plus or minus 10 cents, on revenue between $10.4 billion and $11.2 billion."
-],
-"highlight": [
-"Automotive revenue surged 89% to a record $1.99 billion.",
-"Within QCT, automotive revenue surged 89% to a record $1.99 billion"
-]
-},
-"link": "https://www.tradingview.com/news/DJN_DN20261104003693:0-qualcomm-s-stock-falls-as-supply-costs-eat-into-profit-outlook-barrons-com/"
-},
-{
-"kind": "recap",
-"at": "2026-11-04T17:30:23.561489-05:00",
-"symbol": "NASDAQ:MELI",
-"description": "MercadoLibre, Inc.",
-"market_cap_basic": 88206350601.03438,
-"earnings_per_share_fq": 9.4467,
-"earnings_per_share_forecast_fq": 9.270462,
-"eps_surprise_percent_fq": 1.9010703026451075,
-"revenue_fq": 10750000000,
-"revenue_forecast_fq": 10690528627,
-"revenue_surprise_percent_fq": 0.5562996468649745,
-"claims": {
-"guidance": [
-"The company expects continued leadership as investments drive scale and efficiency.",
-"giving us room to keep investing"
-],
-"highlight": [
-"Revenue surged 45% YoY, highlighting strong growth momentum.",
-"Net revenue and financial income grew 45% YoY, reaching $10.75 billion"
-]
-},
-"link": "https://www.tradingview.com/news/business_wire:0c103a991278e:0-mercado-libre-revenue-reaches-10-75-billion-in-q3-2026-up-45-year-over-year/"
-},
-{
-"kind": "recap",
-"at": "2026-11-04T17:30:23.561489-05:00",
-"symbol": "NYSE:MFC",
-"description": "Manulife Financial Corporation",
-"market_cap_basic": 76308878502.86562,
-"earnings_per_share_fq": 0.872462879705635,
-"earnings_per_share_forecast_fq": 0.8274091266000001,
-"eps_surprise_percent_fq": 5.445160278902205,
-"revenue_fq": null,
-"revenue_forecast_fq": null,
-"revenue_surprise_percent_fq": null,
-"claims": {
-"highlight": [
-"Record core earnings reached $2.1B, with 17.8% core ROE and stronger Asia results.",
-"Record core earnings reached $2.1B, with 17.8% core ROE and stronger Asia results."
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3687702:0-mfc-record-core-earnings-and-17-8-core-roe-offset-market-driven-pressure-on-net-income/"
-},
-{
-"kind": "result",
-"at": "2026-11-04T19:40:17.108860-05:00",
-"id": "1001680887601",
-"title": "Balance of Trade",
-"period": "Sep. 2026",
-"country": "AU",
-"actual": 2.826,
-"forecast": 0.81,
-"previous": 0.184,
-"unit": "A$",
-"scale": "B",
-"date": "2026-11-05T00:30:00.000Z"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T00:35:14.116616-05:00",
-"symbol": "NYSE:TM",
-"description": "Toyota Motor Corporation",
-"market_cap_basic": 227579314128.38007,
-"earnings_per_share_fq": 4.1201715,
-"earnings_per_share_forecast_fq": 3.369246,
-"eps_surprise_percent_fq": 22.287642398328874,
-"revenue_fq": 84808516000,
-"revenue_forecast_fq": 84743268191,
-"revenue_surprise_percent_fq": 0.07699468098509035,
-"claims": {
-"guidance": [
-"Toyota expects operating profit of 3.9 trillion yen, a 15% increase over its prior forecast.",
-"now expects operating profit of 3.9 trillion yen ($24.6 billion) for the year ending March, up from its previous forecast of 3.4 trillion yen."
-],
-"highlight": [
-"Operating profit rose 34% in the July‑September quarter to 1.13 trillion yen.",
-"Operating profit for the July-September quarter jumped 34% to 1.13 trillion yen."
-]
-},
-"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46M050:0-toyota-posts-first-profit-rise-in-six-quarters-lifts-annual-outlook/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T00:35:14.116616-05:00",
-"symbol": "NASDAQ:KMB",
-"description": "Kimberly-Clark Corporation",
-"market_cap_basic": 66757883328.57964,
-"earnings_per_share_fq": 1.7,
-"earnings_per_share_forecast_fq": 1.65271,
-"eps_surprise_percent_fq": 2.861361037326576,
-"revenue_fq": 4134000000,
-"revenue_forecast_fq": 4126463833,
-"revenue_surprise_percent_fq": 0.1826301478697584,
-"claims": {},
-"link": null
-},
-{
-"kind": "recap",
 "at": "2026-11-05T04:30:21.887830-05:00",
 "symbol": "NYSE:SONY",
 "description": "Sony Group Corporation",
@@ -1534,5 +1389,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/DJN_DN20261118008029:0-palo-alto-networks-lifts-fiscal-2027-revenue-outlook-to-14-57-billion-company-talk/"
+},
+{
+"kind": "recap",
+"at": "2026-11-19T04:00:22.988894-05:00",
+"symbol": "NASDAQ:NTES",
+"description": "NetEase, Inc.",
+"market_cap_basic": 76408756436.38184,
+"earnings_per_share_fq": 2.118800325458792,
+"earnings_per_share_forecast_fq": 2.43054013181,
+"eps_surprise_percent_fq": -12.825947708958754,
+"revenue_fq": 4152968060.18018,
+"revenue_forecast_fq": 4500992649.302441,
+"revenue_surprise_percent_fq": -7.732174127771506,
+"claims": {
+"guidance": [
+"NetEase says it remains focused on expanding its global gaming portfolio and new title launches.",
+"NetEase says it remains focused on expanding its global gaming portfolio and new title launches"
+],
+"highlight": [
+"Revenue fell 1.8% year‑over‑year to RMB27.852 billion.",
+"The company's revenue for the period fell 1.8% to RMB27.852 billion from RMB28.359 billion last year"
+]
+},
+"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N4700D4:0-china-s-netease-q3-revenue-profit-fall/"
 }
 ]
