@@ -1,149 +1,5 @@
 [
 {
-"kind": "recap",
-"at": "2026-11-05T06:20:17.565344-05:00",
-"symbol": "NYSE:DUK",
-"description": "Duke Energy Corporation (Holding Company)",
-"market_cap_basic": 101041606470,
-"earnings_per_share_fq": 1.99,
-"earnings_per_share_forecast_fq": 1.864483,
-"eps_surprise_percent_fq": 6.732000238135726,
-"revenue_fq": 9104000000,
-"revenue_forecast_fq": 8908651702,
-"revenue_surprise_percent_fq": 2.192793079520037,
-"claims": {
-"guidance": [
-"Duke Energy expects 2026 adjusted EPS near the top of its $6.70‑$6.80 range.",
-"Company expects 2026 results near top end of guidance range"
-],
-"highlight": [
-"Infrastructure investment recovery and favorable weather were the primary drivers of the higher Q3 results.",
-"Higher Q3 results were primarily driven by recovery of infrastructure investments"
-]
-},
-"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46M0I2:0-duke-energy-q3-adjusted-eps-beats-estimates/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T06:20:17.565344-05:00",
-"symbol": "NYSE:DUKU",
-"description": "Duke Energy Corporation Corporate",
-"market_cap_basic": 101041606470,
-"earnings_per_share_fq": 1.99,
-"earnings_per_share_forecast_fq": 1.864483,
-"eps_surprise_percent_fq": 6.732000238135726,
-"revenue_fq": 9104000000,
-"revenue_forecast_fq": 8908651702,
-"revenue_surprise_percent_fq": 2.192793079520037,
-"claims": {
-"guidance": [
-"Company expects 2026 results near top end of guidance range.",
-"Company expects 2026 results near top end of guidance range"
-],
-"highlight": [
-"Infrastructure investment recovery and favorable weather drove higher Q3 results.",
-"Higher results driven by infrastructure investment recovery and favorable weather"
-]
-},
-"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46M0I2:0-duke-energy-q3-adjusted-eps-beats-estimates/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T06:25:25.815905-05:00",
-"symbol": "NYSE:CI",
-"description": "The Cigna Group",
-"market_cap_basic": 80701694832,
-"earnings_per_share_fq": 7.98,
-"earnings_per_share_forecast_fq": 7.521274,
-"eps_surprise_percent_fq": 6.09904651791705,
-"revenue_fq": 73700000000,
-"revenue_forecast_fq": 72635293977,
-"revenue_surprise_percent_fq": 1.4658246214810389,
-"claims": {
-"guidance": [
-"Cigna expects adjusted income from operations of at least $30.60 per share in 2026.",
-"raised its 2026 adjusted income from operations outlook to at least $30.60 per share."
-],
-"highlight": [
-"Revenue growth was driven by Evernorth Health Services' 6% increase year over year.",
-"Evernorth Health Services’ adjusted revenue increased 6% year over year."
-]
-},
-"link": "https://www.tradingview.com/news/tradingview:41abd57f858ff:0-cigna-group-reports-q3-2026-revenue-growth-raises-full-year-adjusted-eps-outlook/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T06:25:25.815905-05:00",
-"symbol": "NYSE:APD",
-"description": "Air Products and Chemicals, Inc.",
-"market_cap_basic": 71007734379,
-"earnings_per_share_fq": 3.61,
-"earnings_per_share_forecast_fq": 3.611309,
-"eps_surprise_percent_fq": -0.03624724442023667,
-"revenue_fq": 3555600000,
-"revenue_forecast_fq": 3334276037,
-"revenue_surprise_percent_fq": 6.637841634705663,
-"claims": {
-"guidance": [
-"The company expects fiscal 2027 adjusted EPS of $14.15 to $14.50.",
-"The company expects fiscal 2027 adjusted EPS of $14.15 to $14.50."
-],
-"highlight": [
-"The company reported more than $2.0 billion in new electronics wins, expanding its industrial gas project backlog.",
-"The company reported more than $2.0 billion in new electronics wins, expanding its industrial gas project backlog."
-]
-},
-"link": "https://www.tradingview.com/news/tradingview:43ef70831605a:0-air-products-reports-fy2026-adjusted-eps-of-13-45-sets-fy2027-outlook/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T06:40:18.122211-05:00",
-"symbol": "NYSE:BDX",
-"description": "Becton, Dickinson and Company",
-"market_cap_basic": 56980597512.00001,
-"earnings_per_share_fq": 4.15,
-"earnings_per_share_forecast_fq": 4.067765,
-"eps_surprise_percent_fq": 2.021626126386375,
-"revenue_fq": 5274000000,
-"revenue_forecast_fq": 5113399207,
-"revenue_surprise_percent_fq": 3.1407833908243497,
-"claims": {
-"guidance": [
-"Guidance expects low‑single‑digit revenue growth and adjusted EPS of $13.10‑$13.30 despite a ~200 bps Alaris headwind.",
-"low-single-digit FXN revenue growth and adjusted EPS of $13.10–$13.30, with an ~200 bps Alaris headwind"
-],
-"highlight": [
-"Free cash flow surged 42% to $2.933 billion in FY26.",
-"free cash flow rose 42% to $2.933B"
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4251983:0-bdx-fy26-free-cash-flow-surged-42-fy27-guidance-factors-in-a-200-bps-alaris-headwind/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T06:55:14.619458-05:00",
-"symbol": "NYSE:CAH",
-"description": "Cardinal Health, Inc.",
-"market_cap_basic": 60652336605,
-"earnings_per_share_fq": 3.26,
-"earnings_per_share_forecast_fq": 2.944739,
-"eps_surprise_percent_fq": 10.705906363857698,
-"revenue_fq": 67513000000,
-"revenue_forecast_fq": 66668978948,
-"revenue_surprise_percent_fq": 1.2659876682051987,
-"claims": {
-"guidance": [
-"Cardinal Health raised its FY27 non‑GAAP EPS guidance to $12.80‑$13.00.",
-"Cardinal Health raises FY27 non-GAAP EPS guidance to $12.80-$13.00, from $12.40-$12.60"
-],
-"highlight": [
-"Q1 revenue grew 5% to $67.5 billion, and adjusted EPS jumped 28% to $3.26.",
-"Q1 revenue rose 5% to $67.5B, while non-GAAP diluted EPS increased 28% to $3.26"
-]
-},
-"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L2N46M0KX:0-cardinal-health-beats-q1-revenue-adjusted-eps-estimates-raises-outlook/"
-},
-{
 "kind": "regime",
 "at": "2026-11-05T07:00:25.381042-05:00",
 "heading": "🟢 Regime: Risk-on (+3/4)",
@@ -1389,5 +1245,12 @@
 ]
 },
 "link": "https://www.tradingview.com/news/DJN_DN20261119003381:0-alibaba-earnings-rebound-sharply-as-ai-profitability-improves/"
+},
+{
+"kind": "regime",
+"at": "2026-11-19T07:00:24.411379-05:00",
+"heading": "🟡 Regime: Neutral (+0/4)",
+"detail": "VIX 22.1 · 10Y-2Y +0.27 · Breadth 53% · S&P below 50 & 200-day",
+"score": 53
 }
 ]
