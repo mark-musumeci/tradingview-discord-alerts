@@ -1049,5 +1049,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:4074568:0-rost-traffic-led-q3-growth-lifted-eps-to-1-91-and-raised-fy2026-guidance/"
+},
+{
+"kind": "recap",
+"at": "2026-11-19T16:15:17.466456-05:00",
+"symbol": "NASDAQ:INTU",
+"description": "Intuit Inc.",
+"market_cap_basic": 82848499791.1927,
+"earnings_per_share_fq": 2.91,
+"earnings_per_share_forecast_fq": 2.463312,
+"eps_surprise_percent_fq": 18.133634716186986,
+"revenue_fq": 4354000000,
+"revenue_forecast_fq": 4304817983,
+"revenue_surprise_percent_fq": 1.1424877240854994,
+"claims": {
+"guidance": [
+"Intuit expects Q2 revenue below estimates and maintains FY27 non-GAAP EPS guidance.",
+"Intuit expects Q2 revenue of $4.93 bln to $4.95 bln, vs analysts' estimate of $5.11 bln"
+],
+"highlight": [
+"QuickBooks Online Accounting revenue rose 19% to $1.4 billion, driven by higher prices and customer growth.",
+"QuickBooks Online Accounting revenue rose 19% to $1.4 bln, driven by higher effective prices, mix shift and customer growth"
+]
+},
+"link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L6N4701BZ:0-intuit-forecasts-q2-revenue-below-estimates-despite-q1-beat-shares-slump/"
 }
 ]
