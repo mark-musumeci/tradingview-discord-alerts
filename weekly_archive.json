@@ -1,157 +1,5 @@
 [
 {
-"kind": "recap",
-"at": "2026-11-05T16:20:18.540796-05:00",
-"symbol": "NASDAQ:ABNB",
-"description": "Airbnb, Inc.",
-"market_cap_basic": 101871407900.84196,
-"earnings_per_share_fq": 3.16,
-"earnings_per_share_forecast_fq": 2.851943,
-"eps_surprise_percent_fq": 10.801653469231336,
-"revenue_fq": 4869000000,
-"revenue_forecast_fq": 4746918200,
-"revenue_surprise_percent_fq": 2.57181174935772,
-"claims": {
-"highlight": [
-"Revenue rose 19% to $4.87 billion.",
-"Revenue rose 19% to $4.87 billion"
-]
-},
-"link": "https://www.tradingview.com/news/DJN_DN20261105022902:0-airbnb-raises-outlook-as-it-remains-insulated-from-global-conflicts/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T16:20:18.540796-05:00",
-"symbol": "NYSE:SPG",
-"description": "Simon Property Group, Inc.",
-"market_cap_basic": 73300595422.34004,
-"earnings_per_share_fq": 1.54,
-"earnings_per_share_forecast_fq": 1.687318,
-"eps_surprise_percent_fq": -8.730897198986797,
-"revenue_fq": 1814556000,
-"revenue_forecast_fq": 1632056447,
-"revenue_surprise_percent_fq": 11.182183884354338,
-"claims": {
-"guidance": [
-"Guidance for FY 2026 FFO is $13.30–$13.40 per share.",
-"FY 2026 guidance increased to $13.30–$13.40."
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3992300:0-spg-real-estate-ffo-rose-4-7-as-occupancy-rents-and-retailer-sales-strengthened/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T16:30:21.858522-05:00",
-"symbol": "NYSE:EOG",
-"description": "EOG Resources, Inc.",
-"market_cap_basic": 75999030875.57283,
-"earnings_per_share_fq": 4.87,
-"earnings_per_share_forecast_fq": 4.468897,
-"eps_surprise_percent_fq": 8.975436220615512,
-"revenue_fq": 8549000000,
-"revenue_forecast_fq": 7257345649,
-"revenue_surprise_percent_fq": 17.797889386431233,
-"claims": {
-"guidance": [
-"EOG expects FY 2026 production to grow and capital spending of $6.3‑$6.7 billion.",
-"FY 2026 production growth and $6.3B–$6.7B capital spending are expected"
-],
-"highlight": [
-"Q3 revenue rose 46% year‑over‑year to $8.55 billion.",
-"Q3 revenue rose 46% YoY to $8.549B"
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3961092:0-eog-higher-prices-and-output-drove-q3-revenue-up-46-with-fy-production-growth-still-expected/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T16:30:21.858522-05:00",
-"symbol": "NASDAQ:NTRA",
-"description": "Natera, Inc.",
-"market_cap_basic": 52433881310.67448,
-"earnings_per_share_fq": -0.42,
-"earnings_per_share_forecast_fq": -0.281242,
-"eps_surprise_percent_fq": -49.337581157864044,
-"revenue_fq": 793981000,
-"revenue_forecast_fq": 707539119,
-"revenue_surprise_percent_fq": 12.217258195161362,
-"claims": {
-"guidance": [
-"Revenue guidance raised to $3.005-$3.035 billion for FY 2026.",
-"FY26 revenue guidance increased to $3.005B-$3.035B"
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4247925:0-ntra-q3-revenue-rose-34-and-fy26-revenue-guidance-increased-by-140m-at-midpoint/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T16:40:18.703621-05:00",
-"symbol": "NASDAQ:MNST",
-"description": "Monster Beverage Corporation",
-"market_cap_basic": 93701445575.81929,
-"earnings_per_share_fq": 0.3,
-"earnings_per_share_forecast_fq": 0.299108,
-"eps_surprise_percent_fq": 0.2982200409216751,
-"revenue_fq": 2563053000,
-"revenue_forecast_fq": 2493087545,
-"revenue_surprise_percent_fq": 2.8063777840581206,
-"claims": {
-"guidance": [
-"The company said it continued to increase marketing investments across social, digital, and media platforms to support existing products and new launches.",
-"The company said it continued to increase marketing investments across social, digital, and media platforms to support existing products and new launches."
-]
-},
-"link": "https://www.tradingview.com/news/seekingalpha:6776ee61d094b:0-monster-beverage-shares-slip-after-q3-results-as-margin-pressure-offsets-sales-growth/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T17:15:17.648611-05:00",
-"symbol": "NYSE:NET",
-"description": "Cloudflare, Inc.",
-"market_cap_basic": 87065046585.73924,
-"earnings_per_share_fq": 0.38,
-"earnings_per_share_forecast_fq": 0.342409,
-"eps_surprise_percent_fq": 10.978391339012697,
-"revenue_fq": 782513000,
-"revenue_forecast_fq": 737160594,
-"revenue_surprise_percent_fq": 6.152310143697128,
-"claims": {
-"guidance": [
-"Cloudflare raised its full-year revenue guidance to about $2.96 billion and EPS guidance to $1.35.",
-"It raised its revenue projection to $2.96B from $2.865B"
-],
-"highlight": [
-"Revenue jumped 39% year‑over‑year to $782.5 million, beating estimates.",
-"Revenue for the third quarter increased 39% year over year to $782.5M, which was more than the $739.7M estimate"
-]
-},
-"link": "https://www.tradingview.com/news/seekingalpha:6b174c59c094b:0-cloudflare-catapults-as-q3-revenue-surges-39-raises-full-year-guidance/"
-},
-{
-"kind": "recap",
-"at": "2026-11-05T17:24:11.277644-05:00",
-"symbol": "NYSE:WPM",
-"description": "Wheaton Precious Metals Corp",
-"market_cap_basic": 60158028643.47412,
-"earnings_per_share_fq": 0.901,
-"earnings_per_share_forecast_fq": 0.887441,
-"eps_surprise_percent_fq": 1.527876219376836,
-"revenue_fq": 771734000,
-"revenue_forecast_fq": 787101178,
-"revenue_surprise_percent_fq": -1.9523764453062475,
-"claims": {
-"guidance": [
-"FY2026 production guidance remains 860–940K GEOs, targeting 1.2M GEOs annually.",
-"FY2026 guidance remains 860–940K GEOs, with a long-term target of 1.2M GEOs annually."
-],
-"highlight": [
-"Q3 cash flow rose 68% YoY.",
-"Q3 cash flow rose 68% YoY"
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4251785:0-wpm-q3-cash-flow-rose-68-yoy-as-fy2026-production-guidance-remained-on-track/"
-},
-{
 "kind": "regime",
 "at": "2026-11-06T07:00:26.917915-05:00",
 "heading": "🟡 Regime: Neutral (+0/4)",
@@ -1073,5 +921,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/reuters.com,2026:newsml_L6N4701BZ:0-intuit-forecasts-q2-revenue-below-estimates-despite-q1-beat-shares-slump/"
+},
+{
+"kind": "recap",
+"at": "2026-11-19T22:00:22.401047-05:00",
+"symbol": "NASDAQ:PDD",
+"description": "PDD Holdings Inc.",
+"market_cap_basic": 110242051638,
+"earnings_per_share_fq": 3.118246008095492,
+"earnings_per_share_forecast_fq": 2.9389870028800003,
+"eps_surprise_percent_fq": 6.099346646985184,
+"revenue_fq": 16047048598.959724,
+"revenue_forecast_fq": 16916314153.2995,
+"revenue_surprise_percent_fq": -5.138622671950238,
+"claims": {
+"guidance": [
+"PDD aims to sustain rally by keeping marketing spend low and expanding logistics.",
+"If the marketing bill also stays near 23% of sales, PDD would be making progress on both fronts."
+],
+"highlight": [
+"The company cut its sales and marketing spend by 5 billion yuan, boosting margins despite flat revenue.",
+"PDD spent a whopping 5 billion yuan less on sales and marketing than it did a year earlier, even as revenue held steady."
+]
+},
+"link": "https://www.tradingview.com/news/invezz:d904b7988094b:0-temu-owner-just-cut-its-marketing-bill-stock-is-soaring/"
 }
 ]
