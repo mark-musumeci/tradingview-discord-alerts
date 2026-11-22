@@ -2,7 +2,7 @@
 "day": "2026-11-22",
 "first_run": 5680,
 "failed": 0,
-"last_run": 1795350317.7546022,
+"last_run": 1795352423.5221725,
 "issues": {
 "substack": {
 "count": 256,
@@ -11,7 +11,7 @@
 "last_seen": 1795349718.3997788
 }
 },
-"summary_day": "2026-11-21",
+"summary_day": "2026-11-22",
 "yesterday": {
 "runs": 292,
 "failed": 0
