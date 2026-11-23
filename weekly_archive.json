@@ -1,30 +1,6 @@
 [
 {
 "kind": "recap",
-"at": "2026-11-09T09:55:15.760573-05:00",
-"symbol": "NYSE:FERG",
-"description": "Ferguson Enterprises Inc.",
-"market_cap_basic": 50210651007.10976,
-"earnings_per_share_fq": 3.43,
-"earnings_per_share_forecast_fq": 3.307055,
-"eps_surprise_percent_fq": 3.7176581580892996,
-"revenue_fq": 9026000000,
-"revenue_forecast_fq": 8740682985,
-"revenue_surprise_percent_fq": 3.2642416558252516,
-"claims": {
-"guidance": [
-"The company raised its fiscal 2026 net sales growth guidance to around 7% and expects adjusted operating margin of 9.6%‑9.8%.",
-"Calendar 2026 sales growth guidance was raised to ~7%, while leverage stood at 1.7x"
-],
-"highlight": [
-"Adjusted EBITDA grew 9% to $1.028 billion, reflecting strong quarterly performance.",
-"Adjusted EBITDA grew 9 percent to $1.028 billion from $943 million last year"
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4247519:0-ferg-q3-sales-rose-9-5-as-organic-growth-and-acquisitions-lifted-adjusted-eps-7-9/"
-},
-{
-"kind": "recap",
 "at": "2026-11-09T16:45:19.882503-05:00",
 "symbol": "NYSE:OXY",
 "description": "Occidental Petroleum Corporation",
@@ -787,5 +763,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/DJN_DN20261123003820:0-crowdstrike-zscaler-post-higher-revenue-as-ai-security-demand-booms-update/"
+},
+{
+"kind": "recap",
+"at": "2026-11-23T16:20:17.781542-05:00",
+"symbol": "NYSE:HPE",
+"description": "Hewlett Packard Enterprise Company",
+"market_cap_basic": 63744855696.87657,
+"earnings_per_share_fq": 1.43,
+"earnings_per_share_forecast_fq": 1.282112,
+"eps_surprise_percent_fq": 11.534717715768982,
+"revenue_fq": 14547000000,
+"revenue_forecast_fq": 14473875734,
+"revenue_surprise_percent_fq": 0.5052155161746119,
+"claims": {
+"guidance": [
+"HPE raised its FY27 revenue guidance to $59.4‑$63.1 billion and expects adjusted earnings $5.05‑$5.35 per share.",
+"adjusted earnings to fall within a range of $5.05 to $5.35 per share"
+],
+"highlight": [
+"Revenue jumped 50% YoY to $14.5 billion, with Cloud & AI revenue up 68.6%.",
+"revenue rose 50% year-over-year to come in at $14.5B"
+]
+},
+"link": "https://www.tradingview.com/news/seekingalpha:7a91f50ac094b:0-hpe-falls-even-as-q4-results-guidance-top-estimates-by-a-wide-margin/"
 }
 ]
