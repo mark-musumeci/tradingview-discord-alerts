@@ -1,29 +1,5 @@
 [
 {
-"kind": "recap",
-"at": "2026-11-10T06:40:18.244786-05:00",
-"symbol": "NYSE:TDG",
-"description": "Transdigm Group Inc.",
-"market_cap_basic": 67373789428.00001,
-"earnings_per_share_fq": 12.44,
-"earnings_per_share_forecast_fq": 12.208608,
-"eps_surprise_percent_fq": 1.8953184507193581,
-"revenue_fq": 2988000000,
-"revenue_forecast_fq": 2945670386,
-"revenue_surprise_percent_fq": 1.4370112216621918,
-"claims": {
-"guidance": [
-"FY27 guidance targets 14% midpoint sales growth.",
-"FY27 guidance targets 14% midpoint sales growth"
-],
-"highlight": [
-"Q4 FY26 sales rose 23% and EBITDA As Defined rose 20%.",
-"Q4 FY26 sales rose 23% and EBITDA As Defined rose 20%"
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:4553588:0-tdg-fy26-sales-rose-20-fy27-midpoint-guidance-calls-for-14-revenue-growth/"
-},
-{
 "kind": "regime",
 "at": "2026-11-10T07:00:27.873440-05:00",
 "heading": "🟡 Regime: Neutral (+1/4)",
@@ -773,5 +749,12 @@
 ]
 },
 "link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4248286:0-mdt-broad-based-organic-growth-and-reiterated-fy27-guidance-cardiovascular-led-at-10-4/"
+},
+{
+"kind": "regime",
+"at": "2026-11-24T07:00:26.626926-05:00",
+"heading": "🟡 Regime: Neutral (-1/4)",
+"detail": "VIX 28.4 · 10Y-2Y +0.25 · Breadth 50% · S&P below 50 & 200-day",
+"score": 43
 }
 ]
