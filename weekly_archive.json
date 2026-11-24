@@ -1,12 +1,5 @@
 [
 {
-"kind": "regime",
-"at": "2026-11-10T07:00:27.873440-05:00",
-"heading": "🟡 Regime: Neutral (+1/4)",
-"detail": "VIX 20.0 · 10Y-2Y +0.28 · Breadth 59% · S&P above 200-day",
-"score": 63
-},
-{
 "kind": "result",
 "at": "2026-11-10T08:35:15.670701-05:00",
 "id": "1001660738401",
@@ -756,5 +749,29 @@
 "heading": "🟡 Regime: Neutral (-1/4)",
 "detail": "VIX 28.4 · 10Y-2Y +0.25 · Breadth 50% · S&P below 50 & 200-day",
 "score": 43
+},
+{
+"kind": "recap",
+"at": "2026-11-24T07:20:17.518030-05:00",
+"symbol": "NASDAQ:ADI",
+"description": "Analog Devices, Inc.",
+"market_cap_basic": 183529168053,
+"earnings_per_share_fq": 4.06,
+"earnings_per_share_forecast_fq": 3.896064,
+"eps_surprise_percent_fq": 4.207733753860297,
+"revenue_fq": 4373420000,
+"revenue_forecast_fq": 4328958223,
+"revenue_surprise_percent_fq": 1.0270779875807547,
+"claims": {
+"guidance": [
+"Analog Devices forecasts Q1 2027 revenue of $4.4 billion and adjusted EPS of $3.82.",
+"For fiscal 2027’s first quarter, the company forecasts revenue of $4.4 billion, with adjusted EPS of $3.82."
+],
+"highlight": [
+"Communications revenue grew 81% and Industrial revenue grew 55% in the fourth quarter.",
+"Fourth-quarter end-market revenue growth was strongest in Communications, up 81% year over year, and Industrial, up 55%"
+]
+},
+"link": "https://www.tradingview.com/news/tradingview:8269a72a463e7:0-analog-devices-reports-record-fy2026-revenue-of-15-2-billion-up-38/"
 }
 ]
