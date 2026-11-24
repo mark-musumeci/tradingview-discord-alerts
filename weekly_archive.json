@@ -1,44 +1,6 @@
 [
 {
 "kind": "recap",
-"at": "2026-11-09T16:45:19.882503-05:00",
-"symbol": "NYSE:OXY",
-"description": "Occidental Petroleum Corporation",
-"market_cap_basic": 55739781930.36963,
-"earnings_per_share_fq": 1.91,
-"earnings_per_share_forecast_fq": 1.458322,
-"eps_surprise_percent_fq": 30.972446414440714,
-"revenue_fq": 6567000000,
-"revenue_forecast_fq": 6819715798,
-"revenue_surprise_percent_fq": -3.7056646564965843,
-"claims": {
-"guidance": [
-"Occidental aims to add over $4.0 billion annual sustainable cash flow by 2030.",
-"Management said Occidental is advancing a plan to add more than $4.0 billion in annual sustainable cash flow by 2030."
-],
-"highlight": [
-"Adjusted EPS of $1.91 beat expectations of $1.46.",
-"adjusted profit of $1.91 per share for the three months ended September 30, compared with expectations of $1.46"
-]
-},
-"link": "https://www.tradingview.com/news/tradingview:f8935a4b7a219:0-occidental-reports-1-61-eps-and-2-8-billion-free-cash-flow-in-q3-2026/"
-},
-{
-"kind": "result",
-"at": "2026-11-09T22:45:19.112552-05:00",
-"id": "1001669568402",
-"title": "NAB Business Confidence",
-"period": "Oct. 2026",
-"country": "AU",
-"actual": -15,
-"forecast": null,
-"previous": -14,
-"unit": null,
-"scale": null,
-"date": "2026-11-10T00:30:00.000Z"
-},
-{
-"kind": "recap",
 "at": "2026-11-10T06:40:18.244786-05:00",
 "symbol": "NYSE:TDG",
 "description": "Transdigm Group Inc.",
@@ -787,5 +749,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/seekingalpha:7a91f50ac094b:0-hpe-falls-even-as-q4-results-guidance-top-estimates-by-a-wide-margin/"
+},
+{
+"kind": "recap",
+"at": "2026-11-24T06:40:17.758743-05:00",
+"symbol": "NYSE:MDT",
+"description": "Medtronic plc.",
+"market_cap_basic": 128837996093.00002,
+"earnings_per_share_fq": 1.34,
+"earnings_per_share_forecast_fq": 1.33451,
+"eps_surprise_percent_fq": 0.4113869510157282,
+"revenue_fq": 9364000000,
+"revenue_forecast_fq": 9479552632,
+"revenue_surprise_percent_fq": -1.2189671441870633,
+"claims": {
+"guidance": [
+"Medtronic reaffirmed its FY27 adjusted EPS and organic revenue growth guidance despite the diabetes business separation.",
+"FY27 organic growth and adjusted EPS guidance were reiterated"
+],
+"highlight": [
+"Cardiovascular sales rose 10.2% to $3.79 billion, driven by strong cardiac ablation demand.",
+"rose 10.2% to $3.79 billion, topping analysts' estimates of $3.76 billion"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4248286:0-mdt-broad-based-organic-growth-and-reiterated-fy27-guidance-cardiovascular-led-at-10-4/"
 }
 ]
