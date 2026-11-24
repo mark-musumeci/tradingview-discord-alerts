@@ -769,5 +769,29 @@
 ]
 },
 "link": "https://www.tradingview.com/news/DJN_SN20261124009153:0-dell-s-stock-rises-as-the-ai-boom-helps-sales-more-than-double/"
+},
+{
+"kind": "recap",
+"at": "2026-11-24T16:20:18.481282-05:00",
+"symbol": "NASDAQ:ADSK",
+"description": "Autodesk, Inc.",
+"market_cap_basic": 53441300383.55501,
+"earnings_per_share_fq": 3.2,
+"earnings_per_share_forecast_fq": 3.068415,
+"eps_surprise_percent_fq": 4.2883703801474145,
+"revenue_fq": 2160000000,
+"revenue_forecast_fq": 2133716219.9999998,
+"revenue_surprise_percent_fq": 1.2318311007637295,
+"claims": {
+"guidance": [
+"FY27 billings and revenue outlook midpoints increased after Q3 outperformance.",
+"FY27 billings and revenue outlook midpoints increased after Q3 outperformance."
+],
+"highlight": [
+"Q3 revenue grew 17% YoY and non-GAAP operating margin reached 39%.",
+"Q3 revenue grew 17% YoY and non-GAAP operating margin reached 39%."
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:4084115:0-adsk-q3-revenue-rose-17-and-stronger-momentum-lifted-fy27-outlook-midpoints/"
 }
 ]
