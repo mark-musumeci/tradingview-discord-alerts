@@ -765,5 +765,12 @@
 ]
 },
 "link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3693903:0-de-fy-revenue-grew-4-but-net-income-declined-fy2027-guidance-spans-4-50-5-25-billion/"
+},
+{
+"kind": "regime",
+"at": "2026-11-25T07:00:24.897504-05:00",
+"heading": "🔴 Regime: Risk-off (-2/4)",
+"detail": "VIX 30.5 · 10Y-2Y +0.23 · Breadth 51% · S&P below 50 & 200-day",
+"score": 40
 }
 ]
