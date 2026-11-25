@@ -1,53 +1,5 @@
 [
 {
-"kind": "recap",
-"at": "2026-11-10T20:30:21.664189-05:00",
-"symbol": "NYSE:PBR.A",
-"description": "Petroleo Brasileiro S.A. Petrobras",
-"market_cap_basic": 112217563291.8126,
-"earnings_per_share_fq": 1.2,
-"earnings_per_share_forecast_fq": 1.315792,
-"eps_surprise_percent_fq": -8.80017510366381,
-"revenue_fq": 32962000000,
-"revenue_forecast_fq": 33085080797.000004,
-"revenue_surprise_percent_fq": -0.37201298601986243,
-"claims": {
-"guidance": [
-"Petrobras raised its 2026 oil production forecast to 2.7–2.8 million barrels per day.",
-"raised 2026 oil forecast of 2.7–2.8 MMbpd."
-],
-"highlight": [
-"Revenue rose 32.4% to R$169.35 billion, surpassing analyst expectations.",
-"Revenue rose 32.4% to R$169.35 billion from a year ago; analysts expected R$177.10 billion."
-]
-},
-"link": "https://www.tradingview.com/news/urn:summary_document_slides:quartr.com:4561253:0-petrobras-record-output-lifts-2026-production-guidance-and-supports-accelerated-investment/"
-},
-{
-"kind": "recap",
-"at": "2026-11-10T21:00:23.448123-05:00",
-"symbol": "NYSE:PBR",
-"description": "Petroleo Brasileiro S.A. Petrobras",
-"market_cap_basic": 112217563291.8126,
-"earnings_per_share_fq": 1.2,
-"earnings_per_share_forecast_fq": 1.324363,
-"eps_surprise_percent_fq": -9.390401272158766,
-"revenue_fq": 32962000000,
-"revenue_forecast_fq": 33097099309.999996,
-"revenue_surprise_percent_fq": -0.408190786553845,
-"claims": {
-"guidance": [
-"Petrobras raised its 2026 capital expenditure forecast and lifted its oil production target, signaling continued investment and higher output.",
-"Petrobras raised its 2026 capital expenditure forecast to between $24 billion and $25.5 billion from $19.4 billion"
-],
-"highlight": [
-"Adjusted EBITDA rose 34% year‑over‑year but still missed analyst expectations.",
-"Adjusted earnings before interest, taxes, depreciation and amortization rose 34% from a year earlier to 85.82 billion reais"
-]
-},
-"link": "https://www.tradingview.com/news/seekingalpha:b6ecde89e094b:0-petrobras-profit-misses-estimates-as-spending-rises-payouts-disappoint/"
-},
-{
 "kind": "regime",
 "at": "2026-11-11T07:00:24.926054-05:00",
 "heading": "🟡 Regime: Neutral (+1/4)",
@@ -793,5 +745,25 @@
 ]
 },
 "link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:4084115:0-adsk-q3-revenue-rose-17-and-stronger-momentum-lifted-fy27-outlook-midpoints/"
+},
+{
+"kind": "recap",
+"at": "2026-11-25T06:20:17.546872-05:00",
+"symbol": "NYSE:DE",
+"description": "Deere & Company",
+"market_cap_basic": 165485286128.99997,
+"earnings_per_share_fq": 3.89,
+"earnings_per_share_forecast_fq": 4.025964,
+"eps_surprise_percent_fq": -3.3771787328451013,
+"revenue_fq": 12115000000,
+"revenue_forecast_fq": 10380046973,
+"revenue_surprise_percent_fq": 16.714308051908272,
+"claims": {
+"guidance": [
+"Deere projects FY2027 net income between $4.5 billion and $5.25 billion, below analysts’ expectations.",
+"FY2027 net income guidance is $4.50–$5.25 billion"
+]
+},
+"link": "https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3693903:0-de-fy-revenue-grew-4-but-net-income-declined-fy2027-guidance-spans-4-50-5-25-billion/"
 }
 ]
