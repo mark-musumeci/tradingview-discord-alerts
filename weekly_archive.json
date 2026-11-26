@@ -1,12 +1,5 @@
 [
 {
-"kind": "regime",
-"at": "2026-11-12T07:00:24.170477-05:00",
-"heading": "🟡 Regime: Neutral (+1/4)",
-"detail": "VIX 18.4 · 10Y-2Y +0.24 · Breadth 60% · S&P above 200-day",
-"score": 65
-},
-{
 "kind": "recap",
 "at": "2026-11-12T07:45:17.265011-05:00",
 "symbol": "NYSE:BN",
@@ -835,5 +828,12 @@
 "unit": "%",
 "scale": null,
 "date": "2026-11-25T13:30:00.000Z"
+},
+{
+"kind": "regime",
+"at": "2026-11-26T07:00:25.714136-05:00",
+"heading": "🔴 Regime: Risk-off (-2/4)",
+"detail": "VIX 28.3 · 10Y-2Y +0.21 · Breadth 53% · S&P below 50 & 200-day",
+"score": 43
 }
 ]
